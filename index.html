@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="Nutrition Hub — Fresh protein shakes, energy teas & B12 shots in Pearland, TX. Walk-ins welcome!">
+  <title>Nutrition Hub | Pearland, TX</title>
+
+  <!-- ═══════════════════════════════════════════════════════
+       🥤 DRINK OF THE DAY — UPDATE THIS DAILY
+       Change the name, description, and emoji below.
+       ═══════════════════════════════════════════════════════ -->
+  <script>
+    const DRINK_OF_THE_DAY = {
+      name: "Banana Pudding Shake",
+      emoji: "🍌",
+      description: "Creamy, protein-packed & tastes like dessert. 24g protein. Zero guilt.",
+      tag: "Fan Favorite"
+    };
+  </script>
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #1e7a4a;
+      --green-dark:  #145c37;
+      --green-light: #d4edda;
+      --gold:        #f4a522;
+      --bg:          #0d1f15;
+      --card:        #142a1d;
+      --border:      #1e3d28;
+      --text:        #f0f7f2;
+      --muted:       #8aab95;
+      --white:       #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      max-width: 480px;
+      margin: 0 auto;
+      padding-bottom: 100px;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(160deg, var(--green-dark) 0%, var(--green) 100%);
+      padding: 28px 20px 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .header-logo {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 6px;
+    }
+
+    .header h1 {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+    }
+
+    .header h1 span {
+      color: var(--gold);
+    }
+
+    .header-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      margin-top: 6px;
+    }
+
+    .open-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-top: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .open-badge.open { background: rgba(74,222,128,0.25); border-color: #4ade80; color: #4ade80; }
+
+    /* ── CTA Buttons ── */
+    .cta-row {
+      display: flex;
+      gap: 10px;
+      padding: 16px;
+      background: var(--green-dark);
+    }
+
+    .btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 10px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.1s, opacity 0.1s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn:active { transform: scale(0.97); opacity: 0.9; }
+
+    .btn-directions {
+      background: var(--gold);
+      color: #1a1a1a;
+      font-size: 14px;
+    }
+
+    .btn-call {
+      background: rgba(255,255,255,0.12);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 14px;
+    }
+
+    /* ── Section Labels ── */
+    .section {
+      padding: 0 16px;
+      margin-top: 24px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── Drink of the Day ── */
+    .dotd-card {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      border-radius: 16px;
+      padding: 20px;
+      margin: 16px 16px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dotd-card::before {
+      content: '';
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 100px; height: 100px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+
+    .dotd-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: #1a1a1a;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .dotd-name {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .dotd-emoji {
+      font-size: 28px;
+      margin-left: 6px;
+    }
+
+    .dotd-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .dotd-cta {
+      display: inline-block;
+      margin-top: 14px;
+      background: var(--white);
+      color: var(--green-dark);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 9px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+    }
+
+    /* ── Menu Cards ── */
+    .menu-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .menu-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .menu-icon {
+      font-size: 28px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(30, 122, 74, 0.2);
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .menu-info { flex: 1; }
+
+    .menu-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .menu-desc {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 3px;
+      line-height: 1.4;
+    }
+
+    .menu-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      background: rgba(244, 165, 34, 0.12);
+      border: 1px solid rgba(244, 165, 34, 0.25);
+      padding: 3px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── Hours ── */
+    .hours-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .hours-row:last-child { border-bottom: none; }
+
+    .hours-day { color: var(--muted); font-weight: 500; }
+    .hours-time { color: var(--text); font-weight: 600; }
+    .hours-row.today .hours-day { color: var(--gold); font-weight: 700; }
+    .hours-row.today .hours-time { color: var(--gold); }
+
+    /* ── Location ── */
+    .location-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .location-address {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    .location-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .location-map-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      margin-top: 14px;
+      padding: 13px;
+      background: var(--green);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .location-map-btn:active { background: var(--green-dark); }
+
+    /* ── Instagram Strip ── */
+    .ig-strip {
+      margin: 24px 16px 0;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      border-radius: 14px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+    }
+
+    .ig-strip-left { }
+    .ig-strip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.75); }
+    .ig-strip-handle { font-size: 18px; font-weight: 800; color: #fff; margin-top: 2px; }
+    .ig-strip-icon { font-size: 32px; }
+
+    /* ── Sticky Footer CTA ── */
+    .sticky-footer {
+      position: fixed;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
+      z-index: 100;
+    }
+
+    .sticky-footer a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px;
+      background: var(--gold);
+      color: #1a1a1a;
+      font-size: 16px;
+      font-weight: 800;
+      border-radius: 14px;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── Footer ── */
+    .page-footer {
+      text-align: center;
+      padding: 20px 16px 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-logo">Pearland, TX · Since 2017</div>
+    <h1>Nutrition <span>Hub</span></h1>
+    <div class="header-sub">Protein Shakes · Energy Teas · B12 Shots</div>
+    <div class="open-badge open" id="open-status">● Walk-ins Welcome</div>
+  </div>
+
+  <!-- TOP CTAs -->
+  <div class="cta-row">
+    <a class="btn btn-directions" href="https://maps.google.com/?q=8201+Broadway+Suite+113+Pearland+TX+77581" target="_blank">
+      📍 Get Directions
+    </a>
+    <a class="btn btn-call" href="tel:+18447482536">
+      📞 Call Us
+    </a>
+  </div>
+
+  <!-- DRINK OF THE DAY -->
+  <div class="dotd-card" id="dotd-card">
+    <div class="dotd-tag" id="dotd-tag">Today's Special</div>
+    <div>
+      <span class="dotd-name" id="dotd-name">Loading...</span>
+      <span class="dotd-emoji" id="dotd-emoji"></span>
+    </div>
+    <div class="dotd-desc" id="dotd-desc"></div>
+    <a class="dotd-cta" href="https://maps.google.com/?q=8201+Broadway+Suite+113+Pearland+TX+77581" target="_blank">
+      Come grab yours →
+    </a>
+  </div>
+
+  <!-- PROTEIN SHAKES -->
+  <div class="section" style="margin-top:28px;">
+    <div class="section-label">🥤 Protein Shakes</div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-icon">🍌</div>
+        <div class="menu-info">
+          <div class="menu-name">Banana Pudding</div>
+          <div class="menu-desc">Tastes like dessert. Packed with 24g protein & 21 vitamins.</div>
+        </div>
+        <div class="menu-badge">Fan Fav</div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-icon">☕</div>
+        <div class="menu-info">
+          <div class="menu-name">Chai Tea Shake</div>
+          <div class="menu-desc">Warm spice meets creamy protein. The perfect morning swap.</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-icon">🍓</div>
+        <div class="menu-info">
+          <div class="menu-name">Seasonal Flavors</div>
+          <div class="menu-desc">New flavors rotate regularly. Ask us what's fresh today!</div>
+        </div>
+        <div class="menu-badge">Ask Us</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENERGY TEAS -->
+  <div class="section">
+    <div class="section-label">⚡ Energy Teas</div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-icon">🐉</div>
+        <div class="menu-info">
+          <div class="menu-name">Dragon Juice Lit Tea</div>
+          <div class="menu-desc">Bold, tropical energy hit. Green & black tea with B12 & ginseng.</div>
+        </div>
+        <div class="menu-badge">Best Seller</div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-icon">🍏</div>
+        <div class="menu-info">
+          <div class="menu-name">Green Apple Lit Tea</div>
+          <div class="menu-desc">Crisp, refreshing, and clean energy without the crash.</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-icon">👸</div>
+        <div class="menu-info">
+          <div class="menu-name">Wonder Woman Lit Tea</div>
+          <div class="menu-desc">Feel unstoppable. Guarana extract, aloe & vitamin B complex.</div>
+        </div>
+        <div class="menu-badge">⚡ Popular</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOTS & ADD-ONS -->
+  <div class="section">
+    <div class="section-label">💉 Shots & Boosts</div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-icon">⚡</div>
+        <div class="menu-info">
+          <div class="menu-name">B12 Energy Shot</div>
+          <div class="menu-desc">Instant energy. No jitters. Pairs great with your shake or tea.</div>
+        </div>
+        <div class="menu-badge">Quick Hit</div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-icon">🌿</div>
+        <div class="menu-info">
+          <div class="menu-name">Aloe Boost</div>
+          <div class="menu-desc">Gut health, digestion support & natural hydration. Add it to anything.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOOD EATS -->
+  <div class="section">
+    <div class="section-label">🍽️ Good Eats</div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-icon">🧇</div>
+        <div class="menu-info">
+          <div class="menu-name">Protein Waffles</div>
+          <div class="menu-desc">High protein, low carb. Satisfies cravings without the guilt.</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-icon">🍩</div>
+        <div class="menu-info">
+          <div class="menu-name">Protein Donuts</div>
+          <div class="menu-desc">Yes, really. Tastes like a treat. Works like a meal. Made with Herbalife.</div>
+        </div>
+        <div class="menu-badge">🔥 Try It</div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-icon">🥣</div>
+        <div class="menu-info">
+          <div class="menu-name">Protein Bowls</div>
+          <div class="menu-desc">Filling, nutritious, and built for your goals. Great post-workout.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOURS -->
+  <div class="section">
+    <div class="section-label">🕐 Hours</div>
+    <div class="hours-card" id="hours-card">
+      <div class="hours-row" data-day="1,2,3,4">
+        <span class="hours-day">Mon – Thu</span>
+        <span class="hours-time">6:30 AM – 5:00 PM</span>
+      </div>
+      <div class="hours-row" data-day="5">
+        <span class="hours-day">Friday</span>
+        <span class="hours-time">6:30 AM – 3:00 PM</span>
+      </div>
+      <div class="hours-row" data-day="6">
+        <span class="hours-day">Saturday</span>
+        <span class="hours-time">8:00 AM – 2:00 PM</span>
+      </div>
+      <div class="hours-row" data-day="0">
+        <span class="hours-day">Sunday</span>
+        <span class="hours-time">12:00 PM – 3:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCATION -->
+  <div class="section">
+    <div class="section-label">📍 Find Us</div>
+    <div class="location-card">
+      <div class="location-address">8201 Broadway, Suite 113</div>
+      <div class="location-sub">Pearland, TX 77581 · 5 min from 288</div>
+      <a class="location-map-btn" href="https://maps.google.com/?q=8201+Broadway+Suite+113+Pearland+TX+77581" target="_blank">
+        🗺️ Open in Google Maps
+      </a>
+    </div>
+  </div>
+
+  <!-- INSTAGRAM -->
+  <a class="ig-strip" href="https://instagram.com/nutritionhub101" target="_blank">
+    <div class="ig-strip-left">
+      <div class="ig-strip-label">Follow us</div>
+      <div class="ig-strip-handle">@nutritionhub101</div>
+    </div>
+    <div class="ig-strip-icon">📸</div>
+  </a>
+
+  <!-- PAGE FOOTER -->
+  <div class="page-footer">
+    Nutrition Hub · Pearland, TX · (844) 748-2536<br>
+    Powered by <strong>EasyAiFlows</strong>
+  </div>
+
+  <!-- STICKY FOOTER -->
+  <div class="sticky-footer">
+    <a href="https://maps.google.com/?q=8201+Broadway+Suite+113+Pearland+TX+77581" target="_blank">
+      📍 Get Directions — Come See Us!
+    </a>
+  </div>
+
+  <!-- ── JavaScript ── -->
+  <script>
+    // Inject Drink of the Day
+    document.getElementById('dotd-name').textContent = DRINK_OF_THE_DAY.name;
+    document.getElementById('dotd-emoji').textContent = DRINK_OF_THE_DAY.emoji;
+    document.getElementById('dotd-desc').textContent = DRINK_OF_THE_DAY.description;
+    document.getElementById('dotd-tag').textContent = DRINK_OF_THE_DAY.tag || "Today's Special";
+
+    // Highlight today's hours
+    const today = new Date().getDay(); // 0=Sun, 1=Mon ... 6=Sat
+    document.querySelectorAll('.hours-row').forEach(row => {
+      const days = row.dataset.day.split(',').map(Number);
+      if (days.includes(today)) row.classList.add('today');
+    });
+
+    // Open/closed status
+    function checkOpen() {
+      const now = new Date();
+      const day = now.getDay();
+      const hour = now.getHours() + now.getMinutes() / 60;
+      let open = false;
+      if (day >= 1 && day <= 4) open = hour >= 6.5 && hour < 17;
+      else if (day === 5) open = hour >= 6.5 && hour < 15;
+      else if (day === 6) open = hour >= 8 && hour < 14;
+      else if (day === 0) open = hour >= 12 && hour < 15;
+      const badge = document.getElementById('open-status');
+      if (open) {
+        badge.textContent = '● Open Now — Walk-ins Welcome';
+        badge.classList.add('open');
+      } else {
+        badge.textContent = '● Closed — See Hours Below';
+        badge.classList.remove('open');
+        badge.style.background = 'rgba(255,255,255,0.08)';
+        badge.style.borderColor = 'rgba(255,255,255,0.15)';
+        badge.style.color = 'rgba(255,255,255,0.5)';
+      }
+    }
+    checkOpen();
+  </script>
+
+</body>
+</html>
