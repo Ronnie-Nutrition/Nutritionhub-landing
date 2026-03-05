@@ -663,6 +663,62 @@
     }
 
     .page-footer strong { color: var(--text); }
+
+    /* ── FLAVOR CHIPS ── */
+    .all-flavors-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+    .flavor-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 14px 16px;
+      background: var(--green-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+    .flavor-chip {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--green-dark);
+      background: var(--white);
+      border: 1px solid rgba(26,122,69,0.18);
+      padding: 5px 11px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .flavor-chip.hot { color: #b84a1a; border-color: rgba(184,74,26,0.2); }
+    .flavor-chip.tea { color: #7a5c1a; background: #fffbf0; border-color: rgba(122,92,26,0.2); }
+    .subsection-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 14px;
+      margin-bottom: 8px;
+      padding: 4px 0;
+      border-bottom: 2px solid var(--border);
+    }
+    .menu-meta {
+      display: inline-flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .meta-tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 10px;
+      background: var(--green-bg);
+      color: var(--green-dark);
+      border: 1px solid var(--border);
+    }
   </style>
 </head>
 <body>
@@ -691,8 +747,8 @@
   <!-- PROOF BAR -->
   <div class="proof-bar">
     <div class="proof-item">
-      <div class="proof-number">255+</div>
-      <div class="proof-label">5-Star Reviews</div>
+      <div class="proof-number">149+</div>
+      <div class="proof-label">Google Reviews</div>
     </div>
     <div class="proof-item">
       <div class="proof-number">24g</div>
@@ -719,13 +775,13 @@
     </div>
   </div>
 
-  <!-- PROTEIN SHAKES -->
+  <!-- GOURMET SMOOTHIES -->
   <div class="menu-section">
     <div class="menu-header">
       <div class="menu-header-icon icon-shake">🥤</div>
       <div>
-        <h2>Protein Shakes</h2>
-        <p>24g protein · Full meal replacement · 21 vitamins</p>
+        <h2>Gourmet Smoothies</h2>
+        <p>24–30g protein · 300 cal · Full meal replacement</p>
       </div>
     </div>
     <div class="menu-stack">
@@ -733,35 +789,149 @@
         <div class="item-emoji">🍌</div>
         <div class="item-body">
           <div class="item-name">Banana Pudding</div>
-          <div class="item-desc">Dessert-level delicious. Real nutrition underneath.</div>
+          <div class="item-desc">Tastes like dessert. Works like a meal. Our #1 seller.</div>
         </div>
         <span class="item-badge badge-gold">Fan Fav ⭐</span>
       </div>
       <div class="menu-item">
-        <div class="item-emoji">☕</div>
+        <div class="item-emoji">🥜</div>
         <div class="item-body">
-          <div class="item-name">Chai Tea Shake</div>
-          <div class="item-desc">Warm spice, creamy texture. The perfect morning fuel.</div>
+          <div class="item-name">Salted Caramel Frappe</div>
+          <div class="item-desc">Rich, bold, sweet-salty perfection in every sip.</div>
         </div>
+        <span class="item-badge badge-orange">🔥 Try It</span>
       </div>
       <div class="menu-item">
         <div class="item-emoji">🍓</div>
         <div class="item-body">
-          <div class="item-name">Seasonal Flavors</div>
-          <div class="item-desc">New flavors rotating weekly. Ask us what just dropped!</div>
+          <div class="item-name">Strawberry Cheesecake</div>
+          <div class="item-desc">Creamy cheesecake flavor with real protein power.</div>
         </div>
-        <span class="item-badge badge-green">Ask Us</span>
       </div>
+    </div>
+    <div class="all-flavors-label">All Gourmet Flavors</div>
+    <div class="flavor-list">
+      <span class="flavor-chip">Banana Pudding</span>
+      <span class="flavor-chip">Bougie</span>
+      <span class="flavor-chip">Butter Pecan</span>
+      <span class="flavor-chip">Coco-Pebbles/Puffs</span>
+      <span class="flavor-chip">Limarita Gourmet</span>
+      <span class="flavor-chip">Mango Tango</span>
+      <span class="flavor-chip">Orange Blast</span>
+      <span class="flavor-chip">Fruity Pebbles</span>
+      <span class="flavor-chip">Fried Ice Cream</span>
+      <span class="flavor-chip">Peach Cobbler</span>
+      <span class="flavor-chip">Push Pop</span>
+      <span class="flavor-chip">S'mores</span>
+      <span class="flavor-chip">Texas Sunset</span>
+      <span class="flavor-chip">Tropical Twist</span>
+      <span class="flavor-chip">Whatchamacallit</span>
+      <span class="flavor-chip">Salted Caramel Frappe</span>
+      <span class="flavor-chip">Strawberry Cheesecake</span>
+      <span class="flavor-chip">Wild Berry Lemonade</span>
+      <span class="flavor-chip">Fruity Force</span>
+      <span class="flavor-chip">Keto Berry Shake</span>
+      <span class="flavor-chip">Peanut Butter Crunch</span>
+      <span class="flavor-chip">Fit Frosty</span>
+      <span class="flavor-chip">Banana Split</span>
+      <span class="flavor-chip">Coffee Crusted Pralines N' Cream</span>
     </div>
   </div>
 
-  <!-- ENERGY TEAS -->
+  <!-- SMOOTHIES 20OZ -->
+  <div class="menu-section">
+    <div class="menu-header">
+      <div class="menu-header-icon icon-shake">🍶</div>
+      <div>
+        <h2>Smoothies</h2>
+        <p>20oz · 24g protein · 200 cal · 21 vitamins</p>
+      </div>
+    </div>
+    <div class="menu-stack">
+      <div class="menu-item">
+        <div class="item-emoji">🍫</div>
+        <div class="item-body">
+          <div class="item-name">Dutch Chocolate</div>
+          <div class="item-desc">Rich chocolate flavor — tastes indulgent, performs clean.</div>
+        </div>
+        <span class="item-badge badge-gold">Popular ⭐</span>
+      </div>
+      <div class="menu-item">
+        <div class="item-emoji">🍬</div>
+        <div class="item-body">
+          <div class="item-name">Strawberry Banana</div>
+          <div class="item-desc">Classic, fresh, and always a crowd-pleaser.</div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="item-emoji">🥜</div>
+        <div class="item-body">
+          <div class="item-name">Peanut Butter Jelly</div>
+          <div class="item-desc">Nostalgia in a cup. Macro-friendly and delicious.</div>
+        </div>
+      </div>
+    </div>
+    <div class="all-flavors-label">All Smoothie Flavors</div>
+    <div class="flavor-list">
+      <span class="flavor-chip">Banana Bread</span>
+      <span class="flavor-chip">Banana Caramel</span>
+      <span class="flavor-chip">Banana Colada</span>
+      <span class="flavor-chip">Banana Foster</span>
+      <span class="flavor-chip">Peanut Butter Banana</span>
+      <span class="flavor-chip">Brownie Batter</span>
+      <span class="flavor-chip">Birthday Cake</span>
+      <span class="flavor-chip">Blue Banana</span>
+      <span class="flavor-chip">Blue Pina</span>
+      <span class="flavor-chip">Cookies N' Cream</span>
+      <span class="flavor-chip">Cinn-a-Bun</span>
+      <span class="flavor-chip">Cinnamon Roll</span>
+      <span class="flavor-chip">Cinnamon Toast Crunch</span>
+      <span class="flavor-chip">Dutch Chocolate</span>
+      <span class="flavor-chip">French Vanilla</span>
+      <span class="flavor-chip">Lemon Cookie</span>
+      <span class="flavor-chip">Lemon Pound Cake</span>
+      <span class="flavor-chip">Mint Chocolate</span>
+      <span class="flavor-chip">Orange Creamsicle</span>
+      <span class="flavor-chip">Peanut Butter Jelly</span>
+      <span class="flavor-chip">Pina Colada</span>
+      <span class="flavor-chip">Pralines N' Cream</span>
+      <span class="flavor-chip">Strawberry Banana</span>
+      <span class="flavor-chip">Reeces Cup</span>
+      <span class="flavor-chip">Wild Berry</span>
+      <span class="flavor-chip">Snickerdoodle</span>
+      <span class="flavor-chip">Butterfinger</span>
+      <span class="flavor-chip">Café Latte</span>
+      <span class="flavor-chip">Dulce de Leche</span>
+      <span class="flavor-chip">Strawberry Shortcake</span>
+    </div>
+  </div>
+
+  <!-- VEGETARIAN SMOOTHIE -->
+  <div class="menu-section">
+    <div class="menu-header">
+      <div class="menu-header-icon icon-shake">🌱</div>
+      <div>
+        <h2>Vegetarian Smoothie</h2>
+        <p>24g protein · Rice, quinoa & pea protein · Plant-based</p>
+      </div>
+    </div>
+    <div class="all-flavors-label">Available Flavors</div>
+    <div class="flavor-list">
+      <span class="flavor-chip">Brownie Batter</span>
+      <span class="flavor-chip">Cinnamon Roll</span>
+      <span class="flavor-chip">Vanilla</span>
+      <span class="flavor-chip">Apple Pie</span>
+      <span class="flavor-chip">Strawberry</span>
+    </div>
+  </div>
+
+  <!-- LIT TEA -->
   <div class="menu-section">
     <div class="menu-header">
       <div class="menu-header-icon icon-tea">⚡</div>
       <div>
-        <h2>Energy Teas</h2>
-        <p>Green & black tea · B12 · Ginseng · No crash</p>
+        <h2>Lit Tea</h2>
+        <p>32oz · Energy + metabolism boost · B12 & B6 · Low calorie</p>
       </div>
     </div>
     <div class="menu-stack">
@@ -774,13 +944,6 @@
         <span class="item-badge badge-orange">#1 Seller 🔥</span>
       </div>
       <div class="menu-item">
-        <div class="item-emoji">🍏</div>
-        <div class="item-body">
-          <div class="item-name">Green Apple Lit</div>
-          <div class="item-desc">Crisp and clean. Real energy without the crash.</div>
-        </div>
-      </div>
-      <div class="menu-item">
         <div class="item-emoji">👸</div>
         <div class="item-body">
           <div class="item-name">Wonder Woman</div>
@@ -788,10 +951,129 @@
         </div>
         <span class="item-badge badge-blue">⚡ Popular</span>
       </div>
+      <div class="menu-item">
+        <div class="item-emoji">🍹</div>
+        <div class="item-body">
+          <div class="item-name">Blue Margarita</div>
+          <div class="item-desc">Zero sugar. All the flavor. Refreshing every time.</div>
+        </div>
+      </div>
+    </div>
+    <div class="all-flavors-label">Zero Sugar Options</div>
+    <div class="flavor-list">
+      <span class="flavor-chip tea">Arnold Palmer</span>
+      <span class="flavor-chip tea">Bikini In a Bottle</span>
+      <span class="flavor-chip tea">Blue Margarita</span>
+      <span class="flavor-chip tea">Blue Pina</span>
+      <span class="flavor-chip tea">Cherry Limeade</span>
+      <span class="flavor-chip tea">Dragon Juice</span>
+      <span class="flavor-chip tea">Green Apple</span>
+      <span class="flavor-chip tea">Jolly Rancher</span>
+      <span class="flavor-chip tea">Jungle Juice</span>
+      <span class="flavor-chip tea">Watacolada</span>
+      <span class="flavor-chip tea">Jellybean</span>
+      <span class="flavor-chip tea">Wonder Woman</span>
+      <span class="flavor-chip tea">Pineapple Upside Down</span>
+      <span class="flavor-chip tea">Frankenstein</span>
+      <span class="flavor-chip tea">Crazy in Love</span>
+      <span class="flavor-chip tea">Tigers Blood</span>
+      <span class="flavor-chip tea">Blue Lemonade</span>
+    </div>
+    <div class="all-flavors-label" style="margin-top:14px;">H3O + CR7 Options</div>
+    <div class="flavor-list">
+      <span class="flavor-chip tea">Mamba</span>
+      <span class="flavor-chip tea">Over the Rainbow</span>
+      <span class="flavor-chip tea">Purple Passion</span>
+      <span class="flavor-chip tea">Purple Rain</span>
+      <span class="flavor-chip tea">Strawberry Sunrise</span>
+      <span class="flavor-chip tea">Raspberry Sunrise</span>
+      <span class="flavor-chip tea">Blue Ocean</span>
+      <span class="flavor-chip tea">Madori</span>
+      <span class="flavor-chip tea">Orange Pineapple Push Pop</span>
+      <span class="flavor-chip tea">Cherry Bomb</span>
+      <span class="flavor-chip tea">Fish Bowl</span>
     </div>
   </div>
 
-  <!-- SHOTS -->
+  <!-- ENHANCED TEAS -->
+  <div class="menu-section">
+    <div class="menu-header">
+      <div class="menu-header-icon icon-tea">🌸</div>
+      <div>
+        <h2>Enhanced Teas</h2>
+        <p>Premium blends · Unique flavors · All the energy</p>
+      </div>
+    </div>
+    <div class="flavor-list" style="margin-top:4px;">
+      <span class="flavor-chip tea">Olaf</span>
+      <span class="flavor-chip tea">Peaches N' Cream</span>
+      <span class="flavor-chip tea">Lil' Red Corvette</span>
+      <span class="flavor-chip tea">Horchata</span>
+      <span class="flavor-chip tea">Fuzzy Navel</span>
+      <span class="flavor-chip tea">Mamacita</span>
+      <span class="flavor-chip tea">Strawberry Refresher</span>
+    </div>
+  </div>
+
+  <!-- HOT DRINKS -->
+  <div class="menu-section">
+    <div class="menu-header">
+      <div class="menu-header-icon icon-shots">☕</div>
+      <div>
+        <h2>Hot Drinks</h2>
+        <p>Warm, cozy, and loaded with nutrition</p>
+      </div>
+    </div>
+    <div class="menu-stack">
+      <div class="menu-item">
+        <div class="item-emoji">🍵</div>
+        <div class="item-body">
+          <div class="item-name">Chai Latte</div>
+          <div class="item-desc">15g protein · Warm spice blend. Morning fuel done right.</div>
+        </div>
+        <span class="item-badge badge-gold">15g Protein</span>
+      </div>
+      <div class="menu-item">
+        <div class="item-emoji">🍫</div>
+        <div class="item-body">
+          <div class="item-name">Hot Chocolate</div>
+          <div class="item-desc">24g protein · Rich, velvety, and completely on-plan.</div>
+        </div>
+        <span class="item-badge badge-green">24g Protein</span>
+      </div>
+      <div class="menu-item">
+        <div class="item-emoji">🌿</div>
+        <div class="item-body">
+          <div class="item-name">Khadija Tea</div>
+          <div class="item-desc">Immunity boost · Energy · Mental focus. Feel the difference.</div>
+        </div>
+      </div>
+    </div>
+    <div class="flavor-list" style="margin-top:12px;">
+      <span class="flavor-chip hot">Chai Latte — 15g Protein</span>
+      <span class="flavor-chip hot">Hot Chocolate — 24g Protein</span>
+      <span class="flavor-chip hot">Khadija Tea — Immunity Boost</span>
+      <span class="flavor-chip hot">Hang Over Tea</span>
+      <span class="flavor-chip hot">Detox Tea</span>
+    </div>
+  </div>
+
+  <!-- PROTEIN COFFEE -->
+  <div class="menu-section">
+    <div class="menu-header">
+      <div class="menu-header-icon icon-shots">☕</div>
+      <div>
+        <h2>Protein Coffee</h2>
+        <p>20oz · 15g protein · Only 2g sugar</p>
+      </div>
+    </div>
+    <div class="flavor-list" style="margin-top:4px;">
+      <span class="flavor-chip">House Blend</span>
+      <span class="flavor-chip">Mocha</span>
+    </div>
+  </div>
+
+  <!-- SHOTS & BOOSTS -->
   <div class="menu-section">
     <div class="menu-header">
       <div class="menu-header-icon icon-shots">💉</div>
@@ -817,6 +1099,15 @@
         </div>
       </div>
     </div>
+    <div class="all-flavors-label">Enhancers — Add to Any Drink</div>
+    <div class="flavor-list">
+      <span class="flavor-chip">Fiber</span>
+      <span class="flavor-chip">Probiotic</span>
+      <span class="flavor-chip">Aloe</span>
+      <span class="flavor-chip">Lift Off Table</span>
+      <span class="flavor-chip">Lift Off 24 Spark</span>
+      <span class="flavor-chip">Collagen</span>
+    </div>
   </div>
 
   <!-- GOOD EATS -->
@@ -825,7 +1116,7 @@
       <div class="menu-header-icon icon-eats">🍽️</div>
       <div>
         <h2>Good Eats</h2>
-        <p>High protein · Low carb · Actually delicious</p>
+        <p>High protein · Actually delicious · On-plan approved</p>
       </div>
     </div>
     <div class="menu-stack">
@@ -833,24 +1124,28 @@
         <div class="item-emoji">🧇</div>
         <div class="item-body">
           <div class="item-name">Protein Waffles</div>
-          <div class="item-desc">Fluffy, filling, and actually on-plan. Guilt-free treat.</div>
+          <div class="item-desc">33g protein · Banana, Chocolate or Dulce. Topped with strawberries, banana, granola & whip cream.</div>
         </div>
+        <span class="item-badge badge-green">33g Protein</span>
       </div>
       <div class="menu-item">
-        <div class="item-emoji">🍩</div>
+        <div class="item-emoji">☕</div>
         <div class="item-body">
-          <div class="item-name">Protein Donuts</div>
-          <div class="item-desc">Yes, really. Tastes like cheat day. Works like a meal.</div>
+          <div class="item-name">Donut Shot</div>
+          <div class="item-desc">A little treat, big on flavor. Quick grab at the counter.</div>
         </div>
-        <span class="item-badge badge-orange">🔥 Try It</span>
+        <span class="item-badge badge-orange">Counter Item</span>
       </div>
-      <div class="menu-item">
-        <div class="item-emoji">🥣</div>
-        <div class="item-body">
-          <div class="item-name">Protein Bowls</div>
-          <div class="item-desc">Built for real goals. Great post-workout, every time.</div>
-        </div>
-      </div>
+    </div>
+    <div class="all-flavors-label">Snacks & Counter Items</div>
+    <div class="flavor-list">
+      <span class="flavor-chip">Donut Shot</span>
+      <span class="flavor-chip">Protein Balls — 24g/pkg</span>
+      <span class="flavor-chip">Protein Bites</span>
+      <span class="flavor-chip">Protein Bars</span>
+      <span class="flavor-chip">Kickers</span>
+      <span class="flavor-chip">Total Control</span>
+      <span class="flavor-chip">24 Bar</span>
     </div>
   </div>
 
