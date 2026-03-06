@@ -53,6 +53,14 @@
       min-height: 100vh;
     }
 
+    /* ── GMB BANNER ── */
+    .gmb-banner {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 200px;
+    }
+
     /* ── HERO ── */
     .hero {
       background: linear-gradient(165deg, #0a4f2a 0%, #1a7a45 45%, #2a9d5c 100%);
@@ -62,15 +70,6 @@
       overflow: hidden;
     }
 
-    .hero-bg-img {
-      position: absolute;
-      inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center;
-      opacity: 0.45;
-    }
-
     .hero::before {
       content: '';
       position: absolute;
@@ -78,7 +77,6 @@
       width: 220px; height: 220px;
       background: radial-gradient(circle, rgba(245,166,35,0.18) 0%, transparent 70%);
       border-radius: 50%;
-      z-index: 1;
     }
 
     .hero::after {
@@ -88,7 +86,6 @@
       width: 180px; height: 180px;
       background: radial-gradient(circle, rgba(42,157,92,0.3) 0%, transparent 70%);
       border-radius: 50%;
-      z-index: 1;
     }
 
     .hero-eyebrow {
@@ -744,9 +741,11 @@
 </head>
 <body>
 
+  <!-- GMB BANNER -->
+  <img class="gmb-banner" src="NutritionHub_GMB_Cover_v3.png" alt="Nutrition Hub Pearland">
+
   <!-- HERO -->
   <div class="hero">
-    <img class="hero-bg-img" src="NutritionHub_GMB_Cover_v3.png" alt="Nutrition Hub Pearland">
     <div class="hero-eyebrow">Pearland, TX · Since 2017</div>
     <h1>Nutrition<span>Hub</span></h1>
     <p class="hero-sub">Handcrafted Shakes · Energy Teas · B12 Shots</p>
@@ -808,7 +807,7 @@
     </div>
     <div class="menu-stack">
       <div class="menu-item">
-        <div class="item-emoji"><img src="shake_chocolate.png" alt="Gourmet Shake"></div>
+        <div class="item-emoji"><img src="shake_banana_pudding.png" alt="Banana Pudding Shake"></div>
         <div class="item-body">
           <div class="item-name">Banana Pudding</div>
           <div class="item-desc">Tastes like dessert. Works like a meal. Our #1 seller.</div>
@@ -816,7 +815,7 @@
         <span class="item-badge badge-gold">Fan Fav ⭐</span>
       </div>
       <div class="menu-item">
-        <div class="item-emoji"><img src="shake_blue.png" alt="Blue Smoothie"></div>
+        <div class="item-emoji"><img src="shake_salted_caramel.png" alt="Salted Caramel Frappe"></div>
         <div class="item-body">
           <div class="item-name">Salted Caramel Frappe</div>
           <div class="item-desc">Rich, bold, sweet-salty perfection in every sip.</div>
@@ -824,7 +823,7 @@
         <span class="item-badge badge-orange">🔥 Try It</span>
       </div>
       <div class="menu-item">
-        <div class="item-emoji"><img src="shake_choc2.png" alt="Chocolate Smoothie"></div>
+        <div class="item-emoji"><img src="shake_strawberry_cheesecake.png" alt="Strawberry Cheesecake Shake"></div>
         <div class="item-body">
           <div class="item-name">Strawberry Cheesecake</div>
           <div class="item-desc">Creamy cheesecake flavor with real protein power.</div>
@@ -958,7 +957,7 @@
     </div>
     <div class="menu-stack">
       <div class="menu-item">
-        <div class="item-emoji"><img src="tea_red.png" alt="Dragon Juice Tea"></div>
+        <div class="item-emoji"><img src="tea_dragon_juice.png" alt="Dragon Juice Tea"></div>
         <div class="item-body">
           <div class="item-name">Dragon Juice</div>
           <div class="item-desc">Bold, tropical, hits different. Our #1 seller.</div>
@@ -966,15 +965,15 @@
         <span class="item-badge badge-orange">#1 Seller 🔥</span>
       </div>
       <div class="menu-item">
-        <div class="item-emoji">👸</div>
+        <div class="item-emoji"><img src="tea_red.png" alt="Mamacita Tea"></div>
         <div class="item-body">
-          <div class="item-name">Wonder Woman</div>
-          <div class="item-desc">Guarana, aloe, B-complex. Feel unstoppable all day.</div>
+          <div class="item-name">Mamacita</div>
+          <div class="item-desc">Bright, bold, and totally unique. One sip and you'll be back.</div>
         </div>
         <span class="item-badge badge-blue">⚡ Popular</span>
       </div>
       <div class="menu-item">
-        <div class="item-emoji">🍹</div>
+        <div class="item-emoji"><img src="tea_blue_margarita.png" alt="Blue Margarita Tea"></div>
         <div class="item-body">
           <div class="item-name">Blue Margarita</div>
           <div class="item-desc">Zero sugar. All the flavor. Refreshing every time.</div>
