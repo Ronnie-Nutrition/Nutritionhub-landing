@@ -39,14 +39,16 @@ LEDGER_PATH = os.path.join(DATA_DIR, "capi_sent.json")
 LOG_PATH    = os.path.join(DATA_DIR, "capi_feed.log")
 LOOKBACK_HOURS = int(os.environ.get("CAPI_LOOKBACK_HOURS", "36"))
 META_API_VER   = os.environ.get("CAPI_META_VER", "v19.0")
-# Square applications whose payments must NOT be attributed to ads. Default:
-# sq0idp-eWgeI2OSLAabneRPOcL87g = Herbalife's "Engage" ordering app. Existing
-# customers (e.g. Lianny Sophia) log into Engage, which charges through Square
-# and surfaces here noted "Herbalife - The Nutritional Hub". These are repeat
-# app orders, NOT ad-driven foot traffic -- attributing them would inflate ROAS
-# and skew the lookalike audience, so they're excluded.
-EXCLUDE_APP_IDS = set(filter(None, os.environ.get(
-    "CAPI_EXCLUDE_APP_IDS", "sq0idp-eWgeI2OSLAabneRPOcL87g").split(",")))
+# IMPORTANT: the Square Terminal and Herbalife's "Engage" app share ONE Square
+# application id (sq0idp-eWgeI2OSLAabneRPOcL87g). So we CANNOT discriminate by app
+# id -- doing so would wrongly drop real in-store Terminal sales. Instead we key
+# off the physical device:
+#   * in-store foot traffic  -> square_product == TERMINAL_API and/or device_details present
+#   * remote Engage app order -> square_product == ECOMMERCE_API, no device (e.g.
+#                                Lianny Sophia's recurring "Herbalife" orders)
+# We attribute in-store device sales; we exclude remote ecommerce that is NOT the
+# order site (those are app/subscription orders, not ad-driven foot traffic).
+ORDER_SITE_NOTE_HINT = "Online Order"  # order-site payments note "Nutrition Hub Online Order NH-..."
 # Meta hard-rejects events whose event_time is older than 7 days; keep a margin.
 MAX_EVENT_AGE_DAYS = 6.5
 
@@ -134,6 +136,36 @@ def to_epoch(iso):
     return int(datetime.fromisoformat(iso.replace("Z", "+00:00")).timestamp())
 
 
+_cust_cache = {}
+
+
+def customer_pii(host, token, version, cid):
+    """Fetch (email, phone) from a Square customer record. In-store receipt opt-ins
+    often land on the customer profile, not on the payment object itself."""
+    if not cid:
+        return ("", "")
+    if cid in _cust_cache:
+        return _cust_cache[cid]
+    res = ("", "")
+    try:
+        d = square_get(host, f"/v2/customers/{cid}", token, version)
+        c = d.get("customer", {})
+        res = (c.get("email_address") or "", c.get("phone_number") or "")
+    except Exception:
+        pass
+    _cust_cache[cid] = res
+    return res
+
+
+def is_in_store(p):
+    """True if this payment was rung on a physical Square device (Terminal/POS).
+    Keys off the device, NOT the app id, because the Terminal and the Engage app
+    share one application id."""
+    if p.get("device_details"):
+        return True
+    return (p.get("application_details") or {}).get("square_product") == "TERMINAL_API"
+
+
 def build_event(p):
     """Return a Meta CAPI event dict for a payment, or None if unmatchable."""
     email = (p.get("buyer_email_address") or "").strip()
@@ -152,7 +184,7 @@ def build_event(p):
     if not user_data:
         return None  # Meta requires >=1 user identifier; can't match this one.
 
-    in_store = bool(p.get("device_details"))
+    in_store = is_in_store(p)
     amt = (p.get("amount_money") or {}).get("amount", 0) / 100.0
     return {
         "event_name": "Purchase",
@@ -211,8 +243,8 @@ def main():
 
     ledger = load_ledger()
     events, sent_ids = [], []
-    n_total = n_skip_site = n_skip_ledger = n_skip_nopii = n_skip_old = n_skip_status = n_skip_excl = 0
-    unmatched_value = 0.0
+    n_total = n_skip_site = n_skip_ledger = n_skip_nopii = n_skip_old = n_skip_status = n_skip_remote = 0
+    unmatched_value = instore_unmatched = 0.0
 
     for p in list_payments(host, token, version, loc, begin_iso):
         n_total += 1
@@ -224,27 +256,37 @@ def main():
             n_skip_ledger += 1
             continue
         app_id = (p.get("application_details") or {}).get("application_id", "")
+        amt = (p.get("amount_money") or {}).get("amount", 0) / 100.0
         if app_id and app_id == site_app:
             n_skip_site += 1  # order-site already fired realtime CAPI
             continue
-        if app_id and app_id in EXCLUDE_APP_IDS:
-            n_skip_excl += 1  # recurring card-on-file channel -- not ad-driven
+        # Discriminate by DEVICE, not app id (Terminal + Engage share one app).
+        if not is_in_store(p):
+            n_skip_remote += 1  # remote ecommerce (Engage app order) -- not ad-driven
             continue
         if to_epoch(p["created_at"]) < too_old_before:
             n_skip_old += 1
             continue
+        # In-store sale: receipt phone/email may live on the customer record.
+        if not p.get("buyer_email_address"):
+            em, ph = customer_pii(host, token, version, p.get("customer_id"))
+            if em:
+                p["buyer_email_address"] = em
+            if ph:
+                p["buyer_phone_number"] = ph
         ev = build_event(p)
         if ev is None:
-            n_skip_nopii += 1
-            unmatched_value += (p.get("amount_money") or {}).get("amount", 0) / 100.0
+            n_skip_nopii += 1            # in-store sale w/ no receipt phone/email
+            unmatched_value += amt
+            instore_unmatched += amt
             continue
         events.append(ev)
         sent_ids.append(pid)
 
-    log(f"pulled={n_total} | skip_order_site={n_skip_site} | skip_recurring_excluded={n_skip_excl} | "
+    log(f"pulled={n_total} | skip_order_site={n_skip_site} | skip_remote_app_order={n_skip_remote} | "
         f"skip_already_sent={n_skip_ledger} | skip_non_completed={n_skip_status} | "
-        f"skip_too_old={n_skip_old} | skip_no_PII={n_skip_nopii} (${unmatched_value:.2f} unmatchable) | "
-        f"TO_SEND={len(events)}")
+        f"skip_too_old={n_skip_old} | IN_STORE_no_receipt_PII={n_skip_nopii} "
+        f"(${instore_unmatched:.2f} unmatchable -- need texted receipts) | TO_SEND={len(events)}")
 
     for ev in events:
         src = ev["action_source"]
