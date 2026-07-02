@@ -187,7 +187,7 @@ function handleSubmit(e) {
     source: 'nutritionhub101.com/sms'
   };
   // Opt-in submissions post to the Nutrition Hub intake endpoint.
-  fetch('https://order.nutritionhub101.com/sms-optin', {
+  fetch('https://order.nutritionhub101.com/api/sms-optin', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
