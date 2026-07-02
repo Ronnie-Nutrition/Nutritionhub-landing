@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nutrition Hub Rewards — Check In</title>
+<meta name="robots" content="noindex">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f4f7f5; color: #1a1a1a; min-height: 100vh;
+    display: flex; justify-content: center; align-items: flex-start; padding: 18px;
+  }
+  .card { background: #fff; border-radius: 20px; box-shadow: 0 6px 30px rgba(0,0,0,.09);
+    max-width: 440px; width: 100%; overflow: hidden; margin-top: 12px; }
+  .header { background: linear-gradient(135deg,#1b7f3b,#0f5c29); color:#fff; padding: 28px 24px; text-align:center; }
+  .header h1 { font-size: 22px; letter-spacing:.5px; }
+  .header p { font-size: 13px; opacity:.9; margin-top:4px; letter-spacing:3px; }
+  .body { padding: 26px 22px 30px; }
+  label { display:block; font-size:13px; font-weight:600; color:#555; margin-bottom:7px; }
+  input[type=tel], input[type=text] { width:100%; padding:15px 16px; border:1.5px solid #dcdcdc;
+    border-radius:12px; font-size:17px; transition:border-color .15s; }
+  input:focus { outline:none; border-color:#1b7f3b; box-shadow:0 0 0 3px rgba(27,127,59,.12); }
+  .btn { width:100%; padding:16px; background:#0f5c29; color:#fff; border:none; border-radius:12px;
+    font-size:17px; font-weight:700; cursor:pointer; margin-top:16px; transition:background .15s; }
+  .btn:active { background:#0b4a21; }
+  .btn:disabled { background:#9bb3a3; cursor:default; }
+  .btn.secondary { background:#eef4f0; color:#0f5c29; }
+  .muted { font-size:12.5px; color:#888; line-height:1.5; }
+  .center { text-align:center; }
+  .hi { font-size:20px; font-weight:700; color:#0f5c29; margin-bottom:2px; }
+  .ptswrap { text-align:center; margin:18px 0 8px; }
+  .ptsnum { font-size:66px; font-weight:800; color:#0f5c29; line-height:1; }
+  .ptslabel { font-size:14px; color:#666; margin-top:4px; }
+  .bar { height:14px; background:#e8ede9; border-radius:8px; overflow:hidden; margin:18px 0 6px; }
+  .bar > div { height:100%; background:linear-gradient(90deg,#1b7f3b,#3bbf6a); border-radius:8px; transition:width .5s; }
+  .toast { border-radius:12px; padding:13px 15px; font-size:14.5px; font-weight:600; margin:14px 0; text-align:center; }
+  .toast.good { background:#e7f7ec; color:#0f5c29; }
+  .toast.info { background:#eef2f7; color:#41506a; }
+  .reward { background:linear-gradient(135deg,#ffb703,#fb8500); color:#fff; border-radius:16px;
+    padding:20px; text-align:center; margin:18px 0; }
+  .reward .big { font-size:22px; font-weight:800; }
+  .reward .sub { font-size:13px; opacity:.95; margin-top:4px; }
+  .staffbox { background:#fff7e6; border:1.5px dashed #f0a500; border-radius:12px; padding:16px; margin-top:12px; }
+  .staffbox label { color:#8a6d00; }
+  .consent { display:flex; gap:10px; align-items:flex-start; margin:16px 0 4px; }
+  .consent input { width:20px; height:20px; margin-top:2px; flex-shrink:0; }
+  .consent label { font-size:12px; color:#666; line-height:1.45; font-weight:400; }
+  a { color:#0f5c29; }
+  .hide { display:none; }
+  .err { color:#c0392b; font-size:13px; margin-top:8px; text-align:center; min-height:16px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <h1>Nutrition Hub</h1>
+    <p>R E W A R D S</p>
+  </div>
+  <div class="body">
+
+    <!-- STEP 1: phone -->
+    <div id="s-phone">
+      <label for="phone">Enter your phone to check in</label>
+      <input type="tel" id="phone" inputmode="tel" autocomplete="tel" placeholder="(281) 555-1234">
+      <button class="btn" id="goBtn">Check In &amp; See Points</button>
+      <div class="err" id="phoneErr"></div>
+      <p class="muted center" style="margin-top:14px">1 point every visit &bull; 10 points = a FREE drink 🥤</p>
+    </div>
+
+    <!-- STEP 2: balance -->
+    <div id="s-balance" class="hide">
+      <div class="center hi" id="hiName">Hi!</div>
+      <div id="awardToast"></div>
+      <div class="ptswrap">
+        <div class="ptsnum" id="ptsNum">0</div>
+        <div class="ptslabel" id="ptsLabel">points</div>
+      </div>
+      <div class="bar"><div id="barFill" style="width:0%"></div></div>
+      <p class="muted center" id="toNextTxt"></p>
+
+      <div id="rewardBlock" class="hide">
+        <div class="reward">
+          <div class="big">🎉 FREE DRINK READY!</div>
+          <div class="sub">Show this screen to a team member</div>
+        </div>
+        <div class="staffbox">
+          <label for="pin">Staff: enter PIN to give the free drink</label>
+          <input type="tel" id="pin" inputmode="numeric" maxlength="6" placeholder="••••">
+          <button class="btn" id="redeemBtn" style="margin-top:12px">Confirm Free Drink</button>
+          <div class="err" id="redeemErr"></div>
+        </div>
+      </div>
+
+      <button class="btn secondary" id="doneBtn" style="margin-top:20px">Done</button>
+    </div>
+
+    <!-- STEP 3: join (new) -->
+    <div id="s-join" class="hide">
+      <div class="center hi">Welcome! 🎉</div>
+      <p class="muted center" style="margin:6px 0 18px">Looks like you're new — let's get you signed up. Your first visit counts!</p>
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" autocomplete="given-name" placeholder="Your first name">
+      <div class="consent">
+        <input type="checkbox" id="consent">
+        <label for="consent">I agree to receive recurring automated marketing &amp; informational texts from Nutrition Hub (rewards, reminders, promos). Consent is not a condition of purchase. Msg freq varies. Msg &amp; data rates may apply. Reply STOP to cancel, HELP for help. See our <a href="https://nutritionhub101.com/privacy-policy" target="_blank">Privacy Policy</a> &amp; <a href="https://nutritionhub101.com/terms" target="_blank">Terms</a>.</label>
+      </div>
+      <button class="btn" id="joinBtn">Join &amp; Earn My First Point</button>
+      <div class="err" id="joinErr"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const API = 'https://order.nutritionhub101.com';
+const THRESHOLD = 10;
+let state = { phone:'', contactId:null };
+
+const $ = id => document.getElementById(id);
+function show(step){ ['s-phone','s-balance','s-join'].forEach(s => $(s).classList.toggle('hide', s!==step)); }
+function digits(s){ return (s||'').replace(/\D/g,''); }
+
+$('goBtn').addEventListener('click', checkIn);
+$('phone').addEventListener('keydown', e => { if(e.key==='Enter') checkIn(); });
+
+async function checkIn(){
+  const p = $('phone').value.trim();
+  $('phoneErr').textContent = '';
+  if (digits(p).length < 10){ $('phoneErr').textContent = 'Please enter a valid 10-digit phone number.'; return; }
+  state.phone = p;
+  const btn = $('goBtn'); btn.disabled = true; btn.textContent = 'Checking...';
+  try {
+    const r = await fetch(API+'/api/points-checkin', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ phone: p })
+    });
+    const d = await r.json();
+    if (d.found === false){ show('s-join'); }
+    else { renderBalance(d); show('s-balance'); }
+  } catch(e){ $('phoneErr').textContent = 'Something went wrong. Please try again.'; }
+  finally { btn.disabled = false; btn.textContent = 'Check In & See Points'; }
+}
+
+function renderBalance(d){
+  state.contactId = d.contactId;
+  $('hiName').textContent = d.firstName ? ('Hi ' + d.firstName + '!') : 'Your Rewards';
+  const pts = d.points || 0;
+  $('ptsNum').textContent = pts;
+  $('ptsLabel').textContent = pts === 1 ? 'point' : 'points';
+  const pct = Math.min(100, Math.round((pts % THRESHOLD || (pts>=THRESHOLD?THRESHOLD:0)) / THRESHOLD * 100));
+  $('barFill').style.width = (pts>=THRESHOLD ? 100 : Math.min(100, pts/THRESHOLD*100)) + '%';
+  const toNext = (typeof d.toNext === 'number') ? d.toNext : Math.max(0, THRESHOLD - pts);
+
+  const at = $('awardToast');
+  if (d.awarded){ at.innerHTML = '<div class="toast good">✓ +1 point for checking in!</div>'; }
+  else if (d.alreadyToday){ at.innerHTML = '<div class="toast info">You already checked in today — see you next visit! 👋</div>'; }
+  else { at.innerHTML = ''; }
+
+  if (d.hasReward || pts >= THRESHOLD){
+    $('toNextTxt').textContent = 'You have enough for a free drink!';
+    $('rewardBlock').classList.remove('hide');
+  } else {
+    $('toNextTxt').textContent = toNext + (toNext===1?' point':' points') + ' until your FREE drink 🥤';
+    $('rewardBlock').classList.add('hide');
+  }
+}
+
+$('redeemBtn').addEventListener('click', async () => {
+  const pin = $('pin').value.trim();
+  $('redeemErr').textContent = '';
+  if (!pin){ $('redeemErr').textContent = 'Enter the staff PIN.'; return; }
+  const btn = $('redeemBtn'); btn.disabled = true; btn.textContent = 'Confirming...';
+  try {
+    const r = await fetch(API+'/api/redeem', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ contactId: state.contactId, pin })
+    });
+    const d = await r.json();
+    if (d.success){
+      $('rewardBlock').innerHTML = '<div class="toast good" style="font-size:16px;padding:18px">🥤 Free drink redeemed — enjoy!</div>';
+      $('ptsNum').textContent = d.points;
+      $('ptsLabel').textContent = d.points === 1 ? 'point' : 'points';
+      $('barFill').style.width = Math.min(100, d.points/THRESHOLD*100) + '%';
+      $('toNextTxt').textContent = Math.max(0, THRESHOLD - d.points) + ' points until your next free drink 🥤';
+    } else {
+      $('redeemErr').textContent = d.error || 'Could not redeem. Check the PIN.';
+      btn.disabled = false; btn.textContent = 'Confirm Free Drink';
+    }
+  } catch(e){ $('redeemErr').textContent = 'Something went wrong. Try again.'; btn.disabled=false; btn.textContent='Confirm Free Drink'; }
+});
+
+$('joinBtn').addEventListener('click', async () => {
+  const fname = $('fname').value.trim();
+  $('joinErr').textContent = '';
+  if (!fname){ $('joinErr').textContent = 'Please enter your first name.'; return; }
+  if (!$('consent').checked){ $('joinErr').textContent = 'Please check the box to join our texts & rewards.'; return; }
+  const btn = $('joinBtn'); btn.disabled = true; btn.textContent = 'Signing you up...';
+  try {
+    const r = await fetch(API+'/api/sms-optin', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ first_name: fname, phone: state.phone, sms_consent: true, source:'nutritionhub101.com/rewards' })
+    });
+    const d = await r.json();
+    if (d.success){
+      renderBalance({ found:true, contactId:d.contactId, firstName:fname, points:1, awarded:true, hasReward:false, toNext:THRESHOLD-1 });
+      show('s-balance');
+    } else { $('joinErr').textContent = d.error || 'Could not sign you up. Try again.'; btn.disabled=false; btn.textContent='Join & Earn My First Point'; }
+  } catch(e){ $('joinErr').textContent = 'Something went wrong. Try again.'; btn.disabled=false; btn.textContent='Join & Earn My First Point'; }
+});
+
+$('doneBtn').addEventListener('click', () => {
+  $('phone').value=''; $('pin') && ($('pin').value=''); state={phone:'',contactId:null};
+  $('rewardBlock').classList.add('hide'); show('s-phone');
+});
+</script>
+</body>
+</html>
