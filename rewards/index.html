@@ -125,6 +125,10 @@
       <p class="muted center" style="margin:6px 0 18px">Looks like you're new — let's get you signed up. Your first visit counts!</p>
       <label for="fname">First Name</label>
       <input type="text" id="fname" autocomplete="given-name" placeholder="Your first name">
+      <label for="lname" style="margin-top:12px;display:block">Last Name</label>
+      <input type="text" id="lname" autocomplete="family-name" placeholder="Your last name">
+      <label for="jemail" style="margin-top:12px;display:block">Email</label>
+      <input type="text" id="jemail" inputmode="email" autocomplete="email" placeholder="you@example.com">
       <div class="consent">
         <input type="checkbox" id="consent">
         <label for="consent">I agree to receive recurring automated marketing &amp; informational texts from Nutrition Hub (rewards, reminders, promos). Consent is not a condition of purchase. Msg freq varies. Msg &amp; data rates may apply. Reply STOP to cancel, HELP for help. See our <a href="https://nutritionhub101.com/privacy-policy" target="_blank">Privacy Policy</a> &amp; <a href="https://nutritionhub101.com/terms" target="_blank">Terms</a>.</label>
@@ -227,14 +231,18 @@ $('redeemBtn').addEventListener('click', async () => {
 
 $('joinBtn').addEventListener('click', async () => {
   const fname = $('fname').value.trim();
+  const lname = $('lname').value.trim();
+  const email = $('jemail').value.trim();
   $('joinErr').textContent = '';
   if (!fname){ $('joinErr').textContent = 'Please enter your first name.'; return; }
+  if (!lname){ $('joinErr').textContent = 'Please enter your last name.'; return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ $('joinErr').textContent = 'Please enter a valid email address.'; return; }
   if (!$('consent').checked){ $('joinErr').textContent = 'Please check the box to join our texts & rewards.'; return; }
   const btn = $('joinBtn'); btn.disabled = true; btn.textContent = 'Signing you up...';
   try {
     const r = await fetch(API+'/api/sms-optin', {
       method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ first_name: fname, phone: state.phone, sms_consent: true, source:'nutritionhub101.com/rewards' })
+      body: JSON.stringify({ first_name: fname, last_name: lname, email: email, phone: state.phone, sms_consent: true, source:'nutritionhub101.com/rewards' })
     });
     const d = await r.json();
     if (d.success){
