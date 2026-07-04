@@ -119,6 +119,26 @@
       <button class="btn secondary" id="doneBtn" style="margin-top:20px">Done</button>
     </div>
 
+    <!-- STEP 2.5: complete profile (existing member missing name/email) -->
+    <div id="s-profile" class="hide">
+      <div class="center hi" id="profHi">One quick thing! ✨</div>
+      <div id="profToast"></div>
+      <p class="muted center" style="margin:6px 0 18px">Finish setting up your rewards account so we can save your perks &amp; send you member-only deals.</p>
+      <label for="pfname">First Name</label>
+      <input type="text" id="pfname" autocomplete="given-name" placeholder="Your first name">
+      <label for="plname" style="margin-top:12px;display:block">Last Name</label>
+      <input type="text" id="plname" autocomplete="family-name" placeholder="Your last name">
+      <label for="pemail" style="margin-top:12px;display:block">Email</label>
+      <input type="text" id="pemail" inputmode="email" autocomplete="email" placeholder="you@example.com">
+      <div class="consent">
+        <input type="checkbox" id="pconsent">
+        <label for="pconsent">I agree to receive recurring automated marketing &amp; informational texts from Nutrition Hub (rewards, reminders, promos). Consent is not a condition of purchase. Msg freq varies. Msg &amp; data rates may apply. Reply STOP to cancel, HELP for help. See our <a href="https://nutritionhub101.com/privacy-policy" target="_blank">Privacy Policy</a> &amp; <a href="https://nutritionhub101.com/terms" target="_blank">Terms</a>.</label>
+      </div>
+      <button class="btn" id="profBtn">Save &amp; See My Points</button>
+      <button class="btn secondary" id="profSkipBtn">Skip for now</button>
+      <div class="err" id="profErr"></div>
+    </div>
+
     <!-- STEP 3: join (new) -->
     <div id="s-join" class="hide">
       <div class="center hi">Welcome! 🎉</div>
@@ -143,10 +163,10 @@
 <script>
 const API = 'https://order.nutritionhub101.com';
 const THRESHOLD = 10;
-let state = { phone:'', contactId:null };
+let state = { phone:'', contactId:null, balance:null };
 
 const $ = id => document.getElementById(id);
-function show(step){ ['s-phone','s-balance','s-join'].forEach(s => $(s).classList.toggle('hide', s!==step)); }
+function show(step){ ['s-phone','s-balance','s-join','s-profile'].forEach(s => $(s).classList.toggle('hide', s!==step)); }
 function digits(s){ return (s||'').replace(/\D/g,''); }
 
 $('goBtn').addEventListener('click', checkIn);
@@ -165,6 +185,7 @@ async function checkIn(){
     });
     const d = await r.json();
     if (d.found === false){ show('s-join'); }
+    else if (d.needsProfile){ showProfileStep(d); }
     else { renderBalance(d); show('s-balance'); }
   } catch(e){ $('phoneErr').textContent = 'Something went wrong. Please try again.'; }
   finally { btn.disabled = false; btn.textContent = 'Check In & See Points'; }
@@ -204,6 +225,47 @@ function renderBalance(d){
       .catch(()=>{});
   }
 }
+
+// Existing member found but their contact card is missing name/email —
+// ask once per visit. Their check-in point is already awarded either way.
+function showProfileStep(d){
+  state.balance = d;
+  state.contactId = d.contactId;
+  $('profHi').textContent = d.firstName ? ('Hi ' + d.firstName + '! ✨') : 'One quick thing! ✨';
+  $('profToast').innerHTML = d.awarded ? '<div class="toast good">✓ +1 point for checking in!</div>' : '';
+  $('pfname').value = d.firstName || '';
+  $('plname').value = d.lastName || '';
+  $('pemail').value = ''; $('pconsent').checked = false; $('profErr').textContent = '';
+  show('s-profile');
+}
+
+$('profBtn').addEventListener('click', async () => {
+  const fname = $('pfname').value.trim();
+  const lname = $('plname').value.trim();
+  const email = $('pemail').value.trim();
+  $('profErr').textContent = '';
+  if (!fname){ $('profErr').textContent = 'Please enter your first name.'; return; }
+  if (!lname){ $('profErr').textContent = 'Please enter your last name.'; return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ $('profErr').textContent = 'Please enter a valid email address.'; return; }
+  if (!$('pconsent').checked){ $('profErr').textContent = 'Please check the box so we can save your info & rewards texts.'; return; }
+  const btn = $('profBtn'); btn.disabled = true; btn.textContent = 'Saving...';
+  try {
+    const r = await fetch(API+'/api/complete-profile', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ contactId: state.contactId, first_name: fname, last_name: lname, email: email, sms_consent: true })
+    });
+    const d = await r.json();
+    if (d.success){
+      const bal = Object.assign({}, state.balance, { firstName: fname });
+      renderBalance(bal); show('s-balance');
+    } else { $('profErr').textContent = d.error || 'Could not save. Try again.'; }
+  } catch(e){ $('profErr').textContent = 'Something went wrong. Try again.'; }
+  finally { btn.disabled = false; btn.textContent = 'Save & See My Points'; }
+});
+
+$('profSkipBtn').addEventListener('click', () => {
+  renderBalance(state.balance); show('s-balance');
+});
 
 $('redeemBtn').addEventListener('click', async () => {
   const pin = $('pin').value.trim();
