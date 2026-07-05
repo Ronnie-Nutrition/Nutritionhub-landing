@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nutrition Hub Rewards — Check In</title>
 <meta name="robots" content="noindex">
+<!-- Meta Pixel -->
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '915336731481586');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=915336731481586&ev=PageView&noscript=1"/></noscript>
+<!-- /Meta Pixel -->
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   body {
@@ -177,6 +190,10 @@ async function checkIn(){
   $('phoneErr').textContent = '';
   if (digits(p).length < 10){ $('phoneErr').textContent = 'Please enter a valid 10-digit phone number.'; return; }
   state.phone = p;
+  // Advanced matching: attach phone identity to pixel events for this session
+  if (window.fbq){
+    fbq('init', '915336731481586', { ph: digits(p).replace(/^(\d{10})$/, '1$1') });
+  }
   const btn = $('goBtn'); btn.disabled = true; btn.textContent = 'Checking...';
   try {
     const r = await fetch(API+'/api/points-checkin', {
@@ -308,6 +325,13 @@ $('joinBtn').addEventListener('click', async () => {
     });
     const d = await r.json();
     if (d.success){
+      if (window.fbq){
+        fbq('init', '915336731481586', {
+          em: email.toLowerCase(), ph: digits(state.phone).replace(/^(\d{10})$/, '1$1'),
+          fn: fname.toLowerCase(), ln: lname.toLowerCase()
+        });
+        fbq('track', 'Lead', { content_name: 'rewards_join' });
+      }
       renderBalance({ found:true, contactId:d.contactId, firstName:fname, points:1, awarded:true, hasReward:false, toNext:THRESHOLD-1 });
       show('s-balance');
     } else { $('joinErr').textContent = d.error || 'Could not sign you up. Try again.'; btn.disabled=false; btn.textContent='Join & Earn My First Point'; }
