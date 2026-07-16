@@ -130,7 +130,7 @@ PAGES.append(dict(
  grid="\n".join([
   card(f"{GH}/shake_chocolate.png", "PROTEIN COFFEE", "Mocha", "Real coffee + chocolate + protein", "$9.97"),
   card(None, "PROTEIN COFFEE", "Caramel Macchiato", "Sweet, creamy, coffee-forward", "$9.97"),
-  card(None, "PROTEIN COFFEE", "Vanilla Latte", "Smooth &amp; clean classic", "$9.97"),
+  card(None, "PROTEIN COFFEE", "House Blend", "Smooth &amp; clean classic", "$9.97"),
  ]),
  why_h2='Why <span>protein coffee</span>',
  why=[("☕", "Coffee <span>+ protein</span>", "Your caffeine comes with real fuel — a filling blend that carries you to lunch."),
