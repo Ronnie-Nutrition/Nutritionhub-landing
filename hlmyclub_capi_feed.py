@@ -129,7 +129,7 @@ def post_to_meta(pixel, token, events, test_code=None):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--receipts", default=os.path.join(DEFAULT_DL, "Receipts.xlsx"))
+    ap.add_argument("--receipts", default=None, help="Receipts export (default: newest 'Receipts*.xlsx' in ~/Downloads)")
     ap.add_argument("--customers", default=None, help="Customer Report CSV (default: newest 'Customer Report*.csv' in ~/Downloads)")
     ap.add_argument("--ledger", default=os.path.join(os.path.dirname(__file__), "data", "hl_sent.json"))
     ap.add_argument("--send", action="store_true", help="actually POST to Meta (default: dry-run)")
@@ -142,8 +142,15 @@ def main():
         cust_path = cands[-1] if cands else None
     if not cust_path or not os.path.exists(cust_path):
         print("FATAL: no Customer Report CSV found"); sys.exit(1)
-    if not os.path.exists(args.receipts):
-        print(f"FATAL: receipts not found: {args.receipts}"); sys.exit(1)
+
+    receipts_path = args.receipts
+    if not receipts_path:
+        import glob
+        cands = sorted(glob.glob(os.path.join(DEFAULT_DL, "Receipts*.xlsx")), key=os.path.getmtime)
+        receipts_path = cands[-1] if cands else None
+    if not receipts_path or not os.path.exists(receipts_path):
+        print("FATAL: no Receipts*.xlsx found"); sys.exit(1)
+    args.receipts = receipts_path
 
     enabled = args.send or os.environ.get("HL_FEED_ENABLED") == "1"
     pixel = os.environ.get("META_PIXEL_ID", "")
