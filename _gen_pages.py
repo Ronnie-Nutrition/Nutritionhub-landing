@@ -162,14 +162,22 @@ PAGES.append(dict(
 # by meal-replacement-shakes-pearland. "smoothies pearland" was uncovered.
 PAGES.append(dict(
  slug="smoothies-pearland", acc="#2effb4", acc2="#23e0ff", accglow="rgba(46,255,180,.45)",
- title="Smoothies in Pearland, TX — Protein Smoothie Shop | Nutrition Hub",
- desc="Smoothies in Pearland, TX — 16 gourmet protein smoothies with 24–30g protein, made fresh, from $7.80. Order online or walk in at 8201 Broadway, Suite 113.",
+ # 8/7/2026 TITLES PASS (build item 3). The map pack surfaces NH for the BARE head
+ # terms — "smoothies near me" 369, "smoothie" 256, "smoothie near me" 246 = 871 —
+ # not for "protein smoothie." The old title led with "Protein Smoothie Shop", which
+ # qualifies the head term away from exactly the searcher we're shown to, and ran 65
+ # chars (truncating). Now leads with the bare term and spends the saved characters
+ # on a CTR hook instead of a qualifier. "Protein" stays in the H2/body where it
+ # differentiates without gatekeeping the click.
+ title="Smoothies in Pearland, TX — 16 Fresh Flavors | Nutrition Hub",
+ desc="Smoothies in Pearland, TX — 16 flavors blended fresh to order with 24–30g protein, from $7.80. Open 7 days on Broadway. Order online for pickup.",
  ogimg=f"{GH}/shake_strawberry_cheesecake.png",
  schema_desc="Smoothie shop in Pearland, TX — 16 gourmet protein smoothies with 24–30g protein, made fresh to order.",
  serves=["Smoothies", "Protein Smoothies", "Protein Shakes", "Energy Teas"],
  h1='<span class="a">Smoothies</span><br>in <span class="b">Pearland, TX</span>',
- hero_sub="16 gourmet protein smoothies that taste like dessert — 24–30g protein, made fresh to order, 7 days a week.",
- intro_h2='Pearland\'s <span>smoothie spot</span> on Broadway',
+ hero_sub="16 smoothies blended fresh to order — dessert flavors with 24–30g of protein, open 7 days a week.",
+ # "shop" over "spot": it's the word people actually type alongside "smoothie".
+ intro_h2='Pearland\'s <span>smoothie shop</span> on Broadway',
  intro=f"""<p>Looking for <strong>smoothies in Pearland</strong>? Nutrition Hub on Broadway blends 16 gourmet protein smoothies fresh to order — every one packing <strong>24–30g of protein</strong> and tasting like dessert. Banana Pudding, Strawberry Cheesecake, Salted Caramel and more.</p>
     <p>Unlike sugar-heavy chain smoothies, ours are built to actually fill you up: real protein, controlled calories, craveable flavors. Want a lighter option? Our 20oz smoothies run about 200 calories with 24g protein at $7.80.</p>
     <p>Chasing a specific goal? See our <a href="/meal-replacement-shakes-pearland/">meal replacement shakes</a> or <a href="/protein-shakes-pearland/">post-workout protein shakes</a>, add a <a href="/loaded-teas-pearland/">loaded tea</a>, or <a href="{ORDER}" target="_blank" onclick="fbq('track','Lead')">order online</a> from the full menu.</p>""",
