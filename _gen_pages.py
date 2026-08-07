@@ -22,6 +22,10 @@ PHONE_TEL = "+1-844-748-2536"
 IG = "https://instagram.com/nutritionhub101"
 ORDER = "https://order.nutritionhub101.com"
 GH = "https://raw.githubusercontent.com/Ronnie-Nutrition/nutritionhub-landing/main"
+# Same-origin image dir on the VPS (/var/www/nutritionhub-home/img/). Use this for
+# NEW images: GH raw only serves the `main` branch, so anything added on an
+# unmerged branch 404s there. Deploy with: scp img/*.jpg root@VPS:/var/www/nutritionhub-home/img/
+IMGV = f"https://{DOMAIN}/img"
 LOGO = "https://order.nutritionhub101.com/images/logo.png"
 MAPS = "https://www.google.com/maps/dir/?api=1&destination=8201+Broadway+Suite+113+Pearland+TX+77581"
 
@@ -281,7 +285,66 @@ PAGES.append(dict(
  close_p="Walk in and ask for Ronnie, or order online and skip the line — either way, welcome to the club.",
 ))
 
-# ================= PAGES 6–8: NEIGHBORHOODS =================
+# ================= PAGE 6: HEALTHY FOOD (map-pack head term) =================
+# Built 8/6/2026 off the GBP map-pack term list, NOT off GSC. "healthy food near
+# me" (665) + "healthy food pearland" (121, literal exact-match) = 911 searches =
+# 26% of everything that surfaces NH in the map pack — the single largest cluster,
+# and NH had zero coverage for it. See HANDOFF-2026-08-06-PM-gbp-fixes-and-reviews.md.
+#
+# Positioning: this is the FOOD page. The rest of the cluster is drink-led, so this
+# one leads with what you can actually eat (waffle, protein balls, candied grapes)
+# and treats the shake as a meal. Deliberately NOT overlapping:
+#   healthy-breakfast-pearland = morning/6:30 AM combo intent
+#   meal-replacement-shakes-pearland = weight-loss intent
+#   smoothies-pearland = the smoothie head term
+#   nutrition-club-pearland = the category term
+# Food photos are served from the VPS (IMGV), not GH raw — new images on this
+# unmerged branch would 404 on raw.githubusercontent.com/.../main/.
+PAGES.append(dict(
+ slug="healthy-food-pearland", acc="#7ed957", acc2="#2effb4", accglow="rgba(126,217,87,.45)",
+ title="Healthy Food in Pearland, TX — Protein Meals | Nutrition Hub",
+ desc="Healthy food in Pearland, TX — protein-packed meals and snacks from $4.50. Protein balls, waffles, and shakes with 24–30g protein. Open 7 days on Broadway.",
+ ogimg=f"{IMGV}/protein-balls.jpg",
+ schema_desc="Healthy food in Pearland, TX — protein-first meals and snacks including protein balls, waffles, and 24–30g protein shakes, made fresh 7 days a week.",
+ serves=["Healthy Food", "Protein Shakes", "Smoothies", "Protein Snacks"],
+ h1='Healthy <span class="a">Food</span><br>in <span class="b">Pearland, TX</span>',
+ hero_sub="Protein-first food that actually fills you up — snacks from $4.50, meals with 24–30g of protein, made fresh 7 days a week.",
+ intro_h2='Where to find <span>healthy food in Pearland</span>',
+ intro=f"""<p>Looking for <strong>healthy food in Pearland</strong> that isn't a drive-thru bag or a sad pre-made salad? <strong>Nutrition Hub</strong> on Broadway is built around one idea: protein first. Our gourmet shakes carry <strong>24–30g of protein</strong> in about 300 calories — enough to actually work as a meal — and we keep real food and protein snacks on the counter for the grab-and-go crowd.</p>
+    <p>On the food side: <strong>protein balls</strong> (4-pack, $4.50), <strong>candied protein grapes</strong> ($4.50), and a loaded <strong>waffle</strong> ($12.75) when you want a real sit-down plate. On the drink side, 16 gourmet smoothies, 12+ teas, and protein coffee — all made fresh to order.</p>
+    <p>Eating for a goal? Our <a href="/meal-replacement-shakes-pearland/">meal replacement shakes</a> were built for that, and the <a href="/healthy-breakfast-pearland/">healthy breakfast combo</a> runs from 6:30 AM. New to us? Start with the <a href="/smoothies-pearland/">smoothie board</a> or see what a <a href="/nutrition-club-pearland/">nutrition club</a> actually is. <a href="{ORDER}" target="_blank" onclick="fbq('track','Lead')">Order online</a> and skip the line.</p>""",
+ grid_h2='Real <span>food &amp; protein snacks</span>',
+ grid_lead="Grab-and-go from $4.50 — plus shakes that hold up as a full meal.",
+ grid="\n".join([
+  # Uses the TRANSPARENT clean_* variant (served via IMGV). The repo's clean_shake_*
+  # PNGs were never pushed to main, so GH raw 404s on them and every other landing
+  # page falls back to the black-boxed original. Free visual upgrade available there.
+  card(f"{IMGV}/protein-shake.png", "MEAL", "Protein Shake", "24–30g protein · ~300 cal · fills you up like a meal", "$9.97"),
+  card(f"{IMGV}/protein-balls.jpg", "GRAB-AND-GO", "Protein Balls", "4-pack · oats and chocolate, protein-packed bite", "$4.50"),
+  card(f"{IMGV}/candied-protein-grapes.jpg", "GRAB-AND-GO", "Candied Protein Grapes", "Cold, sweet, and genuinely a snack you can feel good about", "$4.50"),
+ ]),
+ why_h2='What makes it <span>healthy food</span> here',
+ why=[("💪", "Protein <span>first</span>", "Every meal option is built around 24–30g of protein — the thing that actually keeps you full, instead of a sugar spike that leaves you hungry an hour later."),
+      ("🥡", "Real <span>grab-and-go</span>", "Protein balls and candied grapes on the counter from $4.50 — faster than a drive-thru and you can eat it in the car without regret."),
+      ("📆", "Open <span>7 days</span>", "Weekday mornings from 6:30 AM through Sunday afternoon at 8201 Broadway, Suite 113 — easy parking, right on FM 518.")],
+ faqs=[
+  ("Where can I find healthy food near me in Pearland, TX?",
+   "Nutrition Hub is at 8201 Broadway, Suite 113, Pearland, TX 77581, right on Broadway (FM 518). We serve protein-first meals and snacks 7 days a week — protein shakes with 24–30g of protein, protein balls, candied protein grapes, and waffles. Order online at order.nutritionhub101.com or walk in."),
+  ("What healthy food does Nutrition Hub serve?",
+   "Protein balls (4-pack, $4.50), candied protein grapes ($4.50), and a loaded waffle ($12.75) on the food side. On the drink side, 16 gourmet protein smoothies with 24–30g protein ($9.97), 20oz smoothies ($7.80), 12+ teas ($9.15), and protein coffee ($9.97). Everything is made fresh to order."),
+  ("Can a protein shake really replace a meal?",
+   "Our gourmet shakes run 24–30g of protein at around 300 calories, which is what makes them filling enough to stand in for a meal rather than just a snack. A lot of our regulars run one for lunch and eat a normal dinner."),
+  ("Do you have healthy grab-and-go snacks?",
+   "Yes — protein balls in a 4-pack and candied protein grapes are both $4.50 and sit right on the counter. They're the quickest thing we sell, and the most popular add-on to a shake or tea."),
+  ("How much does healthy food cost at Nutrition Hub?",
+   "Snacks start at $4.50, a 20oz smoothie is $7.80, gourmet protein smoothies and protein coffee are $9.97, and the waffle is $12.75. Most people spend $10–15 for a full meal. Order online or walk in at 8201 Broadway, Suite 113."),
+ ],
+ cta_label="🍽️ Order Online",
+ close_h2='Eat something that <span>actually works.</span>',
+ close_p="Order online and it's ready at the counter — or walk in and ask for Ronnie on your first visit.",
+))
+
+# ================= PAGES 7–9: NEIGHBORHOODS =================
 def hood_page(slug, hood, acc, acc2, glow, drive_line, local_line):
     return dict(
      slug=slug, acc=acc, acc2=acc2, accglow=glow,
