@@ -303,7 +303,7 @@ PAGES.append(dict(
 PAGES.append(dict(
  slug="healthy-food-pearland", acc="#7ed957", acc2="#2effb4", accglow="rgba(126,217,87,.45)",
  title="Healthy Food in Pearland, TX — Protein Meals | Nutrition Hub",
- desc="Healthy food in Pearland, TX — protein-packed meals and snacks from $4.50. Protein balls, waffles, and shakes with 24–30g protein. Open 7 days on Broadway.",
+ desc="Healthy food in Pearland, TX — protein-packed meals and snacks from $4. Protein balls, donuts, waffles, and shakes with 24–30g protein. Open 7 days.",
  ogimg=f"{IMGV}/protein-balls.jpg",
  schema_desc="Healthy food in Pearland, TX — protein-first meals and snacks including protein balls, waffles, and 24–30g protein shakes, made fresh 7 days a week.",
  serves=["Healthy Food", "Protein Shakes", "Smoothies", "Protein Snacks"],
@@ -311,8 +311,8 @@ PAGES.append(dict(
  hero_sub="Protein-first food that actually fills you up — snacks from $4.50, meals with 24–30g of protein, made fresh 7 days a week.",
  intro_h2='Where to find <span>healthy food in Pearland</span>',
  intro=f"""<p>Looking for <strong>healthy food in Pearland</strong> that isn't a drive-thru bag or a sad pre-made salad? <strong>Nutrition Hub</strong> on Broadway is built around one idea: protein first. Our gourmet shakes carry <strong>24–30g of protein</strong> in about 300 calories — enough to actually work as a meal — and we keep real food and protein snacks on the counter for the grab-and-go crowd.</p>
-    <p>On the food side: <strong>protein balls</strong> (4-pack, $4.50), <strong>candied protein grapes</strong> ($4.50), and a loaded <strong>waffle</strong> ($12.75) when you want a real sit-down plate. On the drink side, 16 gourmet smoothies, 12+ teas, and protein coffee — all made fresh to order.</p>
-    <p>Eating for a goal? Our <a href="/meal-replacement-shakes-pearland/">meal replacement shakes</a> were built for that, and the <a href="/healthy-breakfast-pearland/">healthy breakfast combo</a> runs from 6:30 AM. New to us? Start with the <a href="/smoothies-pearland/">smoothie board</a> or see what a <a href="/nutrition-club-pearland/">nutrition club</a> actually is. <a href="{ORDER}" target="_blank" onclick="fbq('track','Lead')">Order online</a> and skip the line.</p>""",
+    <p>On the food side: <strong>protein balls</strong> (4-pack, $4.50), <strong>candied protein grapes</strong> ($4.50), <strong>mini donuts</strong> (6 to a bag, $4), and a loaded <strong>waffle</strong> ($12.75) when you want a real sit-down plate. On the drink side, 16 gourmet smoothies, 12+ teas, and protein coffee — all made fresh to order.</p>
+    <p>Eating for a goal? Our <a href="/meal-replacement-shakes-pearland/">meal replacement shakes</a> were built for that, and the <a href="/healthy-breakfast-pearland/">healthy breakfast combo</a> runs from 6:30 AM. In a hurry? Everything on the <a href="/grab-and-go-pearland/">grab-and-go counter</a> starts at $4. New to us? Start with the <a href="/smoothies-pearland/">smoothie board</a> or see what a <a href="/nutrition-club-pearland/">nutrition club</a> actually is. <a href="{ORDER}" target="_blank" onclick="fbq('track','Lead')">Order online</a> and skip the line.</p>""",
  grid_h2='Real <span>food &amp; protein snacks</span>',
  grid_lead="Grab-and-go from $4.50 — plus shakes that hold up as a full meal.",
  grid="\n".join([
@@ -331,7 +331,7 @@ PAGES.append(dict(
   ("Where can I find healthy food near me in Pearland, TX?",
    "Nutrition Hub is at 8201 Broadway, Suite 113, Pearland, TX 77581, right on Broadway (FM 518). We serve protein-first meals and snacks 7 days a week — protein shakes with 24–30g of protein, protein balls, candied protein grapes, and waffles. Order online at order.nutritionhub101.com or walk in."),
   ("What healthy food does Nutrition Hub serve?",
-   "Protein balls (4-pack, $4.50), candied protein grapes ($4.50), and a loaded waffle ($12.75) on the food side. On the drink side, 16 gourmet protein smoothies with 24–30g protein ($9.97), 20oz smoothies ($7.80), 12+ teas ($9.15), and protein coffee ($9.97). Everything is made fresh to order."),
+   "Protein balls (4-pack, $4.50), candied protein grapes ($4.50), mini donuts (6-pack, $4), and a loaded waffle ($12.75) on the food side. On the drink side, 16 gourmet protein smoothies with 24–30g protein ($9.97), 20oz smoothies ($7.80), 12+ teas ($9.15), and protein coffee ($9.97). Everything is made fresh to order."),
   ("Can a protein shake really replace a meal?",
    "Our gourmet shakes run 24–30g of protein at around 300 calories, which is what makes them filling enough to stand in for a meal rather than just a snack. A lot of our regulars run one for lunch and eat a normal dinner."),
   ("Do you have healthy grab-and-go snacks?",
@@ -344,7 +344,62 @@ PAGES.append(dict(
  close_p="Order online and it's ready at the counter — or walk in and ask for Ronnie on your first visit.",
 ))
 
-# ================= PAGES 7–9: NEIGHBORHOODS =================
+# ================= PAGE 7: GRAB-AND-GO / MEAL-PREP INTENT =================
+# Build item (2) from the 8/6 PM handoff. The map-pack list shows "Power Fit Eats"
+# — a DIFFERENT local business's brand — pulling up NH 495 times (14% of all
+# impressions), with `meal prep pearland` trailing it, and NH had zero coverage.
+#
+# ⚠️ WHITE-HAT RULE, NON-NEGOTIABLE: their brand name appears nowhere on this page —
+# not in the title, H1, meta, body, schema, or alt text. We build a genuine page for
+# what NH actually sells and let Google keep making the association it already makes.
+#
+# 🔑 POSITIONING CALL (Ronnie OK'd 8/7): the demand term is "meal prep," but NH does
+# NOT sell meal prep — no containers, no weekly plans. It sells grab-and-go protein.
+# Selling "meal prep" would rank and then disappoint everyone who walked in. So the
+# page is honestly framed as GRAB-AND-GO, and the meal-prep query is answered head-on
+# in an FAQ ("we're the no-prep alternative") — which earns the query without lying.
+PAGES.append(dict(
+ slug="grab-and-go-pearland", acc="#ff8c42", acc2="#2effb4", accglow="rgba(255,140,66,.45)",
+ title="Grab-and-Go Protein Snacks in Pearland, TX | Nutrition Hub",
+ desc="Grab-and-go protein snacks in Pearland, TX from $4 — mini donuts, protein balls, candied protein grapes, and shakes that work as a quick meal. Order ahead.",
+ ogimg=f"{IMGV}/donuts.jpg",
+ schema_desc="Grab-and-go protein snacks and quick meals in Pearland, TX — mini donuts, protein balls, candied protein grapes, and 24–30g protein shakes, made fresh 7 days a week.",
+ serves=["Protein Snacks", "Healthy Food", "Protein Shakes", "Smoothies"],
+ h1='<span class="a">Grab-and-Go</span><br>in <span class="b">Pearland, TX</span>',
+ hero_sub="Protein snacks from $4 and a shake that works as a whole meal — in and out in a couple of minutes, 7 days a week.",
+ intro_h2='The <span>no-prep</span> way to eat better in Pearland',
+ intro=f"""<p>Some weeks you plan every meal. Most weeks you don't. <strong>Nutrition Hub</strong> on Broadway is built for the second kind — <strong>grab-and-go protein</strong> you can pick up on the way to work, between errands, or on the way home, with nothing to plan and nothing to wash.</p>
+    <p>On the counter right now: <strong>mini donuts</strong> (6 to a bag, $4), <strong>protein balls</strong> (4-pack, $4.50), and <strong>candied protein grapes</strong> ($4.50). Want something that actually holds you over? A gourmet shake carries <strong>24–30g of protein</strong> in about 300 calories and drinks like dessert, or there's a hot <strong>waffle</strong> ($12.75) if you've got a minute to sit.</p>
+    <p>Order ahead and it's bagged and waiting at the counter. See the <a href="/healthy-food-pearland/">full healthy food lineup</a>, the <a href="/smoothies-pearland/">smoothie board</a>, or the <a href="/healthy-breakfast-pearland/">6:30 AM breakfast combo</a> — or <a href="{ORDER}" target="_blank" onclick="fbq('track','Lead')">order online</a> right now.</p>""",
+ grid_h2='On the <span>counter today</span>',
+ grid_lead="Everything here is grab-and-go — no wait, no prep, from $4.",
+ grid="\n".join([
+  card(f"{IMGV}/donuts.jpg", "$4 · 6-PACK", "Mini Donuts", "Six to a bag — the fastest thing we sell", "$4.00"),
+  card(f"{IMGV}/protein-balls.jpg", "4-PACK", "Protein Balls", "Oats and chocolate, protein-packed bite", "$4.50"),
+  card(f"{IMGV}/candied-protein-grapes.jpg", "CHILLED", "Candied Protein Grapes", "Cold, sweet, and gone before you get home", "$4.50"),
+ ]),
+ why_h2='Why <span>grab-and-go</span> beats meal prep for most people',
+ why=[("⏱️", "Zero <span>planning</span>", "No Sunday afternoon cooking, no containers, no forgetting the bag on the counter. You pick it up on the day you actually want it."),
+      ("💪", "Still <span>protein-first</span>", "The reason meal prep works is protein and portion control. You get both here without the prep — a gourmet shake runs 24–30g of protein at around 300 calories."),
+      ("🛍️", "Order <span>ahead</span>", "Order online on the way over and it's bagged at the counter when you walk in. In and out in about the time it takes to park.")],
+ faqs=[
+  ("Do you do meal prep in Pearland?",
+   "Not in the containers-for-the-week sense — Nutrition Hub doesn't sell prepped meal boxes. What we do is the no-prep alternative: grab-and-go protein snacks from $4 and gourmet shakes with 24–30g of protein that stand in for a meal, made fresh whenever you walk in. If meal prep keeps falling apart by Wednesday, this is the version that doesn't need planning."),
+  ("What grab-and-go snacks do you have?",
+   "Mini donuts (6 to a bag, $4), protein balls (4-pack, $4.50), and candied protein grapes ($4.50) sit right on the counter. There's also a hot waffle for $12.75 if you have a few minutes, and gourmet protein shakes at $9.97."),
+  ("How much do your grab-and-go snacks cost?",
+   "Snacks start at $4 for a 6-pack of mini donuts. Protein balls and candied protein grapes are $4.50 each, a 20oz smoothie is $7.80, and gourmet protein shakes are $9.97. Most people spend $10–15 for a snack and a drink."),
+  ("Can I get a quick healthy lunch in Pearland?",
+   "Yes — a gourmet protein shake with 24–30g of protein at around 300 calories is what most of our regulars use for a fast lunch, often with a snack on the side. Order online at order.nutritionhub101.com and it's ready at the counter when you arrive."),
+  ("Where can I grab healthy food near me in Pearland, TX?",
+   "Nutrition Hub is at 8201 Broadway, Suite 113, Pearland, TX 77581, right on Broadway (FM 518) with easy parking. Open Mon–Thu 6:30 AM–5 PM, Friday 6:30 AM–3 PM, Saturday 8 AM–2 PM, and Sunday 12–3 PM."),
+ ],
+ cta_label="🛍️ Order Ahead",
+ close_h2='Skip the prep. <span>Just grab it.</span>',
+ close_p="Order online on your way over and it's bagged at the counter — or walk in and see what's out today.",
+))
+
+# ================= PAGES 8–10: NEIGHBORHOODS =================
 def hood_page(slug, hood, acc, acc2, glow, drive_line, local_line):
     return dict(
      slug=slug, acc=acc, acc2=acc2, accglow=glow,
