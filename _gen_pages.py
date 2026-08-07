@@ -304,24 +304,28 @@ PAGES.append(dict(
  slug="healthy-food-pearland", acc="#7ed957", acc2="#2effb4", accglow="rgba(126,217,87,.45)",
  title="Healthy Food in Pearland, TX — Protein Meals | Nutrition Hub",
  desc="Healthy food in Pearland, TX — protein-packed meals and snacks from $4. Protein balls, donuts, waffles, and shakes with 24–30g protein. Open 7 days.",
- ogimg=f"{IMGV}/protein-balls.jpg",
- schema_desc="Healthy food in Pearland, TX — protein-first meals and snacks including protein balls, waffles, and 24–30g protein shakes, made fresh 7 days a week.",
+ ogimg=f"{IMGV}/waffle.jpg",
+ schema_desc="Healthy food in Pearland, TX — protein-first meals and snacks including loaded waffles, protein balls, and 24–30g protein shakes, made fresh 7 days a week.",
  serves=["Healthy Food", "Protein Shakes", "Smoothies", "Protein Snacks"],
  h1='Healthy <span class="a">Food</span><br>in <span class="b">Pearland, TX</span>',
  hero_sub="Protein-first food that actually fills you up — snacks from $4.50, meals with 24–30g of protein, made fresh 7 days a week.",
  intro_h2='Where to find <span>healthy food in Pearland</span>',
  intro=f"""<p>Looking for <strong>healthy food in Pearland</strong> that isn't a drive-thru bag or a sad pre-made salad? <strong>Nutrition Hub</strong> on Broadway is built around one idea: protein first. Our gourmet shakes carry <strong>24–30g of protein</strong> in about 300 calories — enough to actually work as a meal — and we keep real food and protein snacks on the counter for the grab-and-go crowd.</p>
-    <p>On the food side: <strong>protein balls</strong> (4-pack, $4.50), <strong>candied protein grapes</strong> ($4.50), <strong>mini donuts</strong> (6 to a bag, $4), and a loaded <strong>waffle</strong> ($12.75) when you want a real sit-down plate. On the drink side, 16 gourmet smoothies, 12+ teas, and protein coffee — all made fresh to order.</p>
+    <p>On the food side: <strong>protein balls</strong> (4-pack, $4.50), <strong>candied protein grapes</strong> ($4.50), <strong>mini donuts</strong> (6 to a bag, $4), and a loaded <strong>waffle</strong> ($12.75) topped with fresh strawberries, blueberries and granola when you want a real sit-down plate. On the drink side, 16 gourmet smoothies, 12+ teas, and protein coffee — all made fresh to order.</p>
     <p>Eating for a goal? Our <a href="/meal-replacement-shakes-pearland/">meal replacement shakes</a> were built for that, and the <a href="/healthy-breakfast-pearland/">healthy breakfast combo</a> runs from 6:30 AM. In a hurry? Everything on the <a href="/grab-and-go-pearland/">grab-and-go counter</a> starts at $4. New to us? Start with the <a href="/smoothies-pearland/">smoothie board</a> or see what a <a href="/nutrition-club-pearland/">nutrition club</a> actually is. <a href="{ORDER}" target="_blank" onclick="fbq('track','Lead')">Order online</a> and skip the line.</p>""",
  grid_h2='Real <span>food &amp; protein snacks</span>',
- grid_lead="Grab-and-go from $4.50 — plus shakes that hold up as a full meal.",
+ grid_lead="A hot plate, a shake that works as a meal, and snacks from $4.50.",
  grid="\n".join([
+  # Waffle leads as of 8/7: Ronnie's new photo (fresh strawberries, blueberries,
+  # granola) actually reads as healthy food. The previous shot — whipped cream,
+  # chocolate chips, caramel drizzle — was kept out of this grid on purpose because
+  # it contradicted the page's promise. Photo, not product, was the blocker.
+  card(f"{IMGV}/waffle.jpg", "HOT PLATE", "Loaded Waffle", "Fresh strawberries, blueberries and granola", "$12.75"),
   # Uses the TRANSPARENT clean_* variant (served via IMGV). The repo's clean_shake_*
   # PNGs were never pushed to main, so GH raw 404s on them and every other landing
   # page falls back to the black-boxed original. Free visual upgrade available there.
   card(f"{IMGV}/protein-shake.png", "MEAL", "Protein Shake", "24–30g protein · ~300 cal · fills you up like a meal", "$9.97"),
   card(f"{IMGV}/protein-balls.jpg", "GRAB-AND-GO", "Protein Balls", "4-pack · oats and chocolate, protein-packed bite", "$4.50"),
-  card(f"{IMGV}/candied-protein-grapes.jpg", "GRAB-AND-GO", "Candied Protein Grapes", "Cold, sweet, and genuinely a snack you can feel good about", "$4.50"),
  ]),
  why_h2='What makes it <span>healthy food</span> here',
  why=[("💪", "Protein <span>first</span>", "Every meal option is built around 24–30g of protein — the thing that actually keeps you full, instead of a sugar spike that leaves you hungry an hour later."),
