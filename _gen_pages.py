@@ -319,7 +319,7 @@ PAGES.append(dict(
  hero_sub="Protein-first food that actually fills you up — snacks from $4.50, meals with 24–30g of protein, made fresh 7 days a week.",
  intro_h2='Where to find <span>healthy food in Pearland</span>',
  intro=f"""<p>Looking for <strong>healthy food in Pearland</strong> that isn't a drive-thru bag or a sad pre-made salad? <strong>Nutrition Hub</strong> on Broadway is built around one idea: protein first. Our gourmet shakes carry <strong>24–30g of protein</strong> in about 300 calories — enough to actually work as a meal — and we keep real food and protein snacks on the counter for the grab-and-go crowd.</p>
-    <p>On the food side: <strong>protein balls</strong> (4-pack, $4.50), <strong>candied protein grapes</strong> ($4.50), <strong>mini donuts</strong> (6 to a bag, $4), and a loaded <strong>waffle</strong> ($12.75) topped with fresh strawberries, blueberries and granola when you want a real sit-down plate. On the drink side, 16 gourmet smoothies, 12+ teas, and protein coffee — all made fresh to order.</p>
+    <p>On the food side: <strong>protein balls</strong> (4-pack, $4.50), <strong>candied protein grapes</strong> ($4.50), <strong>mini donuts</strong> (6 to a bag, $4), an <strong>acai bowl</strong> ($14.00) topped with fresh berries, banana and granola, and a loaded <strong>waffle</strong> ($12.75) topped with fresh strawberries, blueberries and granola when you want a real sit-down plate. On the drink side, 16 gourmet smoothies, 12+ teas, and protein coffee — all made fresh to order.</p>
     <p>Eating for a goal? Our <a href="/meal-replacement-shakes-pearland/">meal replacement shakes</a> were built for that, and the <a href="/healthy-breakfast-pearland/">healthy breakfast combo</a> runs from 6:30 AM. In a hurry? Everything on the <a href="/grab-and-go-pearland/">grab-and-go counter</a> starts at $4. New to us? Start with the <a href="/smoothies-pearland/">smoothie board</a> or see what a <a href="/nutrition-club-pearland/">nutrition club</a> actually is. <a href="{ORDER}" target="_blank" onclick="fbq('track','Lead')">Order online</a> and skip the line.</p>""",
  grid_h2='Real <span>food &amp; protein snacks</span>',
  grid_lead="A hot plate, a shake that works as a meal, and snacks from $4.50.",
@@ -333,6 +333,7 @@ PAGES.append(dict(
   # PNGs were never pushed to main, so GH raw 404s on them and every other landing
   # page falls back to the black-boxed original. Free visual upgrade available there.
   card(f"{IMGV}/protein-shake.png", "MEAL", "Protein Shake", "24–30g protein · ~300 cal · fills you up like a meal", "$9.97"),
+  card(f"{IMGV}/acaibowl.jpg", "BOWL", "Acai Bowl", "Fresh berries, banana and granola on an acai base", "$14.00"),
   card(f"{IMGV}/protein-balls.jpg", "GRAB-AND-GO", "Protein Balls", "4-pack · oats and chocolate, protein-packed bite", "$4.50"),
  ]),
  why_h2='What makes it <span>healthy food</span> here',
@@ -341,9 +342,9 @@ PAGES.append(dict(
       ("📆", "Open <span>7 days</span>", "Weekday mornings from 6:30 AM through Sunday afternoon at 8201 Broadway, Suite 113 — easy parking, right on FM 518.")],
  faqs=[
   ("Where can I find healthy food near me in Pearland, TX?",
-   "Nutrition Hub is at 8201 Broadway, Suite 113, Pearland, TX 77581, right on Broadway (FM 518). We serve protein-first meals and snacks 7 days a week — protein shakes with 24–30g of protein, protein balls, candied protein grapes, and waffles. Order online at order.nutritionhub101.com or walk in."),
+   "Nutrition Hub is at 8201 Broadway, Suite 113, Pearland, TX 77581, right on Broadway (FM 518). We serve protein-first meals and snacks 7 days a week — protein shakes with 24–30g of protein, protein balls, candied protein grapes, acai bowls, and waffles. Order online at order.nutritionhub101.com or walk in."),
   ("What healthy food does Nutrition Hub serve?",
-   "Protein balls (4-pack, $4.50), candied protein grapes ($4.50), mini donuts (6-pack, $4), and a loaded waffle ($12.75) on the food side. On the drink side, 16 gourmet protein smoothies with 24–30g protein ($9.97), 20oz smoothies ($7.80), 12+ teas ($9.15), and protein coffee ($9.97). Everything is made fresh to order."),
+   "Protein balls (4-pack, $4.50), candied protein grapes ($4.50), mini donuts (6-pack, $4), an acai bowl ($14.00), and a loaded waffle ($12.75) on the food side. On the drink side, 16 gourmet protein smoothies with 24–30g protein ($9.97), 20oz smoothies ($7.80), 12+ teas ($9.15), and protein coffee ($9.97). Everything is made fresh to order."),
   ("Can a protein shake really replace a meal?",
    "Our gourmet shakes run 24–30g of protein at around 300 calories, which is what makes them filling enough to stand in for a meal rather than just a snack. A lot of our regulars run one for lunch and eat a normal dinner."),
   ("Do you have healthy grab-and-go snacks?",
