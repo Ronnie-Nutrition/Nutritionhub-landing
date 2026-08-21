@@ -26,6 +26,6 @@ live pages before Ronnie caught it. **Repetition across files is not verificatio
 | B12 energy add-on | $3.00 | ⚠️ UNCONFIRMED | — |  |
 | Delivery fee | $3.00 | ⚠️ UNCONFIRMED | — | order site |
 | Typical spend, snack + drink | $10–15 | ⚠️ UNCONFIRMED | — | a claimed *range*, not a menu price (grab-and-go, healthy-food) |
-| 🔴 **Loaded waffle** | $12.75 | 🔴 **VERIFY FIRST** | — | **Broadway's waffle claim was FALSE. Does NH actually make waffles? 6 live mentions.** |
+| **Loaded waffle** | $12.75 | ✅ CONFIRMED | 2026-08-21 Ronnie | Flavors: Banana, Chocolate, Dulce. 6 live mentions. ⚠️ **NH makes these; Broadway does NOT** — never copy this row to Broadway. |
 
-🔴 **Nothing on this site has been verbally confirmed yet.** Ronnie: walk this list once and the whole property is locked down.
+🔴 **Every row above except the waffle is still UNCONFIRMED.** Ronnie: walk this list once and the whole property is locked down.
