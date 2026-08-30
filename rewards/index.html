@@ -185,6 +185,26 @@ function digits(s){ return (s||'').replace(/\D/g,''); }
 $('goBtn').addEventListener('click', checkIn);
 $('phone').addEventListener('keydown', e => { if(e.key==='Enter') checkIn(); });
 
+/**
+ * Best-effort location. Resolves to null rather than rejecting: a denied
+ * prompt, a slow fix or no GPS at all must NOT strand a customer at the
+ * counter -- the server reads "no coordinates" as fall-back-to-staff, never
+ * as "they are somewhere else".
+ */
+function getPosition(timeoutMs){
+  return new Promise(resolve => {
+    if (!navigator.geolocation) return resolve(null);
+    let settled = false;
+    const finish = v => { if (!settled){ settled = true; resolve(v); } };
+    setTimeout(() => finish(null), timeoutMs);          // hard cap on the wait
+    navigator.geolocation.getCurrentPosition(
+      p => finish({ lat: p.coords.latitude, lng: p.coords.longitude, accuracy: p.coords.accuracy }),
+      () => finish(null),
+      { enableHighAccuracy: true, timeout: timeoutMs, maximumAge: 60000 }
+    );
+  });
+}
+
 async function checkIn(){
   const p = $('phone').value.trim();
   $('phoneErr').textContent = '';
@@ -196,9 +216,13 @@ async function checkIn(){
   }
   const btn = $('goBtn'); btn.disabled = true; btn.textContent = 'Checking...';
   try {
+    // Scan -> location -> point, with nobody behind the counter tapping
+    // anything. A denied, slow or vague fix sends no coordinates at all and the
+    // server falls back to the staff path rather than refusing.
+    const pos = await getPosition(8000);
     const r = await fetch(API+'/api/points-checkin', {
       method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ phone: p })
+      body: JSON.stringify(Object.assign({ phone: p }, pos || {}))
     });
     const d = await r.json();
     if (d.found === false){ show('s-join'); }
@@ -219,7 +243,10 @@ function renderBalance(d){
   const toNext = (typeof d.toNext === 'number') ? d.toNext : Math.max(0, THRESHOLD - pts);
 
   const at = $('awardToast');
-  if (d.awarded){ at.innerHTML = '<div class="toast good">✓ +1 point for checking in!</div>'; }
+  if (d.refused === 'closed'){ at.innerHTML = '<div class="toast info">We\u2019re closed right now \u2014 points get added during club hours.</div>'; }
+  else if (d.refused === 'far'){ at.innerHTML = '<div class="toast info">Looks like you\u2019re not at the club \u2014 ask a team member to add your point.</div>'; }
+  else if (d.refused){ at.innerHTML = '<div class="toast info">We couldn\u2019t check your location \u2014 ask a team member to add your point.</div>'; }
+  else if (d.awarded){ at.innerHTML = '<div class="toast good">✓ +1 point for checking in!</div>'; }
   else if (d.alreadyToday){ at.innerHTML = '<div class="toast info">You already checked in today — see you next visit! 👋</div>'; }
   else { at.innerHTML = ''; }
 
