@@ -76,37 +76,37 @@ PAGES = []
 # national term "loaded tea" and cross-links there rather than repeating it.
 PAGES.append(dict(
  slug="loaded-teas-pearland", acc="#a64dff", acc2="#23e0ff", accglow="rgba(166,77,255,.5)",
- title="Loaded Teas in Pearland, TX | Nutrition Hub",
- desc="Loaded teas in Pearland, TX — 32oz fruit-flavored teas with clean energy and B-vitamins, 12+ flavors, $9.15. Order online or walk in at 8201 Broadway, Suite 113.",
+ title="Loaded Teas in Pearland, TX \u2014 12+ Flavors, $9.15",
+ desc="32oz loaded teas made to order in Pearland. Order ahead for pickup at 8201 Broadway, Suite 113. Weekdays from 6:30 AM; see weekend hours below.",
  ogimg=f"{GH}/tea_dragon_juice.png",
- schema_desc="Loaded teas in Pearland, TX — 32oz fruit-flavored iced teas with clean energy and B-vitamins, made fresh in 12+ flavors.",
+ schema_desc="32oz fruit-flavored iced teas made fresh to order in Pearland, TX.",
  serves=["Loaded Teas", "Energy Teas", "Lit Teas", "Smoothies"],
  h1='<span class="a">Loaded Teas</span><br>in <span class="b">Pearland, TX</span>',
- hero_sub="Big 32oz fruit-flavored teas loaded with B-vitamins and clean energy — 12+ bold flavors, made fresh to order, no crash.",
+ hero_sub="32oz fruit-flavored iced teas, made fresh to order. Choose a flavor from the board or order ahead for pickup.",
  intro_h2='Pearland\'s spot for <span>loaded teas</span>',
- intro=f"""<p>Searching for <strong>loaded teas in Pearland</strong>? Nutrition Hub on Broadway makes them fresh all day — big 32oz fruit-flavored teas loaded with B-vitamins and a clean energy source. Around here some folks call them <a href="/energy-teas-pearland/">energy teas or lit teas</a>; same great drink, 12+ rotating flavors on the board.</p>
-    <p>They're light, refreshing, and low calorie — the swap our regulars make for soda, sugary energy drinks, and that third coffee. Grab one on the way to work, before the gym, or as your afternoon reset.</p>
+ intro=f"""<p>Searching for <strong>loaded teas in Pearland</strong>? Nutrition Hub on Broadway makes them fresh all day — 32oz fruit-flavored iced teas made to order. Around here some folks call them <a href="/energy-teas-pearland/">energy teas or lit teas</a>; same great drink, 12+ rotating flavors on the board.</p>
+    <p>Choose your flavor from the current board. For questions about ingredients, caffeine, or allergens, ask our team about the drink you plan to order.</p>
     <p>Hungry too? Pair it with a <a href="/meal-replacement-shakes-pearland/">meal replacement shake</a> or see the <a href="/">full menu</a>. You can <a href="{ORDER}" target="_blank" onclick="fbq('track','Lead')">order online</a> and skip the line.</p>""",
  grid_h2='Fan-favorite <span>loaded tea flavors</span>',
  grid_lead="A taste of the board — flavors rotate, so ask what's fresh today.",
  grid="\n".join([
-  card(f"{GH}/tea_dragon_juice.png", "LOADED TEA", "Dragon Juice", "32oz · bold fruit flavor, clean energy", "$9.15"),
-  card(f"{GH}/tea_blue_margarita.png", "LOADED TEA", "Blue Margarita", "32oz · low-cal, refreshing lift", "$9.15"),
+  card(f"{GH}/tea_dragon_juice.png", "LOADED TEA", "Dragon Juice", "32oz · bold fruit flavor", "$9.15"),
+  card(f"{GH}/tea_blue_margarita.png", "LOADED TEA", "Blue Margarita", "32oz · made to order", "$9.15"),
   card(f"{GH}/tea_red.png", "12+ FLAVORS", "Ask what's fresh", "Mamacita, Blue Ocean &amp; more — rotating board of fan favorites", "$9.15"),
  ]),
  why_h2='Why our <span>loaded teas</span> hit different',
- why=[("⚡", "Clean <span>energy</span>", "B-vitamins plus a smooth, moderate energy source — a clean lift with no jitters and no 3 PM crash."),
+ why=[("⚡", "Made <span>to order</span>", "Choose your flavor and ask our team about ingredients and caffeine before you order."),
       ("🍓", "12+ <span>flavors</span>", "Fruity, refreshing, made fresh to order. Want it lighter or stronger? Just say the word."),
-      ("🌿", "Light &amp; <span>low-cal</span>", "A smarter swap for soda and canned energy drinks that still tastes like a treat.")],
+      ("🌿", "Order <span>ahead</span>", "Browse the online menu and place your pickup order before you arrive.")],
  faqs=[
   ("What is a loaded tea?",
-   "A loaded tea is a 32oz fruit-flavored iced tea loaded with B-vitamins and a clean energy source — refreshing, low calorie, and built for smooth all-day energy. At Nutrition Hub in Pearland we make every loaded tea fresh to order in 12+ flavors."),
+   "At Nutrition Hub in Pearland, a loaded tea is a 32oz fruit-flavored iced tea made fresh to order. Choose from the current flavor board and ask our team about the ingredients in your drink."),
   ("Are loaded teas the same as lit teas or energy teas?",
    "Yes — loaded tea, lit tea, and energy tea are different names for the same style of drink. Whatever you call it, ours is $9.15 for a 32oz, made fresh at 8201 Broadway, Suite 113 in Pearland."),
   ("How much do loaded teas cost in Pearland?",
    "Loaded teas at Nutrition Hub are $9.15 for a 32oz. Order online at order.nutritionhub101.com for pickup, or walk in at 8201 Broadway, Suite 113."),
-  ("Are loaded teas low in calories?",
-   "Yes — our loaded teas are light and refreshing, a popular lower-calorie alternative to soda and sugary energy drinks."),
+  ("Where can I ask about ingredients, caffeine, or allergens?",
+   "Ask the Nutrition Hub team about your chosen drink before ordering, including ingredients, caffeine, and allergens. Specify any additions or substitutions you want."),
   ("Where can I get a loaded tea near me in Pearland, TX?",
    "Nutrition Hub is at 8201 Broadway, Suite 113, Pearland, TX 77581 — open 7 days a week. Order online or walk in; first visit, ask for Ronnie."),
  ],
@@ -586,6 +586,8 @@ src="https://www.facebook.com/tr?id=__PIXEL__&ev=PageView&noscript=1"/></noscrip
   @media(max-width:780px){.grid{grid-template-columns:1fr 1fr;gap:12px}.feats{grid-template-columns:1fr}.info{grid-template-columns:1fr}.drink img{height:160px}}
   @media(max-width:480px){.grid{grid-template-columns:1fr}}
 </style>
+<script defer src="/analytics-consent.js"></script>
+<script defer src="/assets/portfolio-measurement.js"></script>
 </head>
 <body>
 
