@@ -76,8 +76,8 @@ PAGES = []
 # national term "loaded tea" and cross-links there rather than repeating it.
 PAGES.append(dict(
  slug="loaded-teas-pearland", acc="#a64dff", acc2="#23e0ff", accglow="rgba(166,77,255,.5)",
- title="Loaded Teas in Pearland, TX \u2014 12+ Flavors, $9.15",
- desc="32oz loaded teas made to order in Pearland. Order ahead for pickup at 8201 Broadway, Suite 113. Weekdays from 6:30 AM; see weekend hours below.",
+ title="Loaded Teas in Pearland | 32oz $9.15 | Nutrition Hub",
+ desc="Choose a 32oz loaded tea for $9.15 at Nutrition Hub in Pearland. Browse flavors and order ahead for pickup at 8201 Broadway, Suite 113.",
  ogimg=f"{GH}/tea_dragon_juice.png",
  schema_desc="32oz fruit-flavored iced teas made fresh to order in Pearland, TX.",
  serves=["Loaded Teas", "Energy Teas", "Lit Teas", "Smoothies"],
