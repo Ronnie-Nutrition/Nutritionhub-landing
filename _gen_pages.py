@@ -169,8 +169,8 @@ PAGES.append(dict(
  # chars (truncating). Now leads with the bare term and spends the saved characters
  # on a CTR hook instead of a qualifier. "Protein" stays in the H2/body where it
  # differentiates without gatekeeping the click.
- title="Smoothies in Pearland, TX — 16 Fresh Flavors | Nutrition Hub",
- desc="Smoothies in Pearland, TX — 16 flavors blended fresh to order with 24–30g protein, from $7.80. Open 7 days on Broadway. Order online for pickup.",
+ title="Smoothies in Pearland — 16 Flavors & Pickup | Nutrition Hub",
+ desc="Choose from 16 fresh protein smoothie flavors in Pearland with 24–30g protein. Order online for pickup at Nutrition Hub on Broadway. Open 7 days.",
  ogimg=f"{GH}/shake_strawberry_cheesecake.png",
  schema_desc="Smoothie shop in Pearland, TX — 16 gourmet protein smoothies with 24–30g protein, made fresh to order.",
  serves=["Smoothies", "Protein Smoothies", "Protein Shakes", "Energy Teas"],
@@ -254,8 +254,8 @@ PAGES.append(dict(
 # ================= PAGE 5: NUTRITION CLUB (category term) =================
 PAGES.append(dict(
  slug="nutrition-club-pearland", acc="#ff5a5a", acc2="#a64dff", accglow="rgba(255,90,90,.45)",
- title="Nutrition Club in Pearland, TX | Nutrition Hub",
- desc="Nutrition Hub is Pearland's nutrition club — protein shakes, loaded teas, and a community that knows your name. 8201 Broadway, Suite 113. Open 7 days.",
+ title="Nutrition Club in Pearland — Shakes & Teas | Nutrition Hub",
+ desc="Visit Nutrition Hub, a nutrition club in Pearland for protein shakes, loaded teas and online pickup. Open 7 days at 8201 Broadway, Suite 113.",
  ogimg=f"{GH}/shake_strawberry_cheesecake.png",
  schema_desc="Nutrition club in Pearland, TX serving protein shakes, meal replacement smoothies, and loaded energy teas 7 days a week.",
  serves=["Protein Shakes", "Smoothies", "Energy Teas", "Loaded Teas"],
@@ -373,8 +373,8 @@ PAGES.append(dict(
 # in an FAQ ("we're the no-prep alternative") — which earns the query without lying.
 PAGES.append(dict(
  slug="grab-and-go-pearland", acc="#ff8c42", acc2="#2effb4", accglow="rgba(255,140,66,.45)",
- title="Grab-and-Go Protein Snacks in Pearland, TX | Nutrition Hub",
- desc="Grab-and-go protein snacks in Pearland, TX from $4 — mini donuts, protein balls, candied protein grapes, and shakes that work as a quick meal. Order ahead.",
+ title="Quick Healthy Food in Pearland — From $4 | Nutrition Hub",
+ desc="Grab quick healthy food in Pearland: protein snacks from $4 and shakes with 24–30g protein. Order ahead for pickup at Nutrition Hub on Broadway.",
  ogimg=f"{IMGV}/donuts.jpg",
  schema_desc="Grab-and-go protein snacks and quick meals in Pearland, TX — mini donuts, protein balls, candied protein grapes, and 24–30g protein shakes, made fresh 7 days a week.",
  serves=["Protein Snacks", "Healthy Food", "Protein Shakes", "Smoothies"],
