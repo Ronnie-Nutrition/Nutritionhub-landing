@@ -90,6 +90,7 @@
       else {
         let url; try { url = new URL(href, location.href); } catch (_) { return; }
         if (url.hostname === 'www.google.com' && url.pathname.startsWith('/maps/dir')) name = 'directions_click';
+        else if (host === 'nutritionhub101.com' && url.hostname === 'order.nutritionhub101.com' && url.pathname === '/checkin.html') name = 'rewards_signup_click';
         else if (host === 'nutritionhub101.com' && url.hostname === 'order.nutritionhub101.com') name = 'order_site_click';
       }
       if (host === 'houstoncarecompass.com') {
