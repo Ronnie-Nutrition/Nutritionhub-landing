@@ -1,759 +1,5 @@
 {
-  "_note": "Nutrition Hub Square catalog backup",
-  "_date": "2026-06-18",
-  "_location": "LN9BK0S2ZGN4Q (The Nutritional Hub)",
-  "object_count": 378,
   "objects": [
-    {
-      "type": "CATEGORY",
-      "id": "UT2TALTNGZMIHELKVORSNNBB",
-      "updated_at": "2026-06-18T17:31:13.827Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781803873827,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "category_data": {
-        "name": "\u2605 Most Popular",
-        "category_type": "REGULAR_CATEGORY",
-        "parent_category": {
-          "ordinal": -2251799796908032
-        },
-        "is_top_level": true,
-        "channels": [
-          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-        ],
-        "online_visibility": true
-      }
-    },
-    {
-      "type": "CATEGORY",
-      "id": "ZGTXU6DPZF2ZUI3J4WJ7EI7R",
-      "updated_at": "2026-06-18T17:31:13.827Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781803873827,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "category_data": {
-        "name": "Shakes & Smoothies",
-        "category_type": "REGULAR_CATEGORY",
-        "parent_category": {
-          "ordinal": -2251799780130816
-        },
-        "is_top_level": true,
-        "channels": [
-          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-        ],
-        "online_visibility": true
-      }
-    },
-    {
-      "type": "CATEGORY",
-      "id": "5UITIVAPBPIMBQ4MZGHHCNTH",
-      "updated_at": "2026-06-18T17:31:13.827Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781803873827,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "category_data": {
-        "name": "Lit Teas",
-        "category_type": "REGULAR_CATEGORY",
-        "parent_category": {
-          "ordinal": -2251799763353600
-        },
-        "is_top_level": true,
-        "channels": [
-          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-        ],
-        "online_visibility": true
-      }
-    },
-    {
-      "type": "CATEGORY",
-      "id": "UGSW2R6SFTXZLAVKRNHKNEWQ",
-      "updated_at": "2026-06-18T17:31:13.827Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781803873827,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "category_data": {
-        "name": "Protein Coffee",
-        "category_type": "REGULAR_CATEGORY",
-        "parent_category": {
-          "ordinal": -2251799746576384
-        },
-        "is_top_level": true,
-        "channels": [
-          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-        ],
-        "online_visibility": true
-      }
-    },
-    {
-      "type": "CATEGORY",
-      "id": "MJN6YBJJFZEECNCEA37LRFAA",
-      "updated_at": "2026-06-18T17:31:13.827Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781803873827,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "category_data": {
-        "name": "Boosters & Shots",
-        "category_type": "REGULAR_CATEGORY",
-        "parent_category": {
-          "ordinal": -2251799729799168
-        },
-        "is_top_level": true,
-        "channels": [
-          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-        ],
-        "online_visibility": true
-      }
-    },
-    {
-      "type": "CATEGORY",
-      "id": "AB53KYBK6IXAB6PUKD3HA4NH",
-      "updated_at": "2026-06-18T17:31:13.827Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781803873827,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "category_data": {
-        "name": "Bars & Snacks",
-        "category_type": "REGULAR_CATEGORY",
-        "parent_category": {
-          "ordinal": -2251799713021952
-        },
-        "is_top_level": true,
-        "channels": [
-          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-        ],
-        "online_visibility": true
-      }
-    },
-    {
-      "type": "CATEGORY",
-      "id": "VIGK5AYDTWNNTM3OA4KWKJUO",
-      "updated_at": "2026-06-18T17:31:13.827Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781803873827,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "category_data": {
-        "name": "Toppings & Add-Ons",
-        "category_type": "REGULAR_CATEGORY",
-        "parent_category": {
-          "ordinal": -2251799696244736
-        },
-        "is_top_level": true,
-        "channels": [
-          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-        ],
-        "online_visibility": true
-      }
-    },
-    {
-      "type": "CATEGORY",
-      "id": "EZWVABGFPFSNX5K6AKFYEVHG",
-      "updated_at": "2026-06-18T17:31:13.827Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781803873827,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "category_data": {
-        "name": "Kits & Programs",
-        "category_type": "REGULAR_CATEGORY",
-        "parent_category": {
-          "ordinal": -2251799679467520
-        },
-        "is_top_level": true,
-        "channels": [
-          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-        ],
-        "online_visibility": true
-      }
-    },
-    {
-      "type": "CATEGORY",
-      "id": "LCM2XUT3Y3NU7OLDUR5KH6O3",
-      "updated_at": "2026-06-18T17:31:13.827Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781803873827,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "category_data": {
-        "name": "Fees & Supplies",
-        "category_type": "REGULAR_CATEGORY",
-        "parent_category": {
-          "ordinal": -2251799662690304
-        },
-        "is_top_level": true,
-        "channels": [
-          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-        ],
-        "online_visibility": true
-      }
-    },
-    {
-      "type": "CATEGORY",
-      "id": "AS34HMTKTHJLBCLB4A2FT66E",
-      "updated_at": "2026-06-18T17:31:13.827Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781803873827,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "category_data": {
-        "name": "Aloe",
-        "category_type": "REGULAR_CATEGORY",
-        "parent_category": {
-          "ordinal": -2251799645913088
-        },
-        "is_top_level": true,
-        "channels": [
-          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-        ],
-        "online_visibility": true
-      }
-    },
-    {
-      "type": "CATEGORY",
-      "id": "GSHUN7CNGYTTOXFKHCLYOWHX",
-      "updated_at": "2026-06-18T17:31:13.827Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781803873827,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "category_data": {
-        "name": "Gift Cards",
-        "category_type": "REGULAR_CATEGORY",
-        "parent_category": {
-          "ordinal": -2251799629135872
-        },
-        "is_top_level": true,
-        "channels": [
-          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-        ],
-        "online_visibility": true
-      }
-    },
-    {
-      "type": "MODIFIER_LIST",
-      "id": "RICTXJTVICXKHMAIE5VTALSK",
-      "updated_at": "2026-06-18T17:31:13.827Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781803873827,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "modifier_list_data": {
-        "name": "Toppings",
-        "ordinal": 1,
-        "selection_type": "MULTIPLE",
-        "modifiers": [
-          {
-            "type": "MODIFIER",
-            "id": "LFQ4HO2T7HAUCXWWHFOVH5SL",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Whipped Cream",
-              "price_money": {
-                "amount": 125,
-                "currency": "USD"
-              },
-              "ordinal": 0,
-              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "EB6W34ZCNVEJPI3Z24SIFL5X",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Banana Slices",
-              "price_money": {
-                "amount": 125,
-                "currency": "USD"
-              },
-              "ordinal": 1,
-              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "ZQOK4B5W2JSYZ5EV2MHIVYEC",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Strawberry Slices",
-              "price_money": {
-                "amount": 125,
-                "currency": "USD"
-              },
-              "ordinal": 2,
-              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "HG5Y7MH67ILBA5PBZYWLQZP3",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Pecan Toppings",
-              "price_money": {
-                "amount": 125,
-                "currency": "USD"
-              },
-              "ordinal": 3,
-              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "AQ3MWL5Q7JMGCNYVCL5B3RWE",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Chocolate Chips",
-              "price_money": {
-                "amount": 125,
-                "currency": "USD"
-              },
-              "ordinal": 4,
-              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "APYTMDSAQDSFD3OMCV5I2ZJY",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Cucumber Slices",
-              "price_money": {
-                "amount": 125,
-                "currency": "USD"
-              },
-              "ordinal": 5,
-              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "QKXZVM3OKB65QJDOTL3HHY3R",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Cinnamon",
-              "price_money": {
-                "amount": 125,
-                "currency": "USD"
-              },
-              "ordinal": 6,
-              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "6V4GCK646KV4USAHBYIRYPEB",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Oatmeal",
-              "price_money": {
-                "amount": 125,
-                "currency": "USD"
-              },
-              "ordinal": 7,
-              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "P7NUMUZWUNRZW4ZFJWD4JEGO",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Boba",
-              "price_money": {
-                "amount": 100,
-                "currency": "USD"
-              },
-              "ordinal": 8,
-              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "UO4WJCRQLSPA3NI2SYS5RFWX",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Granola",
-              "price_money": {
-                "amount": 100,
-                "currency": "USD"
-              },
-              "ordinal": 9,
-              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "CYOVBGRUJI5CHVBSLJJ5Z5EV",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Sprinkles",
-              "price_money": {
-                "amount": 0,
-                "currency": "USD"
-              },
-              "ordinal": 10,
-              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
-            }
-          }
-        ],
-        "modifier_type": "LIST"
-      }
-    },
-    {
-      "type": "MODIFIER_LIST",
-      "id": "P44SIBHRUERATDR2MP63YC75",
-      "updated_at": "2026-06-18T17:31:13.827Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781803873827,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "modifier_list_data": {
-        "name": "Boosters & Add-Ins",
-        "ordinal": 2,
-        "selection_type": "MULTIPLE",
-        "modifiers": [
-          {
-            "type": "MODIFIER",
-            "id": "6PQCL7OJWBSM7Z6KHVWS5P2H",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Extra Protein",
-              "price_money": {
-                "amount": 200,
-                "currency": "USD"
-              },
-              "ordinal": 0,
-              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "WNKF4RBBAGT3TPCZI3NM5TEE",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Probiotic",
-              "price_money": {
-                "amount": 200,
-                "currency": "USD"
-              },
-              "ordinal": 1,
-              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "RVKTLQESSMH5OCQS6UT5SOR6",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "BCAA",
-              "price_money": {
-                "amount": 300,
-                "currency": "USD"
-              },
-              "ordinal": 2,
-              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "GGG556XBW5GWSMUBAB4OCOKT",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Creatine",
-              "price_money": {
-                "amount": 175,
-                "currency": "USD"
-              },
-              "ordinal": 3,
-              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "FZ2KJUHRIC5SFQFQPFDAQ7WY",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Collagen",
-              "price_money": {
-                "amount": 325,
-                "currency": "USD"
-              },
-              "ordinal": 4,
-              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "333TVP76ZBLTI3OHBBTEHZAR",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Apple Fiber",
-              "price_money": {
-                "amount": 225,
-                "currency": "USD"
-              },
-              "ordinal": 5,
-              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "IMNJTU47Y3GGYC7ECWDBTS5A",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Tropical Fiber",
-              "price_money": {
-                "amount": 225,
-                "currency": "USD"
-              },
-              "ordinal": 6,
-              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "HIH2RRRVBGEZIWCYL2CYSVPE",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Greens",
-              "price_money": {
-                "amount": 400,
-                "currency": "USD"
-              },
-              "ordinal": 7,
-              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "FNYPBSGULXXSWAONE5VCWYXS",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "CR7",
-              "price_money": {
-                "amount": 250,
-                "currency": "USD"
-              },
-              "ordinal": 8,
-              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "QSVFJDVJFH2C226GSR73EUBM",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "H3O",
-              "price_money": {
-                "amount": 250,
-                "currency": "USD"
-              },
-              "ordinal": 9,
-              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "MR7HIBNFDNLZHBBEPWEW7GOG",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Prolessa Fat Reducer",
-              "price_money": {
-                "amount": 600,
-                "currency": "USD"
-              },
-              "ordinal": 10,
-              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "U3DFMRF2AQBFGAAN64JKPKAG",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Total Control",
-              "price_money": {
-                "amount": 350,
-                "currency": "USD"
-              },
-              "ordinal": 11,
-              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
-            }
-          }
-        ],
-        "modifier_type": "LIST"
-      }
-    },
-    {
-      "type": "MODIFIER_LIST",
-      "id": "L3U22VN6QKA44OGT2F4QBLEF",
-      "updated_at": "2026-06-18T21:16:40.333Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781817400333,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "modifier_list_data": {
-        "name": "Prep",
-        "ordinal": 3,
-        "selection_type": "MULTIPLE",
-        "modifiers": [
-          {
-            "type": "MODIFIER",
-            "id": "DIQFSSMMEP5UK52TLX3DWJDW",
-            "updated_at": "2026-06-18T21:16:40.333Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781817400333,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "No Ice",
-              "price_money": {
-                "amount": 0,
-                "currency": "USD"
-              },
-              "ordinal": 0,
-              "modifier_list_id": "L3U22VN6QKA44OGT2F4QBLEF"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "3JUWO47H2QEFW2AVZZKAJYKR",
-            "updated_at": "2026-06-18T21:16:40.333Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781817400333,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Extra Aloe",
-              "price_money": {
-                "amount": 150,
-                "currency": "USD"
-              },
-              "ordinal": 1,
-              "modifier_list_id": "L3U22VN6QKA44OGT2F4QBLEF"
-            }
-          },
-          {
-            "type": "MODIFIER",
-            "id": "J3UMLOBGTG3S5H6LDUAHLH7Y",
-            "updated_at": "2026-06-18T21:16:40.333Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781817400333,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "modifier_data": {
-              "name": "Rebuild Strength 1 scoop",
-              "price_money": {
-                "amount": 325,
-                "currency": "USD"
-              },
-              "ordinal": 2,
-              "modifier_list_id": "L3U22VN6QKA44OGT2F4QBLEF"
-            }
-          }
-        ],
-        "modifier_type": "LIST"
-      }
-    },
     {
       "type": "ITEM",
       "id": "IQ53P4DEGSJCMMR4UKED33SO",
@@ -9856,89 +9102,6 @@
     },
     {
       "type": "ITEM",
-      "id": "FST25QJIUCGLOMNCRZ27BDDD",
-      "updated_at": "2026-06-18T21:16:40.333Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781817400333,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "item_data": {
-        "name": "Elderberry Shot",
-        "description": "Elderberry, vitamin D, zinc, vitamin C, acerola cherry, relishing mushrooms",
-        "is_taxable": true,
-        "modifier_list_info": [
-          {
-            "modifier_list_id": "L3U22VN6QKA44OGT2F4QBLEF",
-            "enabled": true,
-            "ordinal": 1,
-            "allow_quantities": "NOT_SET",
-            "is_conversational": "NOT_SET",
-            "hidden_from_customer_override": "NOT_SET"
-          },
-          {
-            "modifier_list_id": "P44SIBHRUERATDR2MP63YC75",
-            "enabled": true,
-            "ordinal": 2,
-            "allow_quantities": "NOT_SET",
-            "is_conversational": "NOT_SET",
-            "hidden_from_customer_override": "NOT_SET"
-          },
-          {
-            "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK",
-            "enabled": true,
-            "ordinal": 3,
-            "allow_quantities": "NOT_SET",
-            "is_conversational": "NOT_SET",
-            "hidden_from_customer_override": "NOT_SET"
-          }
-        ],
-        "variations": [
-          {
-            "type": "ITEM_VARIATION",
-            "id": "AXSULECQUZ2F6Z5HNZ3P6UET",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "item_variation_data": {
-              "item_id": "FST25QJIUCGLOMNCRZ27BDDD",
-              "name": "Regular",
-              "ordinal": 0,
-              "pricing_type": "FIXED_PRICING",
-              "price_money": {
-                "amount": 0,
-                "currency": "USD"
-              },
-              "sellable": true,
-              "stockable": true,
-              "channels": [
-                "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-              ]
-            }
-          }
-        ],
-        "product_type": "REGULAR",
-        "categories": [
-          {
-            "id": "5UITIVAPBPIMBQ4MZGHHCNTH",
-            "ordinal": -2251798068854784
-          }
-        ],
-        "description_html": "<p>Elderberry, vitamin D, zinc, vitamin C, acerola cherry, relishing mushrooms</p>",
-        "description_plaintext": "Elderberry, vitamin D, zinc, vitamin C, acerola cherry, relishing mushrooms",
-        "channels": [
-          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-        ],
-        "is_archived": false,
-        "reporting_category": {
-          "id": "5UITIVAPBPIMBQ4MZGHHCNTH",
-          "ordinal": -2251798068854784
-        }
-      }
-    },
-    {
-      "type": "ITEM",
       "id": "PRQNKTCWLPIYCMXHNCJE4LFD",
       "updated_at": "2026-06-18T21:16:40.333Z",
       "created_at": "2026-06-18T17:31:16.962Z",
@@ -13657,86 +12820,6 @@
         "reporting_category": {
           "id": "ZGTXU6DPZF2ZUI3J4WJ7EI7R",
           "ordinal": -2251799562027008
-        }
-      }
-    },
-    {
-      "type": "ITEM",
-      "id": "HMNXCDMHVUUGQCPEZWJJJZIP",
-      "updated_at": "2026-06-18T21:16:40.333Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781817400333,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "item_data": {
-        "name": "Guy",
-        "is_taxable": true,
-        "modifier_list_info": [
-          {
-            "modifier_list_id": "L3U22VN6QKA44OGT2F4QBLEF",
-            "enabled": true,
-            "ordinal": 1,
-            "allow_quantities": "NOT_SET",
-            "is_conversational": "NOT_SET",
-            "hidden_from_customer_override": "NOT_SET"
-          },
-          {
-            "modifier_list_id": "P44SIBHRUERATDR2MP63YC75",
-            "enabled": true,
-            "ordinal": 2,
-            "allow_quantities": "NOT_SET",
-            "is_conversational": "NOT_SET",
-            "hidden_from_customer_override": "NOT_SET"
-          },
-          {
-            "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK",
-            "enabled": true,
-            "ordinal": 3,
-            "allow_quantities": "NOT_SET",
-            "is_conversational": "NOT_SET",
-            "hidden_from_customer_override": "NOT_SET"
-          }
-        ],
-        "variations": [
-          {
-            "type": "ITEM_VARIATION",
-            "id": "VMWPISX5J6KX7D7SBWPI7XKX",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "item_variation_data": {
-              "item_id": "HMNXCDMHVUUGQCPEZWJJJZIP",
-              "name": "Regular",
-              "ordinal": 0,
-              "pricing_type": "FIXED_PRICING",
-              "price_money": {
-                "amount": 0,
-                "currency": "USD"
-              },
-              "sellable": true,
-              "stockable": true,
-              "channels": [
-                "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-              ]
-            }
-          }
-        ],
-        "product_type": "REGULAR",
-        "categories": [
-          {
-            "id": "ZGTXU6DPZF2ZUI3J4WJ7EI7R",
-            "ordinal": -2251799545249792
-          }
-        ],
-        "channels": [
-          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-        ],
-        "is_archived": false,
-        "reporting_category": {
-          "id": "ZGTXU6DPZF2ZUI3J4WJ7EI7R",
-          "ordinal": -2251799545249792
         }
       }
     },
@@ -23483,63 +22566,6 @@
     },
     {
       "type": "ITEM",
-      "id": "FGFL34DXQ3RM4M3M53KESVM4",
-      "updated_at": "2026-06-18T17:31:13.827Z",
-      "created_at": "2026-06-18T17:31:16.962Z",
-      "version": 1781803873827,
-      "is_deleted": false,
-      "present_at_all_locations": true,
-      "item_data": {
-        "name": "Cola - Ginger 6pack kit",
-        "description": "Tea kits with ginger LO and Cola L/o",
-        "is_taxable": true,
-        "variations": [
-          {
-            "type": "ITEM_VARIATION",
-            "id": "XJ6B5D64VFNGTUFKVKCFOM6X",
-            "updated_at": "2026-06-18T17:31:13.827Z",
-            "created_at": "2026-06-18T17:31:16.962Z",
-            "version": 1781803873827,
-            "is_deleted": false,
-            "present_at_all_locations": true,
-            "item_variation_data": {
-              "item_id": "FGFL34DXQ3RM4M3M53KESVM4",
-              "name": "Regular",
-              "ordinal": 0,
-              "pricing_type": "FIXED_PRICING",
-              "price_money": {
-                "amount": 0,
-                "currency": "USD"
-              },
-              "sellable": true,
-              "stockable": true,
-              "channels": [
-                "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-              ]
-            }
-          }
-        ],
-        "product_type": "REGULAR",
-        "categories": [
-          {
-            "id": "EZWVABGFPFSNX5K6AKFYEVHG",
-            "ordinal": -2251799796908032
-          }
-        ],
-        "description_html": "<p>Tea kits with ginger LO and Cola L/o</p>",
-        "description_plaintext": "Tea kits with ginger LO and Cola L/o",
-        "channels": [
-          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
-        ],
-        "is_archived": false,
-        "reporting_category": {
-          "id": "EZWVABGFPFSNX5K6AKFYEVHG",
-          "ordinal": -2251799796908032
-        }
-      }
-    },
-    {
-      "type": "ITEM",
       "id": "OOZFMBZ3WNOFCZTN3IMMKUEH",
       "updated_at": "2026-06-18T17:31:13.827Z",
       "created_at": "2026-06-18T17:31:16.962Z",
@@ -28066,6 +27092,756 @@
           "id": "MJN6YBJJFZEECNCEA37LRFAA",
           "ordinal": -2251798958047232
         }
+      }
+    },
+    {
+      "type": "CATEGORY",
+      "id": "UT2TALTNGZMIHELKVORSNNBB",
+      "updated_at": "2026-06-18T17:31:13.827Z",
+      "created_at": "2026-06-18T17:31:16.962Z",
+      "version": 1781803873827,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "category_data": {
+        "name": "\u2605 Most Popular",
+        "category_type": "REGULAR_CATEGORY",
+        "parent_category": {
+          "ordinal": -2251799796908032
+        },
+        "is_top_level": true,
+        "channels": [
+          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
+        ],
+        "online_visibility": true
+      }
+    },
+    {
+      "type": "CATEGORY",
+      "id": "ZGTXU6DPZF2ZUI3J4WJ7EI7R",
+      "updated_at": "2026-06-18T17:31:13.827Z",
+      "created_at": "2026-06-18T17:31:16.962Z",
+      "version": 1781803873827,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "category_data": {
+        "name": "Shakes & Smoothies",
+        "category_type": "REGULAR_CATEGORY",
+        "parent_category": {
+          "ordinal": -2251799780130816
+        },
+        "is_top_level": true,
+        "channels": [
+          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
+        ],
+        "online_visibility": true
+      }
+    },
+    {
+      "type": "CATEGORY",
+      "id": "5UITIVAPBPIMBQ4MZGHHCNTH",
+      "updated_at": "2026-06-18T17:31:13.827Z",
+      "created_at": "2026-06-18T17:31:16.962Z",
+      "version": 1781803873827,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "category_data": {
+        "name": "Lit Teas",
+        "category_type": "REGULAR_CATEGORY",
+        "parent_category": {
+          "ordinal": -2251799763353600
+        },
+        "is_top_level": true,
+        "channels": [
+          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
+        ],
+        "online_visibility": true
+      }
+    },
+    {
+      "type": "CATEGORY",
+      "id": "UGSW2R6SFTXZLAVKRNHKNEWQ",
+      "updated_at": "2026-06-18T17:31:13.827Z",
+      "created_at": "2026-06-18T17:31:16.962Z",
+      "version": 1781803873827,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "category_data": {
+        "name": "Protein Coffee",
+        "category_type": "REGULAR_CATEGORY",
+        "parent_category": {
+          "ordinal": -2251799746576384
+        },
+        "is_top_level": true,
+        "channels": [
+          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
+        ],
+        "online_visibility": true
+      }
+    },
+    {
+      "type": "CATEGORY",
+      "id": "MJN6YBJJFZEECNCEA37LRFAA",
+      "updated_at": "2026-06-18T17:31:13.827Z",
+      "created_at": "2026-06-18T17:31:16.962Z",
+      "version": 1781803873827,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "category_data": {
+        "name": "Boosters & Shots",
+        "category_type": "REGULAR_CATEGORY",
+        "parent_category": {
+          "ordinal": -2251799729799168
+        },
+        "is_top_level": true,
+        "channels": [
+          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
+        ],
+        "online_visibility": true
+      }
+    },
+    {
+      "type": "CATEGORY",
+      "id": "AB53KYBK6IXAB6PUKD3HA4NH",
+      "updated_at": "2026-06-18T17:31:13.827Z",
+      "created_at": "2026-06-18T17:31:16.962Z",
+      "version": 1781803873827,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "category_data": {
+        "name": "Bars & Snacks",
+        "category_type": "REGULAR_CATEGORY",
+        "parent_category": {
+          "ordinal": -2251799713021952
+        },
+        "is_top_level": true,
+        "channels": [
+          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
+        ],
+        "online_visibility": true
+      }
+    },
+    {
+      "type": "CATEGORY",
+      "id": "VIGK5AYDTWNNTM3OA4KWKJUO",
+      "updated_at": "2026-06-18T17:31:13.827Z",
+      "created_at": "2026-06-18T17:31:16.962Z",
+      "version": 1781803873827,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "category_data": {
+        "name": "Toppings & Add-Ons",
+        "category_type": "REGULAR_CATEGORY",
+        "parent_category": {
+          "ordinal": -2251799696244736
+        },
+        "is_top_level": true,
+        "channels": [
+          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
+        ],
+        "online_visibility": true
+      }
+    },
+    {
+      "type": "CATEGORY",
+      "id": "EZWVABGFPFSNX5K6AKFYEVHG",
+      "updated_at": "2026-06-18T17:31:13.827Z",
+      "created_at": "2026-06-18T17:31:16.962Z",
+      "version": 1781803873827,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "category_data": {
+        "name": "Kits & Programs",
+        "category_type": "REGULAR_CATEGORY",
+        "parent_category": {
+          "ordinal": -2251799679467520
+        },
+        "is_top_level": true,
+        "channels": [
+          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
+        ],
+        "online_visibility": true
+      }
+    },
+    {
+      "type": "CATEGORY",
+      "id": "LCM2XUT3Y3NU7OLDUR5KH6O3",
+      "updated_at": "2026-06-18T17:31:13.827Z",
+      "created_at": "2026-06-18T17:31:16.962Z",
+      "version": 1781803873827,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "category_data": {
+        "name": "Fees & Supplies",
+        "category_type": "REGULAR_CATEGORY",
+        "parent_category": {
+          "ordinal": -2251799662690304
+        },
+        "is_top_level": true,
+        "channels": [
+          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
+        ],
+        "online_visibility": true
+      }
+    },
+    {
+      "type": "CATEGORY",
+      "id": "AS34HMTKTHJLBCLB4A2FT66E",
+      "updated_at": "2026-06-18T17:31:13.827Z",
+      "created_at": "2026-06-18T17:31:16.962Z",
+      "version": 1781803873827,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "category_data": {
+        "name": "Aloe",
+        "category_type": "REGULAR_CATEGORY",
+        "parent_category": {
+          "ordinal": -2251799645913088
+        },
+        "is_top_level": true,
+        "channels": [
+          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
+        ],
+        "online_visibility": true
+      }
+    },
+    {
+      "type": "CATEGORY",
+      "id": "GSHUN7CNGYTTOXFKHCLYOWHX",
+      "updated_at": "2026-06-18T17:31:13.827Z",
+      "created_at": "2026-06-18T17:31:16.962Z",
+      "version": 1781803873827,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "category_data": {
+        "name": "Gift Cards",
+        "category_type": "REGULAR_CATEGORY",
+        "parent_category": {
+          "ordinal": -2251799629135872
+        },
+        "is_top_level": true,
+        "channels": [
+          "CH_daXR9mVz53qpEXlz4sHxRMDFQPzHIrPEqhSuQQDl9945o"
+        ],
+        "online_visibility": true
+      }
+    },
+    {
+      "type": "MODIFIER_LIST",
+      "id": "RICTXJTVICXKHMAIE5VTALSK",
+      "updated_at": "2026-06-18T17:31:13.827Z",
+      "created_at": "2026-06-18T17:31:16.962Z",
+      "version": 1781803873827,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "modifier_list_data": {
+        "name": "Toppings",
+        "ordinal": 1,
+        "selection_type": "MULTIPLE",
+        "modifiers": [
+          {
+            "type": "MODIFIER",
+            "id": "LFQ4HO2T7HAUCXWWHFOVH5SL",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Whipped Cream",
+              "price_money": {
+                "amount": 125,
+                "currency": "USD"
+              },
+              "ordinal": 0,
+              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "EB6W34ZCNVEJPI3Z24SIFL5X",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Banana Slices",
+              "price_money": {
+                "amount": 125,
+                "currency": "USD"
+              },
+              "ordinal": 1,
+              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "ZQOK4B5W2JSYZ5EV2MHIVYEC",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Strawberry Slices",
+              "price_money": {
+                "amount": 125,
+                "currency": "USD"
+              },
+              "ordinal": 2,
+              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "HG5Y7MH67ILBA5PBZYWLQZP3",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Pecan Toppings",
+              "price_money": {
+                "amount": 125,
+                "currency": "USD"
+              },
+              "ordinal": 3,
+              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "AQ3MWL5Q7JMGCNYVCL5B3RWE",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Chocolate Chips",
+              "price_money": {
+                "amount": 125,
+                "currency": "USD"
+              },
+              "ordinal": 4,
+              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "APYTMDSAQDSFD3OMCV5I2ZJY",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Cucumber Slices",
+              "price_money": {
+                "amount": 125,
+                "currency": "USD"
+              },
+              "ordinal": 5,
+              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "QKXZVM3OKB65QJDOTL3HHY3R",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Cinnamon",
+              "price_money": {
+                "amount": 125,
+                "currency": "USD"
+              },
+              "ordinal": 6,
+              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "6V4GCK646KV4USAHBYIRYPEB",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Oatmeal",
+              "price_money": {
+                "amount": 125,
+                "currency": "USD"
+              },
+              "ordinal": 7,
+              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "P7NUMUZWUNRZW4ZFJWD4JEGO",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Boba",
+              "price_money": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "ordinal": 8,
+              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "UO4WJCRQLSPA3NI2SYS5RFWX",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Granola",
+              "price_money": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "ordinal": 9,
+              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "CYOVBGRUJI5CHVBSLJJ5Z5EV",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Sprinkles",
+              "price_money": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "ordinal": 10,
+              "modifier_list_id": "RICTXJTVICXKHMAIE5VTALSK"
+            }
+          }
+        ],
+        "modifier_type": "LIST"
+      }
+    },
+    {
+      "type": "MODIFIER_LIST",
+      "id": "P44SIBHRUERATDR2MP63YC75",
+      "updated_at": "2026-06-18T17:31:13.827Z",
+      "created_at": "2026-06-18T17:31:16.962Z",
+      "version": 1781803873827,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "modifier_list_data": {
+        "name": "Boosters & Add-Ins",
+        "ordinal": 2,
+        "selection_type": "MULTIPLE",
+        "modifiers": [
+          {
+            "type": "MODIFIER",
+            "id": "6PQCL7OJWBSM7Z6KHVWS5P2H",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Extra Protein",
+              "price_money": {
+                "amount": 200,
+                "currency": "USD"
+              },
+              "ordinal": 0,
+              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "WNKF4RBBAGT3TPCZI3NM5TEE",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Probiotic",
+              "price_money": {
+                "amount": 200,
+                "currency": "USD"
+              },
+              "ordinal": 1,
+              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "RVKTLQESSMH5OCQS6UT5SOR6",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "BCAA",
+              "price_money": {
+                "amount": 300,
+                "currency": "USD"
+              },
+              "ordinal": 2,
+              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "GGG556XBW5GWSMUBAB4OCOKT",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Creatine",
+              "price_money": {
+                "amount": 175,
+                "currency": "USD"
+              },
+              "ordinal": 3,
+              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "FZ2KJUHRIC5SFQFQPFDAQ7WY",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Collagen",
+              "price_money": {
+                "amount": 325,
+                "currency": "USD"
+              },
+              "ordinal": 4,
+              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "333TVP76ZBLTI3OHBBTEHZAR",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Apple Fiber",
+              "price_money": {
+                "amount": 225,
+                "currency": "USD"
+              },
+              "ordinal": 5,
+              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "IMNJTU47Y3GGYC7ECWDBTS5A",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Tropical Fiber",
+              "price_money": {
+                "amount": 225,
+                "currency": "USD"
+              },
+              "ordinal": 6,
+              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "HIH2RRRVBGEZIWCYL2CYSVPE",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Greens",
+              "price_money": {
+                "amount": 400,
+                "currency": "USD"
+              },
+              "ordinal": 7,
+              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "FNYPBSGULXXSWAONE5VCWYXS",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "CR7",
+              "price_money": {
+                "amount": 250,
+                "currency": "USD"
+              },
+              "ordinal": 8,
+              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "QSVFJDVJFH2C226GSR73EUBM",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "H3O",
+              "price_money": {
+                "amount": 250,
+                "currency": "USD"
+              },
+              "ordinal": 9,
+              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "MR7HIBNFDNLZHBBEPWEW7GOG",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Prolessa Fat Reducer",
+              "price_money": {
+                "amount": 600,
+                "currency": "USD"
+              },
+              "ordinal": 10,
+              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "U3DFMRF2AQBFGAAN64JKPKAG",
+            "updated_at": "2026-06-18T17:31:13.827Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781803873827,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Total Control",
+              "price_money": {
+                "amount": 350,
+                "currency": "USD"
+              },
+              "ordinal": 11,
+              "modifier_list_id": "P44SIBHRUERATDR2MP63YC75"
+            }
+          }
+        ],
+        "modifier_type": "LIST"
+      }
+    },
+    {
+      "type": "MODIFIER_LIST",
+      "id": "L3U22VN6QKA44OGT2F4QBLEF",
+      "updated_at": "2026-06-18T21:16:40.333Z",
+      "created_at": "2026-06-18T17:31:16.962Z",
+      "version": 1781817400333,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "modifier_list_data": {
+        "name": "Prep",
+        "ordinal": 3,
+        "selection_type": "MULTIPLE",
+        "modifiers": [
+          {
+            "type": "MODIFIER",
+            "id": "DIQFSSMMEP5UK52TLX3DWJDW",
+            "updated_at": "2026-06-18T21:16:40.333Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781817400333,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "No Ice",
+              "price_money": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "ordinal": 0,
+              "modifier_list_id": "L3U22VN6QKA44OGT2F4QBLEF"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "3JUWO47H2QEFW2AVZZKAJYKR",
+            "updated_at": "2026-06-18T21:16:40.333Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781817400333,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Extra Aloe",
+              "price_money": {
+                "amount": 150,
+                "currency": "USD"
+              },
+              "ordinal": 1,
+              "modifier_list_id": "L3U22VN6QKA44OGT2F4QBLEF"
+            }
+          },
+          {
+            "type": "MODIFIER",
+            "id": "J3UMLOBGTG3S5H6LDUAHLH7Y",
+            "updated_at": "2026-06-18T21:16:40.333Z",
+            "created_at": "2026-06-18T17:31:16.962Z",
+            "version": 1781817400333,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "modifier_data": {
+              "name": "Rebuild Strength 1 scoop",
+              "price_money": {
+                "amount": 325,
+                "currency": "USD"
+              },
+              "ordinal": 2,
+              "modifier_list_id": "L3U22VN6QKA44OGT2F4QBLEF"
+            }
+          }
+        ],
+        "modifier_type": "LIST"
       }
     }
   ]

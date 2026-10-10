@@ -1,0 +1,5 @@
+data/
+menu/server.js
+menu/.env
+menu/.env.*
+menu/

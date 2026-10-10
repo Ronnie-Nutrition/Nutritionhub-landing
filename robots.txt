@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nutritionhub101.com/sitemap.xml
