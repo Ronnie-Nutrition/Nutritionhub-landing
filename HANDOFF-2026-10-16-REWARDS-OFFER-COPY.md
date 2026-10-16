@@ -6,6 +6,8 @@ Published the approved headline **“Get $2 off your next visit”** to https://
 
 Previously the first screen said “Enter your phone to check in” without mentioning the $2 offer. The optional section was titled “Want occasional drink offers by text? Optional.”
 
+The original brand heading was “Nutrition Hub” with “R E W A R D S” below it. The original first-screen button was “Check In & See Points”; the optional SMS button was “Get text offers.” Both button labels remain unchanged.
+
 Only static wording in `/var/www/nutritionhub-home/rewards/index.html` changed. All script blocks, stylesheet blocks, form-control attributes, links, consent disclosure, checkbox default, disabled offer button, verification requirements, and backend behavior remain byte-for-byte unchanged. No check-in, consent submission, manual SMS, payment, provider retry, settings change, or service reload was performed.
 
 ## Source and deployment
@@ -44,5 +46,9 @@ Local receipts, before/served HTML, validation scripts and mobile screenshots ar
 At **1:37:47 p.m. Central**, the existing read-only lookup succeeded (HTTP 200) for the owner's number ending **6922**, found the Rewards contact, and confirmed the returned number matched exactly. Only masked status was retained.
 
 At that point the queue had six total entries and one fresh post-cutoff entry; the fresh consent status count was `opted_in: 1`. The encrypted queue and protected identity mapping did not permit a safe exact join to the owner's number using available read-only outputs. Therefore this does **not** confirm that the owner's scan completed SMS consent, entered the eligible queue, or received a message. A rewards check-in alone is not SMS opt-in. No credentials were read, identities exported, or messages sent.
+
+Eligibility clarification: this is a fresh queued candidate plus an aggregate fresh opt-in, not proof that the complete sender gate has passed. The normal 2 p.m. Central run is its next scheduled opportunity. That run still validates receipt linkage and freshness, exact customer identity, current consent and GHL suppression status, U.S. destination, prior-attempt exclusion, daily/monthly limits, signed authorization/fee basis, and the kill switch. Passing the scheduled time does not itself prove a provider attempt or delivery.
+
+Source review explains the read-only identity limit: the outbox encrypts the GHL contact ID with AES-256-GCM, while the consent ledger uses a separate canonical customer UUID. The identity ledger bridges them through an HMAC of the GHL contact ID. The public Rewards lookup confirms the contact/phone match but does not expose that consent linkage. The existing aggregate evidence can be read without keys; an exact join would require a permitted authenticated read interface or protected identity/encryption keys. None were loaded or bypassed for this check.
 
 Next session: if requested, verify the owner's explicit consent/normal scheduled delivery through an authorized existing read-only interface. Do not infer the fresh queue entry's identity from timing alone, decrypt it by loading production secrets, manually run the sender, create synthetic consent, or retry an unknown provider attempt. No further page work is pending.
