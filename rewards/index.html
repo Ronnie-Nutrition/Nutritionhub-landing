@@ -65,6 +65,11 @@
   .err { color:#c0392b; font-size:13px; margin-top:8px; text-align:center; min-height:16px; }
   /* Wallet buttons */
   .walletrow { margin:20px 0 4px; }
+  .offer { margin:18px 0 4px; padding:14px; border:1px solid #cde2d2; border-radius:12px; background:#f6faf7; }
+  .offer summary { cursor:pointer; color:#0f5c29; font-weight:700; }
+  .offer .consent { margin:12px 0 4px; }
+  .offer .btn { margin-top:10px; }
+  .offer-status { min-height:18px; font-size:13px; margin-top:6px; }
   .walletrow .wtitle { font-size:12.5px; color:#888; text-align:center; margin-bottom:10px; font-weight:600; }
   .wbtn { display:flex; align-items:center; justify-content:center; gap:9px; width:100%;
     padding:13px 16px; border-radius:12px; font-size:15.5px; font-weight:600; text-decoration:none;
@@ -75,6 +80,7 @@
   .wbtn-google { background:#fff; color:#3c4043; border-color:#dadce0; }
   .wbtn-google:active { background:#f7f8f8; }
 </style>
+  <script defer src="/analytics-consent.js"></script>
 <script defer src="/assets/portfolio-measurement.js"></script>
 </head>
 <body>
@@ -92,6 +98,24 @@
       <button class="btn" id="goBtn">Check In &amp; See Points</button>
       <div class="err" id="phoneErr"></div>
       <p class="muted center" style="margin-top:14px">1 point every visit &bull; 10 points = a FREE drink 🥤</p>
+    </div>
+
+    <!-- STEP 1.5: prove possession of the phone number -->
+    <div id="s-verify" class="hide">
+      <div class="center hi">Check your texts</div>
+      <p class="muted center" id="verifyHelp" style="margin:7px 0 18px">Enter the six-digit code we sent you.</p>
+      <label for="verifyCode">Verification code</label>
+      <input type="tel" id="verifyCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="123456">
+      <button class="btn" id="verifyBtn">Verify &amp; Check In</button>
+      <button class="btn secondary" id="resendBtn">Send a New Code</button>
+      <div class="err" id="verifyErr"></div>
+      <div class="staffbox">
+        <label for="staffVerifyPin">Team member help: enter staff PIN</label>
+        <input type="tel" id="staffVerifyPin" inputmode="numeric" maxlength="6" placeholder="••••">
+        <button class="btn" id="staffVerifyBtn" style="margin-top:12px">Staff Check-In</button>
+        <div class="err" id="staffVerifyErr"></div>
+      </div>
+      <button class="btn secondary" id="verifyBackBtn">Use a Different Number</button>
     </div>
 
     <!-- STEP 2: balance -->
@@ -117,6 +141,17 @@
         </a>
       </div>
 
+      <details id="offerBox" class="offer hide">
+        <summary>Want occasional drink offers by text? Optional</summary>
+        <div class="consent">
+          <input type="checkbox" id="offerConsent">
+          <label for="offerConsent">By checking this box, I agree to receive recurring automated promotional text messages from Nutrition Hub at the mobile number provided, including offers inviting me to visit Nutrition Hub again. Consent is not a condition of purchase. Message frequency varies (approximately 2–6 messages per month). Message and data rates may apply. Reply STOP to cancel and HELP for help. View our Privacy Policy and Terms &amp; Conditions.</label>
+        </div>
+        <p class="muted"><a href="https://nutritionhub101.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://nutritionhub101.com/terms/" target="_blank" rel="noopener">Terms &amp; Conditions</a></p>
+        <button class="btn" id="offerSubmit" type="button" disabled>Get text offers</button>
+        <div id="offerStatus" class="offer-status" role="status" aria-live="polite"></div>
+      </details>
+
       <div id="rewardBlock" class="hide">
         <div class="reward">
           <div class="big">🎉 FREE DRINK READY!</div>
@@ -137,17 +172,13 @@
     <div id="s-profile" class="hide">
       <div class="center hi" id="profHi">One quick thing! ✨</div>
       <div id="profToast"></div>
-      <p class="muted center" style="margin:6px 0 18px">Finish setting up your rewards account so we can save your perks &amp; send you member-only deals.</p>
+      <p class="muted center" style="margin:6px 0 18px">Add your name and email to your rewards account. Text offers are optional.</p>
       <label for="pfname">First Name</label>
       <input type="text" id="pfname" autocomplete="given-name" placeholder="Your first name">
       <label for="plname" style="margin-top:12px;display:block">Last Name</label>
       <input type="text" id="plname" autocomplete="family-name" placeholder="Your last name">
       <label for="pemail" style="margin-top:12px;display:block">Email</label>
       <input type="text" id="pemail" inputmode="email" autocomplete="email" placeholder="you@example.com">
-      <div class="consent">
-        <input type="checkbox" id="pconsent">
-        <label for="pconsent">I agree to receive recurring automated marketing &amp; informational texts from Nutrition Hub (rewards, reminders, promos). Consent is not a condition of purchase. Msg freq varies. Msg &amp; data rates may apply. Reply STOP to cancel, HELP for help. See our <a href="https://nutritionhub101.com/privacy-policy" target="_blank">Privacy Policy</a> &amp; <a href="https://nutritionhub101.com/terms" target="_blank">Terms</a>.</label>
-      </div>
       <button class="btn" id="profBtn">Save &amp; See My Points</button>
       <button class="btn secondary" id="profSkipBtn">Skip for now</button>
       <div class="err" id="profErr"></div>
@@ -163,10 +194,6 @@
       <input type="text" id="lname" autocomplete="family-name" placeholder="Your last name">
       <label for="jemail" style="margin-top:12px;display:block">Email</label>
       <input type="text" id="jemail" inputmode="email" autocomplete="email" placeholder="you@example.com">
-      <div class="consent">
-        <input type="checkbox" id="consent">
-        <label for="consent">I agree to receive recurring automated marketing &amp; informational texts from Nutrition Hub (rewards, reminders, promos). Consent is not a condition of purchase. Msg freq varies. Msg &amp; data rates may apply. Reply STOP to cancel, HELP for help. See our <a href="https://nutritionhub101.com/privacy-policy" target="_blank">Privacy Policy</a> &amp; <a href="https://nutritionhub101.com/terms" target="_blank">Terms</a>.</label>
-      </div>
       <button class="btn" id="joinBtn">Join &amp; Earn My First Point</button>
       <div class="err" id="joinErr"></div>
     </div>
@@ -177,14 +204,23 @@
 <script>
 const API = 'https://order.nutritionhub101.com';
 const THRESHOLD = 10;
-let state = { phone:'', contactId:null, balance:null };
+let state = { phone:'', contactId:null, sessionToken:null, balance:null, verifiedDevice:false, offerCaptured:false };
 
 const $ = id => document.getElementById(id);
-function show(step){ ['s-phone','s-balance','s-join','s-profile'].forEach(s => $(s).classList.toggle('hide', s!==step)); }
+function show(step){ ['s-phone','s-verify','s-balance','s-join','s-profile'].forEach(s => $(s).classList.toggle('hide', s!==step)); }
 function digits(s){ return (s||'').replace(/\D/g,''); }
 
 $('goBtn').addEventListener('click', checkIn);
 $('phone').addEventListener('keydown', e => { if(e.key==='Enter') checkIn(); });
+$('verifyBtn').addEventListener('click', verifyCodeAndCheckIn);
+$('verifyCode').addEventListener('keydown', e => { if(e.key==='Enter') verifyCodeAndCheckIn(); });
+$('resendBtn').addEventListener('click', sendVerificationCode);
+$('staffVerifyBtn').addEventListener('click', staffCheckIn);
+$('verifyBackBtn').addEventListener('click', () => {
+  $('verifyCode').value = ''; $('staffVerifyPin').value = '';
+  $('verifyErr').textContent = ''; $('staffVerifyErr').textContent = '';
+  show('s-phone');
+});
 
 /**
  * Best-effort location. Resolves to null rather than rejecting: a denied
@@ -217,24 +253,87 @@ async function checkIn(){
   }
   const btn = $('goBtn'); btn.disabled = true; btn.textContent = 'Checking...';
   try {
-    // Scan -> location -> point, with nobody behind the counter tapping
-    // anything. A denied, slow or vague fix sends no coordinates at all and the
-    // server falls back to the staff path rather than refusing.
-    const pos = await getPosition(8000);
-    const r = await fetch(API+'/api/points-checkin', {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(Object.assign({ phone: p }, pos || {}))
+    const r = await fetch(API+'/api/verification/status', {
+      method:'POST', credentials:'include', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ phone: p })
     });
     const d = await r.json();
-    if (d.found === false){ show('s-join'); }
-    else if (d.needsProfile){ showProfileStep(d); }
-    else { renderBalance(d); show('s-balance'); }
+    if (d.verificationRequired && !d.trusted) await sendVerificationCode();
+    else { state.verifiedDevice = d.trusted === true; await performPointsCheckin(); }
   } catch(e){ $('phoneErr').textContent = 'Something went wrong. Please try again.'; }
   finally { btn.disabled = false; btn.textContent = 'Check In & See Points'; }
 }
 
+async function sendVerificationCode(){
+  $('verifyErr').textContent = '';
+  const btn = $('resendBtn'); btn.disabled = true; btn.textContent = 'Sending...';
+  try {
+    const r = await fetch(API+'/api/verification/start', {
+      method:'POST', credentials:'include', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ phone: state.phone })
+    });
+    const d = await r.json();
+    if (!r.ok || !d.sent) throw new Error(d.error || 'We could not send a code.');
+    $('verifyHelp').textContent = 'Enter the six-digit code sent to the phone ending in ' + digits(state.phone).slice(-4) + '.';
+    $('verifyCode').value = ''; show('s-verify'); $('verifyCode').focus();
+  } catch(e){
+    show('s-verify');
+    $('verifyErr').textContent = e.message || 'We could not send a code. Ask a team member for help.';
+  } finally { btn.disabled = false; btn.textContent = 'Send a New Code'; }
+}
+
+async function verifyCodeAndCheckIn(){
+  const code = digits($('verifyCode').value);
+  $('verifyErr').textContent = '';
+  if (code.length !== 6){ $('verifyErr').textContent = 'Enter the six-digit code.'; return; }
+  const btn = $('verifyBtn'); btn.disabled = true; btn.textContent = 'Verifying...';
+  try {
+    const r = await fetch(API+'/api/verification/check', {
+      method:'POST', credentials:'include', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ phone: state.phone, code })
+    });
+    const d = await r.json();
+    if (!r.ok || !d.verified) throw new Error(d.error || 'That code is invalid or expired.');
+    state.verifiedDevice = true;
+    await performPointsCheckin();
+  } catch(e){ $('verifyErr').textContent = e.message || 'That code is invalid or expired.'; }
+  finally { btn.disabled = false; btn.textContent = 'Verify & Check In'; }
+}
+
+async function staffCheckIn(){
+  const pin = $('staffVerifyPin').value.trim();
+  $('staffVerifyErr').textContent = '';
+  if (!pin){ $('staffVerifyErr').textContent = 'Enter the staff PIN.'; return; }
+  const btn = $('staffVerifyBtn'); btn.disabled = true; btn.textContent = 'Checking In...';
+  try { state.verifiedDevice = false; await performPointsCheckin(pin); }
+  catch(e){ $('staffVerifyErr').textContent = e.message || 'Could not check in. Check the PIN.'; }
+  finally { btn.disabled = false; btn.textContent = 'Staff Check-In'; }
+}
+
+async function performPointsCheckin(pin){
+  // A denied, slow or vague location fix sends no coordinates. The existing
+  // staff-PIN route remains the fallback for customers who cannot receive SMS.
+  const pos = await getPosition(8000);
+  const payload = Object.assign({ phone: state.phone }, pos || {});
+  if (pin) payload.pin = pin;
+  const r = await fetch(API+'/api/points-checkin', {
+    method:'POST', credentials:'include', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify(payload)
+  });
+  const d = await r.json();
+  if (!r.ok) {
+    if (d.verificationRequired && !pin){ await sendVerificationCode(); return; }
+    throw new Error(d.error || 'Could not check in.');
+  }
+  if (d.sessionToken) state.sessionToken = d.sessionToken;
+  if (d.found === false){ show('s-join'); }
+  else if (d.needsProfile){ showProfileStep(d); }
+  else { renderBalance(d); show('s-balance'); }
+}
+
 function renderBalance(d){
   state.contactId = d.contactId;
+  if (d.sessionToken) state.sessionToken = d.sessionToken;
   $('hiName').textContent = d.firstName ? ('Hi ' + d.firstName + '!') : 'Your Rewards';
   const pts = d.points || 0;
   $('ptsNum').textContent = pts;
@@ -259,12 +358,22 @@ function renderBalance(d){
     $('rewardBlock').classList.add('hide');
   }
 
+  // Check-in has completed independently; this optional offer cannot block points.
+  const offer = $('offerBox');
+  offer.classList.toggle('hide', !(state.verifiedDevice && state.sessionToken && !state.offerCaptured));
+  $('offerConsent').checked = false;
+  $('offerSubmit').disabled = true;
+  $('offerStatus').textContent = '';
+  offer.open = false;
+
   // Wallet passes — Apple is always available; Google reveals only if the issuer is configured.
   if (state.contactId){
-    const cid = encodeURIComponent(state.contactId);
-    $('appleWalletBtn').href = API + '/api/wallet/apple?contactId=' + cid;
+    const walletAuth = state.sessionToken
+      ? ('session=' + encodeURIComponent(state.sessionToken))
+      : ('contactId=' + encodeURIComponent(state.contactId));
+    $('appleWalletBtn').href = API + '/api/wallet/apple?' + walletAuth;
     const g = $('googleWalletBtn'); g.classList.add('hide');
-    fetch(API + '/api/wallet/google?contactId=' + cid)
+    fetch(API + '/api/wallet/google?' + walletAuth)
       .then(r => r.ok ? r.json() : null)
       .then(j => { if (j && j.url){ g.href = j.url; g.classList.remove('hide'); } })
       .catch(()=>{});
@@ -280,7 +389,7 @@ function showProfileStep(d){
   $('profToast').innerHTML = d.awarded ? '<div class="toast good">✓ +1 point for checking in!</div>' : '';
   $('pfname').value = d.firstName || '';
   $('plname').value = d.lastName || '';
-  $('pemail').value = ''; $('pconsent').checked = false; $('profErr').textContent = '';
+  $('pemail').value = ''; $('profErr').textContent = '';
   show('s-profile');
 }
 
@@ -292,12 +401,11 @@ $('profBtn').addEventListener('click', async () => {
   if (!fname){ $('profErr').textContent = 'Please enter your first name.'; return; }
   if (!lname){ $('profErr').textContent = 'Please enter your last name.'; return; }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ $('profErr').textContent = 'Please enter a valid email address.'; return; }
-  if (!$('pconsent').checked){ $('profErr').textContent = 'Please check the box so we can save your info & rewards texts.'; return; }
   const btn = $('profBtn'); btn.disabled = true; btn.textContent = 'Saving...';
   try {
     const r = await fetch(API+'/api/complete-profile', {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ contactId: state.contactId, first_name: fname, last_name: lname, email: email, sms_consent: true })
+      method:'POST', headers:{'Content-Type':'application/json', 'X-Rewards-Session': state.sessionToken || ''},
+      body: JSON.stringify({ contactId: state.contactId, first_name: fname, last_name: lname, email: email, sms_consent: false })
     });
     const d = await r.json();
     if (d.success){
@@ -319,7 +427,7 @@ $('redeemBtn').addEventListener('click', async () => {
   const btn = $('redeemBtn'); btn.disabled = true; btn.textContent = 'Confirming...';
   try {
     const r = await fetch(API+'/api/redeem', {
-      method:'POST', headers:{'Content-Type':'application/json'},
+      method:'POST', headers:{'Content-Type':'application/json', 'X-Rewards-Session': state.sessionToken || ''},
       body: JSON.stringify({ contactId: state.contactId, pin })
     });
     const d = await r.json();
@@ -344,12 +452,11 @@ $('joinBtn').addEventListener('click', async () => {
   if (!fname){ $('joinErr').textContent = 'Please enter your first name.'; return; }
   if (!lname){ $('joinErr').textContent = 'Please enter your last name.'; return; }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ $('joinErr').textContent = 'Please enter a valid email address.'; return; }
-  if (!$('consent').checked){ $('joinErr').textContent = 'Please check the box to join our texts & rewards.'; return; }
   const btn = $('joinBtn'); btn.disabled = true; btn.textContent = 'Signing you up...';
   try {
     const r = await fetch(API+'/api/sms-optin', {
       method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ first_name: fname, last_name: lname, email: email, phone: state.phone, sms_consent: true, source:'nutritionhub101.com/rewards' })
+      body: JSON.stringify({ first_name: fname, last_name: lname, email: email, phone: state.phone, sms_consent: false, source:'nutritionhub101.com/rewards' })
     });
     const d = await r.json();
     if (d.success){
@@ -360,14 +467,41 @@ $('joinBtn').addEventListener('click', async () => {
         });
         fbq('track', 'Lead', { content_name: 'rewards_join' });
       }
-      renderBalance({ found:true, contactId:d.contactId, firstName:fname, points:1, awarded:true, hasReward:false, toNext:THRESHOLD-1 });
+      renderBalance({ found:true, contactId:d.contactId, sessionToken:d.sessionToken, firstName:fname, points:1, awarded:true, hasReward:false, toNext:THRESHOLD-1 });
       show('s-balance');
     } else { $('joinErr').textContent = d.error || 'Could not sign you up. Try again.'; btn.disabled=false; btn.textContent='Join & Earn My First Point'; }
   } catch(e){ $('joinErr').textContent = 'Something went wrong. Try again.'; btn.disabled=false; btn.textContent='Join & Earn My First Point'; }
 });
 
+$('offerConsent').addEventListener('change', () => {
+  $('offerSubmit').disabled = !$('offerConsent').checked || !state.sessionToken || !state.verifiedDevice || state.offerCaptured;
+});
+$('offerSubmit').addEventListener('click', async () => {
+  if (!$('offerConsent').checked || !state.sessionToken || !state.verifiedDevice || state.offerCaptured) return;
+  const btn = $('offerSubmit'); btn.disabled = true;
+  $('offerStatus').textContent = 'Recording your choice...';
+  try {
+    const response = await fetch(API+'/api/consent/winback', {
+      method:'POST', credentials:'include',
+      headers:{'Content-Type':'application/json', 'X-Rewards-Session':state.sessionToken},
+      body:JSON.stringify({affirmative_opt_in:true, disclosure_version:'nh-sms-winback-v1',
+        occurred_at:new Date().toISOString()})
+    });
+    const result = await response.json();
+    if (response.status !== 201 || result.ok !== true || result.receipt?.status !== 'captured') {
+      throw new Error('We could not record your choice. Please try again later.');
+    }
+    state.offerCaptured = true;
+    $('offerConsent').disabled = true;
+    $('offerStatus').textContent = 'Thanks! Your optional text-offer signup was recorded.';
+  } catch (e) {
+    $('offerStatus').textContent = e.message || 'We could not record your choice.';
+    btn.disabled = false;
+  }
+});
+
 $('doneBtn').addEventListener('click', () => {
-  $('phone').value=''; $('pin') && ($('pin').value=''); state={phone:'',contactId:null};
+  $('phone').value=''; $('pin') && ($('pin').value=''); state={phone:'',contactId:null,sessionToken:null,balance:null,verifiedDevice:false,offerCaptured:false};
   $('rewardBlock').classList.add('hide'); show('s-phone');
 });
 </script>
