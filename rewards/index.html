@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nutrition Hub Rewards — Check In</title>
+<title>Nutrition Hub — Rewards &amp; Text Offers</title>
 <meta name="robots" content="noindex">
 
 <style>
@@ -83,15 +83,27 @@
 
     <!-- STEP 1: phone -->
     <div id="s-phone">
-      <h2 class="hi center" style="font-size:26px;line-height:1.2;margin-bottom:12px">Get $2 off your next visit</h2>
-      <p class="center" style="font-size:14px;line-height:1.5;margin-bottom:10px">Check in, then choose optional text offers for $2 off one drink on your next visit.</p>
-      <p class="muted center" style="color:#666;margin-bottom:20px">Eligible new U.S. mobile signups. One use. Show the offer text within 7 days of receiving it.</p>
-      <label for="phone">Enter your phone to check in</label>
+      <h2 class="hi center" style="font-size:26px;line-height:1.2;margin-bottom:12px">Rewards &amp; text offers</h2>
+      <p class="center" style="font-size:14px;line-height:1.5;margin-bottom:20px">New here or coming back? Use your phone to check in or choose text offers below.</p>
+      <label for="phone">Your mobile phone number</label>
       <input type="tel" id="phone" inputmode="tel" autocomplete="tel" placeholder="(281) 555-1234">
       <button class="btn" id="goBtn">Check In &amp; See Points</button>
       <div class="err" id="phoneErr"></div>
       <p class="muted center" style="margin-top:14px">1 point every visit &bull; 10 points = a FREE drink 🥤</p>
     </div>
+
+      <section id="offerBox" class="offer" aria-labelledby="offerTitle">
+        <h2 id="offerTitle" style="font-size:17px;color:#0f5c29">Optional text offers</h2>
+        <p class="muted" style="color:#555;margin-top:12px">Eligible new U.S. mobile signups can receive $2 off one drink on their next visit. One use; show the offer text within 7 days of receiving it.</p>
+        <div class="consent">
+          <input type="checkbox" id="offerConsent">
+          <label for="offerConsent">By checking this box, I agree to receive recurring automated promotional text messages from Nutrition Hub at the mobile number provided, including offers inviting me to visit Nutrition Hub again. Consent is not a condition of purchase. Message frequency varies (approximately 2–6 messages per month). Message and data rates may apply. Reply STOP to cancel and HELP for help. View our Privacy Policy and Terms &amp; Conditions.</label>
+        </div>
+        <p class="muted"><a href="https://nutritionhub101.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://nutritionhub101.com/terms/" target="_blank" rel="noopener">Terms &amp; Conditions</a></p>
+        <button class="btn" id="offerSubmit" type="button" disabled>Get text offers</button>
+        <div id="offerStatus" class="offer-status" role="status" aria-live="polite"></div>
+        <p class="muted" style="color:#555;margin-top:12px">If you previously replied STOP, reply START to the same Nutrition Hub number. Already signed up but missing texts? Ask our team; signing up again does not guarantee another coupon.</p>
+      </section>
 
     <!-- STEP 1.5: prove possession of the phone number -->
     <div id="s-verify" class="hide">
@@ -102,7 +114,7 @@
       <button class="btn" id="verifyBtn">Verify &amp; Check In</button>
       <button class="btn secondary" id="resendBtn">Send a New Code</button>
       <div class="err" id="verifyErr"></div>
-      <div class="staffbox">
+      <div class="staffbox" id="staffVerifyBox">
         <label for="staffVerifyPin">Team member help: enter staff PIN</label>
         <input type="tel" id="staffVerifyPin" inputmode="numeric" maxlength="6" placeholder="••••">
         <button class="btn" id="staffVerifyBtn" style="margin-top:12px">Staff Check-In</button>
@@ -134,17 +146,7 @@
         </a>
       </div>
 
-      <details id="offerBox" class="offer hide">
-        <summary>Get $2 off your next visit &middot; Optional text offers</summary>
-        <p class="muted" style="color:#555;margin-top:12px">Sign up below for a $2-off text for one drink on your next visit. Show the text within 7 days of receiving it. One use; eligible new U.S. mobile signups.</p>
-        <div class="consent">
-          <input type="checkbox" id="offerConsent">
-          <label for="offerConsent">By checking this box, I agree to receive recurring automated promotional text messages from Nutrition Hub at the mobile number provided, including offers inviting me to visit Nutrition Hub again. Consent is not a condition of purchase. Message frequency varies (approximately 2–6 messages per month). Message and data rates may apply. Reply STOP to cancel and HELP for help. View our Privacy Policy and Terms &amp; Conditions.</label>
-        </div>
-        <p class="muted"><a href="https://nutritionhub101.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://nutritionhub101.com/terms/" target="_blank" rel="noopener">Terms &amp; Conditions</a></p>
-        <button class="btn" id="offerSubmit" type="button" disabled>Get text offers</button>
-        <div id="offerStatus" class="offer-status" role="status" aria-live="polite"></div>
-      </details>
+
 
       <div id="rewardBlock" class="hide">
         <div class="reward">
@@ -162,33 +164,20 @@
       <button class="btn secondary" id="doneBtn" style="margin-top:20px">Done</button>
     </div>
 
-    <!-- STEP 2.5: complete profile (existing member missing name/email) -->
-    <div id="s-profile" class="hide">
-      <div class="center hi" id="profHi">One quick thing! ✨</div>
-      <div id="profToast"></div>
-      <p class="muted center" style="margin:6px 0 18px">Add your name and email to your rewards account. Text offers are optional.</p>
-      <label for="pfname">First Name</label>
-      <input type="text" id="pfname" autocomplete="given-name" placeholder="Your first name">
-      <label for="plname" style="margin-top:12px;display:block">Last Name</label>
-      <input type="text" id="plname" autocomplete="family-name" placeholder="Your last name">
-      <label for="pemail" style="margin-top:12px;display:block">Email</label>
-      <input type="text" id="pemail" inputmode="email" autocomplete="email" placeholder="you@example.com">
-      <button class="btn" id="profBtn">Save &amp; See My Points</button>
-      <button class="btn secondary" id="profSkipBtn">Skip for now</button>
-      <div class="err" id="profErr"></div>
+    <div id="s-offers" class="hide">
+      <div class="center hi">Your text-offer choice</div>
+      <p id="offerResult" class="center" role="status" aria-live="polite" style="font-size:14px;line-height:1.5;margin-top:14px"></p>
+      <button class="btn secondary" id="offerDoneBtn">Done</button>
     </div>
 
-    <!-- STEP 3: join (new) -->
+    <!-- New rewards members: optional name, no repeated profile form. -->
     <div id="s-join" class="hide">
       <div class="center hi">Welcome! 🎉</div>
-      <p class="muted center" style="margin:6px 0 18px">Looks like you're new — let's get you signed up. Your first visit counts!</p>
-      <label for="fname">First Name</label>
-      <input type="text" id="fname" autocomplete="given-name" placeholder="Your first name">
-      <label for="lname" style="margin-top:12px;display:block">Last Name</label>
-      <input type="text" id="lname" autocomplete="family-name" placeholder="Your last name">
-      <label for="jemail" style="margin-top:12px;display:block">Email</label>
-      <input type="text" id="jemail" inputmode="email" autocomplete="email" placeholder="you@example.com">
-      <button class="btn" id="joinBtn">Join &amp; Earn My First Point</button>
+      <p class="muted center" style="margin:6px 0 18px">Create your rewards account, then check in for today's visit.</p>
+      <label for="fname">First name (optional)</label>
+      <input type="text" id="fname" autocomplete="given-name" placeholder="Your first name" maxlength="80">
+      <button class="btn" id="joinBtn">Join &amp; Check In</button>
+      <button class="btn secondary" id="joinBackBtn">Back</button>
       <div class="err" id="joinErr"></div>
     </div>
 
@@ -203,130 +192,203 @@
 <script>
 const API = 'https://order.nutritionhub101.com';
 const THRESHOLD = 10;
-let state = { phone:'', contactId:null, sessionToken:null, balance:null, verifiedDevice:false, offerCaptured:false };
-
+const freshState = () => ({phone:'', contactId:null, sessionToken:null, verifiedDevice:false,
+  offerCaptured:false, purpose:'rewards', staffPin:''});
+let state = freshState();
+let busy = false;
 const $ = id => document.getElementById(id);
-$('privacyChoices').addEventListener('click', () => window.NHAnalytics?.showPreferences());
-function show(step){ ['s-phone','s-verify','s-balance','s-join','s-profile'].forEach(s => $(s).classList.toggle('hide', s!==step)); }
 function digits(s){ return (s||'').replace(/\D/g,''); }
-
+function syncOfferControls(){
+  $('goBtn').disabled = busy;
+  $('offerConsent').disabled = state.offerCaptured || busy;
+  $('offerSubmit').disabled = busy || !$('offerConsent').checked || state.offerCaptured;
+}
+function show(step){
+  ['s-phone','s-verify','s-balance','s-join','s-offers'].forEach(s => $(s).classList.toggle('hide', s!==step));
+  // Reuse one optional choice: upfront, or below the customer's completed check-in.
+  if (step === 's-balance') $('doneBtn').before($('offerBox'));
+  else $('s-phone').after($('offerBox'));
+  $('offerBox').classList.toggle('hide', !['s-phone','s-balance'].includes(step));
+  syncOfferControls();
+}
+function clearStaffPin(){
+  state.staffPin = '';
+  $('staffVerifyPin').value = '';
+}
+function resetVisit(){
+  clearStaffPin();
+  state = freshState();
+  $('phone').value = ''; $('verifyCode').value = ''; $('fname').value = '';
+  if ($('pin')) $('pin').value = '';
+  $('offerConsent').checked = false;
+  ['phoneErr','verifyErr','staffVerifyErr','joinErr','offerStatus','offerResult'].forEach(id => $(id).textContent = '');
+  $('rewardBlock').classList.add('hide');
+  show('s-phone');
+}
+$('privacyChoices').addEventListener('click', () => window.NHAnalytics?.showPreferences());
 $('goBtn').addEventListener('click', checkIn);
 $('phone').addEventListener('keydown', e => { if(e.key==='Enter') checkIn(); });
+$('offerConsent').addEventListener('change', syncOfferControls);
+$('offerSubmit').addEventListener('click', () => startFlow('offers'));
 $('verifyBtn').addEventListener('click', verifyCodeAndCheckIn);
 $('verifyCode').addEventListener('keydown', e => { if(e.key==='Enter') verifyCodeAndCheckIn(); });
-$('resendBtn').addEventListener('click', sendVerificationCode);
-$('staffVerifyBtn').addEventListener('click', staffCheckIn);
-$('verifyBackBtn').addEventListener('click', () => {
-  $('verifyCode').value = ''; $('staffVerifyPin').value = '';
-  $('verifyErr').textContent = ''; $('staffVerifyErr').textContent = '';
-  show('s-phone');
+$('resendBtn').addEventListener('click', async () => {
+  if (busy) return;
+  busy = true;
+  try { await sendVerificationCode(); }
+  finally { busy = false; syncOfferControls(); }
 });
+$('staffVerifyBtn').addEventListener('click', staffCheckIn);
+for (const id of ['verifyBackBtn','joinBackBtn','doneBtn','offerDoneBtn']) {
+  $(id).addEventListener('click', () => { if (!busy) resetVisit(); });
+}
 
-/**
- * Best-effort location. Resolves to null rather than rejecting: a denied
- * prompt, a slow fix or no GPS at all must NOT strand a customer at the
- * counter -- the server reads "no coordinates" as fall-back-to-staff, never
- * as "they are somewhere else".
- */
+// Only rewards check-in requests location. Coupon-only signup never calls this.
 function getPosition(timeoutMs){
   return new Promise(resolve => {
     if (!navigator.geolocation) return resolve(null);
     let settled = false;
     const finish = v => { if (!settled){ settled = true; resolve(v); } };
-    setTimeout(() => finish(null), timeoutMs);          // hard cap on the wait
+    setTimeout(() => finish(null), timeoutMs);
     navigator.geolocation.getCurrentPosition(
-      p => finish({ lat: p.coords.latitude, lng: p.coords.longitude, accuracy: p.coords.accuracy }),
-      () => finish(null),
-      { enableHighAccuracy: true, timeout: timeoutMs, maximumAge: 60000 }
+      p => finish({lat:p.coords.latitude, lng:p.coords.longitude, accuracy:p.coords.accuracy}),
+      () => finish(null), {enableHighAccuracy:true, timeout:timeoutMs, maximumAge:60000}
     );
   });
 }
-
-async function checkIn(){
-  const p = $('phone').value.trim();
-  $('phoneErr').textContent = '';
-  if (digits(p).length < 10){ $('phoneErr').textContent = 'Please enter a valid 10-digit phone number.'; return; }
-  state.phone = p;
-  const btn = $('goBtn'); btn.disabled = true; btn.textContent = 'Checking...';
+async function checkIn(){ return startFlow('rewards'); }
+async function startFlow(purpose){
+  if (busy || (purpose === 'offers' && (!$('offerConsent').checked || state.offerCaptured))) return;
+  const phone = $('phone').value.trim();
+  $('phoneErr').textContent = ''; $('offerStatus').textContent = '';
+  const numbers = digits(phone);
+  if (!(numbers.length === 10 || (numbers.length === 11 && numbers[0] === '1'))) {
+    $('phoneErr').textContent = 'Please enter a valid U.S. mobile phone number.';
+    show('s-phone'); return;
+  }
+  clearStaffPin();
+  state.phone = phone; state.purpose = purpose;
+  state.sessionToken = null; state.contactId = null; state.verifiedDevice = false;
+  busy = true; syncOfferControls();
   try {
-    const r = await fetch(API+'/api/verification/status', {
+    const response = await fetch(API+'/api/verification/status', {
       method:'POST', credentials:'include', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ phone: p })
+      body:JSON.stringify({phone})
     });
-    const d = await r.json();
-    if (d.verificationRequired && !d.trusted) await sendVerificationCode();
-    else { state.verifiedDevice = d.trusted === true; await performPointsCheckin(); }
-  } catch(e){ $('phoneErr').textContent = 'Something went wrong. Please try again.'; }
-  finally { btn.disabled = false; btn.textContent = 'Check In & See Points'; }
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || 'Could not check this phone. Please try again.');
+    state.verifiedDevice = result.trusted === true;
+    if (!state.verifiedDevice && (purpose === 'offers' || result.verificationRequired)) await sendVerificationCode();
+    else await continueFlow();
+  } catch (error) {
+    show('s-phone'); $('phoneErr').textContent = error.message || 'Something went wrong. Please try again.';
+  } finally { busy = false; syncOfferControls(); }
 }
-
 async function sendVerificationCode(){
   $('verifyErr').textContent = '';
-  const btn = $('resendBtn'); btn.disabled = true; btn.textContent = 'Sending...';
+  $('verifyBtn').textContent = state.purpose === 'offers' ? 'Verify & Continue' : 'Verify & Check In';
+  $('staffVerifyBox').classList.toggle('hide', state.purpose === 'offers');
+  show('s-verify');
+  const button = $('resendBtn'); button.disabled = true; button.textContent = 'Sending...';
   try {
-    const r = await fetch(API+'/api/verification/start', {
+    const response = await fetch(API+'/api/verification/start', {
       method:'POST', credentials:'include', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ phone: state.phone })
+      body:JSON.stringify({phone:state.phone})
     });
-    const d = await r.json();
-    if (!r.ok || !d.sent) throw new Error(d.error || 'We could not send a code.');
+    const result = await response.json();
+    if (!response.ok || !result.sent) throw new Error(result.error || 'We could not send a code.');
     $('verifyHelp').textContent = 'Enter the six-digit code sent to the phone ending in ' + digits(state.phone).slice(-4) + '.';
-    $('verifyCode').value = ''; show('s-verify'); $('verifyCode').focus();
-  } catch(e){
-    show('s-verify');
-    $('verifyErr').textContent = e.message || 'We could not send a code. Ask a team member for help.';
-  } finally { btn.disabled = false; btn.textContent = 'Send a New Code'; }
+    $('verifyCode').value = ''; $('verifyCode').focus();
+  } catch (error) { $('verifyErr').textContent = error.message || 'We could not send a code. Ask a team member for help.'; }
+  finally { button.disabled = false; button.textContent = 'Send a New Code'; }
 }
-
 async function verifyCodeAndCheckIn(){
+  if (busy) return;
   const code = digits($('verifyCode').value);
   $('verifyErr').textContent = '';
   if (code.length !== 6){ $('verifyErr').textContent = 'Enter the six-digit code.'; return; }
-  const btn = $('verifyBtn'); btn.disabled = true; btn.textContent = 'Verifying...';
+  busy = true; $('verifyBtn').disabled = true; $('verifyBtn').textContent = 'Verifying...';
   try {
-    const r = await fetch(API+'/api/verification/check', {
+    const response = await fetch(API+'/api/verification/check', {
       method:'POST', credentials:'include', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ phone: state.phone, code })
+      body:JSON.stringify({phone:state.phone, code})
     });
-    const d = await r.json();
-    if (!r.ok || !d.verified) throw new Error(d.error || 'That code is invalid or expired.');
-    state.verifiedDevice = true;
-    await performPointsCheckin();
-  } catch(e){ $('verifyErr').textContent = e.message || 'That code is invalid or expired.'; }
-  finally { btn.disabled = false; btn.textContent = 'Verify & Check In'; }
+    const result = await response.json();
+    if (!response.ok || !result.verified) throw new Error(result.error || 'That code is invalid or expired.');
+    state.verifiedDevice = true; $('verifyCode').value = '';
+    await continueFlow();
+  } catch (error) { $('verifyErr').textContent = error.message || 'Could not continue. Please try again.'; }
+  finally {
+    busy = false; $('verifyBtn').disabled = false;
+    $('verifyBtn').textContent = state.purpose === 'offers' ? 'Verify & Continue' : 'Verify & Check In';
+    syncOfferControls();
+  }
 }
-
+async function continueFlow(){
+  if (state.purpose === 'offers') await completeOfferSignup();
+  else await performPointsCheckin();
+}
 async function staffCheckIn(){
+  if (busy || state.purpose === 'offers') return;
   const pin = $('staffVerifyPin').value.trim();
   $('staffVerifyErr').textContent = '';
   if (!pin){ $('staffVerifyErr').textContent = 'Enter the staff PIN.'; return; }
-  const btn = $('staffVerifyBtn'); btn.disabled = true; btn.textContent = 'Checking In...';
+  clearStaffPin();
+  busy = true; $('staffVerifyBtn').disabled = true;
   try { state.verifiedDevice = false; await performPointsCheckin(pin); }
-  catch(e){ $('staffVerifyErr').textContent = e.message || 'Could not check in. Check the PIN.'; }
-  finally { btn.disabled = false; btn.textContent = 'Staff Check-In'; }
+  catch (error) { clearStaffPin(); $('staffVerifyErr').textContent = error.message || 'Could not check in. Check the PIN.'; }
+  finally { busy = false; $('staffVerifyBtn').disabled = false; syncOfferControls(); }
 }
-
 async function performPointsCheckin(pin){
-  // A denied, slow or vague location fix sends no coordinates. The existing
-  // staff-PIN route remains the fallback for customers who cannot receive SMS.
-  const pos = await getPosition(8000);
-  const payload = Object.assign({ phone: state.phone }, pos || {});
+  const pos = pin ? null : await getPosition(8000);
+  const payload = Object.assign({phone:state.phone}, pos || {});
   if (pin) payload.pin = pin;
-  const r = await fetch(API+'/api/points-checkin', {
+  const response = await fetch(API+'/api/points-checkin', {
     method:'POST', credentials:'include', headers:{'Content-Type':'application/json'},
-    body: JSON.stringify(payload)
+    body:JSON.stringify(payload)
   });
-  const d = await r.json();
-  if (!r.ok) {
-    if (d.verificationRequired && !pin){ await sendVerificationCode(); return; }
-    throw new Error(d.error || 'Could not check in.');
+  const result = await response.json();
+  if (!response.ok) {
+    if (result.verificationRequired && !pin){ await sendVerificationCode(); return; }
+    throw new Error(result.error || 'Could not check in.');
   }
-  if (d.sessionToken) state.sessionToken = d.sessionToken;
-  if (d.found === false){ show('s-join'); }
-  else if (d.needsProfile){ showProfileStep(d); }
-  else { renderBalance(d); show('s-balance'); }
+  if (result.found === false){ state.staffPin = pin || ''; show('s-join'); return; }
+  clearStaffPin();
+  if (!result.contactId || !result.sessionToken) throw new Error('Could not load your rewards. Ask a team member for help.');
+  renderBalance(result); show('s-balance');
 }
-
+async function completeOfferSignup(){
+  if (!state.verifiedDevice || !$('offerConsent').checked || state.offerCaptured) return;
+  clearStaffPin(); show('s-offers'); $('offerResult').textContent = 'Recording your choice...';
+  try {
+    const signup = await fetch(API+'/api/sms-optin', {
+      method:'POST', credentials:'include', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({phone:state.phone, sms_consent:false, purpose:'offers'})
+    });
+    const account = await signup.json();
+    if (!signup.ok || account.success !== true || !account.sessionToken || !account.contactId) {
+      throw new Error(account.error || 'Could not start text signup. Ask a team member for help.');
+    }
+    state.sessionToken = account.sessionToken; state.contactId = account.contactId;
+    const response = await fetch(API+'/api/consent/winback', {
+      method:'POST', credentials:'include',
+      headers:{'Content-Type':'application/json', 'X-Rewards-Session':state.sessionToken},
+      body:JSON.stringify({affirmative_opt_in:true, disclosure_version:'nh-sms-winback-v1',
+        occurred_at:new Date().toISOString()})
+    });
+    const result = await response.json();
+    if (response.status !== 201 || result.ok !== true || result.receipt?.status !== 'captured') {
+      throw new Error('We could not confirm your text-offer choice. Please ask a team member for help.');
+    }
+    state.offerCaptured = true;
+    $('offerResult').textContent = result.receipt.handoff_status === 'pending_reconciliation'
+      ? 'Your text-offer signup was recorded. Please ask a team member about your offer.'
+      : 'Thanks! Your optional text-offer signup was recorded. Offer eligibility still applies.';
+  } catch (error) {
+    $('offerResult').textContent = error.message || 'We could not confirm your choice. Please ask a team member for help.';
+  }
+  syncOfferControls();
+}
 function renderBalance(d){
   state.contactId = d.contactId;
   if (d.sessionToken) state.sessionToken = d.sessionToken;
@@ -354,15 +416,6 @@ function renderBalance(d){
     $('rewardBlock').classList.add('hide');
   }
 
-  // Check-in has completed independently; this optional offer cannot block points.
-  const offer = $('offerBox');
-  offer.classList.toggle('hide', !(state.verifiedDevice && state.sessionToken && !state.offerCaptured));
-  $('offerConsent').checked = false;
-  $('offerConsent').disabled = state.offerCaptured;
-  $('offerSubmit').disabled = true;
-  $('offerStatus').textContent = '';
-  offer.open = false;
-
   // Wallet passes — Apple is always available; Google reveals only if the issuer is configured.
   if (state.contactId){
     const walletAuth = state.sessionToken
@@ -376,46 +429,6 @@ function renderBalance(d){
       .catch(()=>{});
   }
 }
-
-// Existing member found but their contact card is missing name/email —
-// ask once per visit. Their check-in point is already awarded either way.
-function showProfileStep(d){
-  state.balance = d;
-  state.contactId = d.contactId;
-  $('profHi').textContent = d.firstName ? ('Hi ' + d.firstName + '! ✨') : 'One quick thing! ✨';
-  $('profToast').innerHTML = d.awarded ? '<div class="toast good">✓ +1 point for checking in!</div>' : '';
-  $('pfname').value = d.firstName || '';
-  $('plname').value = d.lastName || '';
-  $('pemail').value = ''; $('profErr').textContent = '';
-  show('s-profile');
-}
-
-$('profBtn').addEventListener('click', async () => {
-  const fname = $('pfname').value.trim();
-  const lname = $('plname').value.trim();
-  const email = $('pemail').value.trim();
-  $('profErr').textContent = '';
-  if (!fname){ $('profErr').textContent = 'Please enter your first name.'; return; }
-  if (!lname){ $('profErr').textContent = 'Please enter your last name.'; return; }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ $('profErr').textContent = 'Please enter a valid email address.'; return; }
-  const btn = $('profBtn'); btn.disabled = true; btn.textContent = 'Saving...';
-  try {
-    const r = await fetch(API+'/api/complete-profile', {
-      method:'POST', headers:{'Content-Type':'application/json', 'X-Rewards-Session': state.sessionToken || ''},
-      body: JSON.stringify({ contactId: state.contactId, first_name: fname, last_name: lname, email: email, sms_consent: false })
-    });
-    const d = await r.json();
-    if (d.success){
-      const bal = Object.assign({}, state.balance, { firstName: fname });
-      renderBalance(bal); show('s-balance');
-    } else { $('profErr').textContent = d.error || 'Could not save. Try again.'; }
-  } catch(e){ $('profErr').textContent = 'Something went wrong. Try again.'; }
-  finally { btn.disabled = false; btn.textContent = 'Save & See My Points'; }
-});
-
-$('profSkipBtn').addEventListener('click', () => {
-  renderBalance(state.balance); show('s-balance');
-});
 
 $('redeemBtn').addEventListener('click', async () => {
   const pin = $('pin').value.trim();
@@ -441,61 +454,32 @@ $('redeemBtn').addEventListener('click', async () => {
   } catch(e){ $('redeemErr').textContent = 'Something went wrong. Try again.'; btn.disabled=false; btn.textContent='Confirm Free Drink'; }
 });
 
-$('joinBtn').addEventListener('click', async () => {
-  const fname = $('fname').value.trim();
-  const lname = $('lname').value.trim();
-  const email = $('jemail').value.trim();
-  $('joinErr').textContent = '';
-  if (!fname){ $('joinErr').textContent = 'Please enter your first name.'; return; }
-  if (!lname){ $('joinErr').textContent = 'Please enter your last name.'; return; }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ $('joinErr').textContent = 'Please enter a valid email address.'; return; }
-  const btn = $('joinBtn'); btn.disabled = true; btn.textContent = 'Signing you up...';
-  try {
-    const r = await fetch(API+'/api/sms-optin', {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ first_name: fname, last_name: lname, email: email, phone: state.phone, sms_consent: false, source:'nutritionhub101.com/rewards' })
-    });
-    const d = await r.json();
-    if (d.success){
-      window.NHAnalytics?.track('rewards_join');
-      renderBalance({ found:true, contactId:d.contactId, sessionToken:d.sessionToken, firstName:fname, points:1, awarded:true, hasReward:false, toNext:THRESHOLD-1 });
-      show('s-balance');
-    } else { $('joinErr').textContent = d.error || 'Could not sign you up. Try again.'; btn.disabled=false; btn.textContent='Join & Earn My First Point'; }
-  } catch(e){ $('joinErr').textContent = 'Something went wrong. Try again.'; btn.disabled=false; btn.textContent='Join & Earn My First Point'; }
-});
 
-$('offerConsent').addEventListener('change', () => {
-  $('offerSubmit').disabled = !$('offerConsent').checked || !state.sessionToken || !state.verifiedDevice || state.offerCaptured;
-});
-$('offerSubmit').addEventListener('click', async () => {
-  if (!$('offerConsent').checked || !state.sessionToken || !state.verifiedDevice || state.offerCaptured) return;
-  const btn = $('offerSubmit'); btn.disabled = true;
-  $('offerStatus').textContent = 'Recording your choice...';
+$('joinBtn').addEventListener('click', async () => {
+  if (busy) return;
+  busy = true;
+  const pin = state.staffPin;
+  const button = $('joinBtn'); button.disabled = true; button.textContent = 'Joining...';
+  $('joinErr').textContent = '';
   try {
-    const response = await fetch(API+'/api/consent/winback', {
-      method:'POST', credentials:'include',
-      headers:{'Content-Type':'application/json', 'X-Rewards-Session':state.sessionToken},
-      body:JSON.stringify({affirmative_opt_in:true, disclosure_version:'nh-sms-winback-v1',
-        occurred_at:new Date().toISOString()})
+    const response = await fetch(API+'/api/sms-optin', {
+      method:'POST', credentials:'include', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({phone:state.phone, first_name:$('fname').value.trim(),
+        sms_consent:false, purpose:'rewards', ...(pin ? {pin} : {})})
     });
     const result = await response.json();
-    if (response.status !== 201 || result.ok !== true || result.receipt?.status !== 'captured') {
-      throw new Error('We could not record your choice. Please try again later.');
+    if (!response.ok || result.success !== true || !result.contactId || !result.sessionToken) {
+      throw new Error(result.error || 'Could not join rewards. Please try again.');
     }
-    state.offerCaptured = true;
-    $('offerConsent').disabled = true;
-    $('offerStatus').textContent = result.receipt.handoff_status === 'pending_reconciliation'
-      ? 'Your text-offer signup was recorded. Please ask a team member about your offer.'
-      : 'Thanks! Your optional text-offer signup was recorded.';
-  } catch (e) {
-    $('offerStatus').textContent = e.message || 'We could not record your choice.';
-    btn.disabled = false;
+    state.contactId = result.contactId; state.sessionToken = result.sessionToken;
+    if (result.isNew === true) window.NHAnalytics?.track('rewards_join');
+    // The server creates an account with zero points. Only a real check-in can award one.
+    await performPointsCheckin(pin);
+  } catch (error) { $('joinErr').textContent = error.message || 'Could not check in. Ask a team member for help.'; }
+  finally {
+    clearStaffPin(); busy = false; button.disabled = false; button.textContent = 'Join & Check In';
+    syncOfferControls();
   }
-});
-
-$('doneBtn').addEventListener('click', () => {
-  $('phone').value=''; $('pin') && ($('pin').value=''); state={phone:'',contactId:null,sessionToken:null,balance:null,verifiedDevice:false,offerCaptured:false};
-  $('rewardBlock').classList.add('hide'); show('s-phone');
 });
 </script>
 </body>

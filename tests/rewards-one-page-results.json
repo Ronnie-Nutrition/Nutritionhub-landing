@@ -1,0 +1,34 @@
+{
+  "mode": "isolated Chromium, synthetic API fixtures, all requests intercepted, DNS disabled",
+  "liveProviderRequests": 0,
+  "scenariosPassed": 16,
+  "tracker": {
+    "advancedMatching": false,
+    "pageView": false
+  },
+  "blockedRequests": [],
+  "scenarios": [
+    "optional consent upfront, no email/name prerequisites, saved decline",
+    "persistent privacy controls",
+    "new offers: one code, no profile/geolocation/points, separate consent",
+    "trusted returning offers skip OTP",
+    "pending handoff: recorded, no promise of delivery or automatic retry",
+    "returning rewards: balance directly, no profile or marketing enrollment",
+    "new rewards: optional name, real second check-in, server refusal respected",
+    "rewards verification reused for optional offers without a second OTP",
+    "staff new rewards: transient PIN survives join then clears, no consent",
+    "staff account still requires phone proof for optional offers",
+    "back clears staff authority and opt-in choice",
+    "failed account setup cannot claim captured consent",
+    "uncertain consent result has no success claim or automatic retry",
+    "failed verification lookup stops signup",
+    "bad OTP blocks account creation and consent",
+    "Done resets the next visit to unchecked optional consent"
+  ],
+  "source_sha256": {
+    "rewards/index.html": "6b87455fee1a7ef29b0fdc2abc9d90edb81cda652a564a2e47b3ef02ebb74328",
+    "sms/index.html": "dd2a459ebb1ddc6878dfa482bdb9647cadb3b2e87ab68e61143bd2051376237f",
+    "tests/legacy-signup-response.test.cjs": "39d7c7b3e47d38b4ad30b13e2df5abdf988d9ed32ab9512780bda6bcf9cc6918",
+    "tests/rewards-one-page.browser.mjs": "6eca850b95392df260dbd3608f1251270b636cbb146d254ae6e37e620abacd70"
+  }
+}
