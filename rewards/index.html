@@ -484,7 +484,9 @@ $('offerSubmit').addEventListener('click', async () => {
     }
     state.offerCaptured = true;
     $('offerConsent').disabled = true;
-    $('offerStatus').textContent = 'Thanks! Your optional text-offer signup was recorded.';
+    $('offerStatus').textContent = result.receipt.handoff_status === 'pending_reconciliation'
+      ? 'Your text-offer signup was recorded. Please ask a team member about your offer.'
+      : 'Thanks! Your optional text-offer signup was recorded.';
   } catch (e) {
     $('offerStatus').textContent = e.message || 'We could not record your choice.';
     btn.disabled = false;

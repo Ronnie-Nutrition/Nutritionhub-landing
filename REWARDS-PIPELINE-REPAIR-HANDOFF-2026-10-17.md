@@ -3,6 +3,7 @@
 Prepared on October 17 UTC / October 16 late evening Central. No website or application code was deployed.
 
 - Rewards removes unconditional Meta initialization, pixel fallback, and form-field advanced matching. The paired main-host analytics helper emits only an aggregate rewards-join event after consent; saved decline and withdrawal block it. Reaccept restores permissions without duplicate SDK initialization. Persistent privacy links and Privacy choices let customers reopen consent controls.
+- If durable consent is recorded but its delivery queue handoff needs reconciliation, the page says the choice was recorded and directs the customer to a team member. It leaves the captured checkbox disabled and does not repeat the capture or send.
 - A fresh visit restores an enabled, unchecked optional text-offer checkbox. OTP/staff check-in and optional marketing choice remain separate.
 - The legacy `/sms` form now shows errors instead of claiming a failed request succeeded. It still sends affirmative legacy consent, so the paired server containment will reject it. Decide the verified-signup handoff or retirement before releasing this legacy flow.
 
