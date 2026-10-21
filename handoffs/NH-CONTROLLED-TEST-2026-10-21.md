@@ -20,3 +20,15 @@ Resolve the visible GHL form/Cloudflare validation issue through ordinary user i
 
 ## Remaining launch work
 After a successful controlled validation: verify provider delivery and handset receipt, actual rendered expiry and code; fix native label/consent contrast seen on dark background; restore public wording and claim CTA; embed form in existing branded /offer/ with allowed UTMs; remove temporary recipient guard only when general claims are ready. Staff redemption is manual and first-visit eligibility is checked at redemption.
+
+## Read-only Turnstile follow-up
+- Preserved native form now shows Cloudflare widget spinner but no human checkbox/puzzle or actionable verification control. Submit re-enabled; no success confirmation. Do not infer success or click it again.
+- Console repeats 300030, with crashed_retry challenge URLs at 21:41:04–05Z. Native host is api.leadconnectorhq.com; challenge script loads from challenges.cloudflare.com. No observed domain-not-authorized or invalid-sitekey code.
+- Refreshed form submissions still No submissions yet; workflow enrollment history No enrollments found. Workflow remains OFF. No reload/resubmission/security changes.
+- Official Cloudflare error table classifies 300* as generic challenge failure/bot detection; suffix internal. Domain unauthorized is 110200 and invalid keys have separate codes. No evidence supports DNS/domain/key edits here.
+- Official supported-browser docs state automated browsers/frameworks are unsupported for production challenge solving. Automation interference is plausible, not proven account-specific root cause.
+- Smallest supported user step: manually open https://debug.challenges.cloudflare.com/ in an ordinary up-to-date browser (no coupon data/submission) and report result. This can diagnose browser compatibility without another SMS attempt. No need to change security settings. If manual diagnostics pass, coordinate a human-driven form validation only after reconciling current pending request and explicitly authorizing any fresh submission. If failure persists manually, provide GHL support form ID, native URL, timestamps/error, and console/HAR through an approved support channel. No support message sent.
+Sources:
+https://developers.cloudflare.com/turnstile/troubleshooting/client-side-errors/error-codes/
+https://developers.cloudflare.com/cloudflare-challenges/reference/supported-browsers/
+https://developers.cloudflare.com/cloudflare-challenges/troubleshooting/challenge-solve-issues/
