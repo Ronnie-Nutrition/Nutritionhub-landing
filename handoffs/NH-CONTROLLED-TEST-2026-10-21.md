@@ -38,3 +38,6 @@ Viewed both newest Desktop screenshots (4.45.05 PM and 4.45.00 PM, Oct 21). Clou
 
 ## Manual signup ready — supersedes OFF state above
 Reconciled again: no submissions/enrollments, no coupon conversation entry, NH3 fields empty, all DND boxes unchecked. Verified exact-phone AND SMS-permitted AND code-empty guard, dedicated consented form trigger, one approved SMS with native NH3 fields, explicit existing default sender and re-entry off. Enabled only this guarded workflow; Publish checked and Saved verified. No form submission or SMS test performed. Owner is to submit once manually in normal browser, then report confirmation/receipt for immediate read-only inspection. Public branded /offer remains noncollecting. Workflow intentionally remains enabled with owner-phone restriction awaiting manual validation.
+
+## Awaited manual signup — read-only check
+Refreshed Form 5 submissions: none. Workflow enrollment: none; execution logs: none. Refreshed existing contact: NH3 code/expiry empty and no new outbound coupon, so no coupon provider status to inspect. Workflow enabled state observed with test-only guard; no settings, form submission or sends performed. Awaiting user manual submission; tabs preserved. Browser instance bc462535 now inventory browser 1 (IDs can reorder).
