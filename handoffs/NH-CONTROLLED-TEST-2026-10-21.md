@@ -41,3 +41,7 @@ Reconciled again: no submissions/enrollments, no coupon conversation entry, NH3 
 
 ## Awaited manual signup — read-only check
 Refreshed Form 5 submissions: none. Workflow enrollment: none; execution logs: none. Refreshed existing contact: NH3 code/expiry empty and no new outbound coupon, so no coupon provider status to inspect. Workflow enabled state observed with test-only guard; no settings, form submission or sends performed. Awaiting user manual submission; tabs preserved. Browser instance bc462535 now inventory browser 1 (IDs can reorder).
+
+
+## Read-only status — 2026-10-22 01:09 UTC
+Mac connected. Refreshed Form submissions with Oct 1–31 filter: No submissions yet. Workflow execution filter extended through Oct22: No logs found. Unbounded enrollment history: No enrollments found. Refreshed existing owner contact: NH3 code and expiry empty, no coupon SMS in conversation. Workflow remains Saved and Publish ON, restricted by exact owner phone AND SMS DND not enabled AND empty NH3 code. Trigger exact claim form plus Terms and Conditions Yes. No changes/sends/submissions this check. Public HTTPS offer fetched successfully and retains claims-not-open preview; no collection. Await owner manual signup; no evidence it happened. Prior uncertain automated attempt was not retried. Preserve native form tab.
