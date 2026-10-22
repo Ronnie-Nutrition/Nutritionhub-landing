@@ -45,3 +45,7 @@ Refreshed Form 5 submissions: none. Workflow enrollment: none; execution logs: n
 
 ## Read-only status — 2026-10-22 01:09 UTC
 Mac connected. Refreshed Form submissions with Oct 1–31 filter: No submissions yet. Workflow execution filter extended through Oct22: No logs found. Unbounded enrollment history: No enrollments found. Refreshed existing owner contact: NH3 code and expiry empty, no coupon SMS in conversation. Workflow remains Saved and Publish ON, restricted by exact owner phone AND SMS DND not enabled AND empty NH3 code. Trigger exact claim form plus Terms and Conditions Yes. No changes/sends/submissions this check. Public HTTPS offer fetched successfully and retains claims-not-open preview; no collection. Await owner manual signup; no evidence it happened. Prior uncertain automated attempt was not retried. Preserve native form tab.
+
+
+## iPhone manual-test readiness — 2026-10-22T02:31:45.311903+00:00
+Remote Mac connected. Read-only: guarded workflow saved/enabled, exact owner phone plus SMS DND exclusion and empty code guard verified. Refreshed October form submissions and unbounded enrollment history remain empty. Refreshed owner contact code/expiry empty; no coupon message; all-channel and text-message DND unchecked. Native form renders owner-test notice, name/phone/email/consent controls and Submit; no submission performed, challenge success on iPhone not yet established. Await one manual Safari signup and then inspect execution/provider status. No recipient, activation, contact or public-site changes.
