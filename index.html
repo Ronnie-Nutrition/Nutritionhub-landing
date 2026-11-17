@@ -1,1293 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <meta name="description" content="Nutrition Hub Pearland — Handcrafted protein shakes, energy teas & B12 shots. Walk-ins welcome. 8201 Broadway, Pearland TX.">
-  <title>Nutrition Hub | Pearland, TX</title>
-      <!-- Meta Pixel Code -->
-      <script>
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                 n.queue=[];t=b.createElement(e);t.async=!0;
-                 t.src=v;s=b.getElementsByTagName(e)[0];
-                 s.parentNode.insertBefore(t,s)}(window, document,'script',
-                                                     'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '915336731481586');
-            fbq('track', 'PageView');
-      </script>
-      <noscript><img height="1" width="1" style="display:none"
-                      src="https://www.facebook.com/tr?id=915336731481586&ev=PageView&noscript=1"
-                      /></noscript>
-    <!-- End Meta Pixel Code -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- ═══════════════════════════════════════
-       🥤 UPDATE DRINK OF THE DAY HERE DAILY
-       ═══════════════════════════════════════ -->
-  <script>
-    const DRINK = {
-      name: "Banana Pudding Shake",
-      emoji: "🍌",
-      tagline: "Tastes like dessert. Works like a meal.",
-      desc: "Creamy, dreamy, packed with 24g protein & 21 vitamins. Zero guilt — all flavor.",
-      tag: "Fan Favorite"
-    };
-  </script>
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --green:      #cc1100;
-      --green-dark: #990d00;
-      --green-bg:   #fff0ee;
-      --gold:       #cc1100;
-      --gold-dark:  #990d00;
-      --orange:     #e63000;
-      --cream:      #ffffff;
-      --white:      #ffffff;
-      --text:       #111111;
-      --muted:      #666666;
-      --border:     #e8e8e8;
-      --card-bg:    #ffffff;
-      --shadow:     0 4px 24px rgba(0,0,0,0.08);
-      --shadow-lg:  0 12px 48px rgba(0,0,0,0.14);
-    }
-
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      max-width: 480px;
-      margin: 0 auto;
-      padding-bottom: 90px;
-      min-height: 100vh;
-    }
-
-    /* ── GMB BANNER ── */
-    .gmb-banner {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      max-height: 200px;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(165deg, #0d0d0d 0%, #1a1a1a 60%, #2a0000 100%);
-      padding: 18px 24px 24px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 220px; height: 220px;
-      background: radial-gradient(circle, rgba(204,17,0,0.2) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -40px; left: -40px;
-      width: 180px; height: 180px;
-      background: radial-gradient(circle, rgba(204,17,0,0.15) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 14px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-eyebrow::before,
-    .hero-eyebrow::after {
-      content: '';
-      display: block;
-      width: 28px; height: 1px;
-      background: rgba(255,255,255,0.3);
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 44px;
-      font-weight: 800;
-      line-height: 1.05;
-      color: var(--white);
-      letter-spacing: -0.5px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero h1 span {
-      color: var(--gold);
-      display: block;
-    }
-
-    .hero-sub {
-      font-size: 15px;
-      color: rgba(255,255,255,0.75);
-      margin-top: 10px;
-      letter-spacing: 0.3px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      margin-top: 18px;
-      padding: 8px 18px;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: 600;
-      position: relative;
-      z-index: 2;
-    }
-
-    .status-pill.open {
-      background: rgba(74, 222, 128, 0.2);
-      border: 1px solid rgba(74, 222, 128, 0.4);
-      color: #86efac;
-    }
-
-    .status-pill.closed {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.5);
-    }
-
-    .status-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: currentColor;
-      animation: pulse 2s infinite;
-    }
-
-    .status-pill.closed .status-dot { animation: none; }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.8); }
-    }
-
-    /* ── CTA BUTTONS ── */
-    .cta-bar {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      padding: 20px 20px 0;
-      background: var(--cream);
-    }
-
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 16px 12px;
-      border-radius: 16px;
-      font-size: 15px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s;
-      -webkit-tap-highlight-color: transparent;
-      cursor: pointer;
-    }
-
-    .btn:active { transform: scale(0.97); }
-
-    .btn-primary {
-      background: var(--green);
-      color: var(--white);
-      box-shadow: 0 6px 20px rgba(204,17,0,0.35);
-    }
-
-    .btn-secondary {
-      background: var(--white);
-      color: var(--text);
-      border: 2px solid #dddddd;
-      box-shadow: var(--shadow);
-    }
-
-    /* ── DIVIDER ── */
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: 24px 20px 0;
-    }
-
-    /* ── DRINK OF THE DAY ── */
-    .dotd-wrap {
-      padding: 24px 20px 0;
-    }
-
-    .section-eyebrow {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .dotd-card {
-      background: linear-gradient(145deg, #0d0d0d 0%, #1a1a1a 60%, #2a0000 100%);
-      border-radius: 24px;
-      padding: 28px 24px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
-    }
-
-    .dotd-card::before {
-      content: '';
-      position: absolute;
-      top: -30px; right: -30px;
-      width: 160px; height: 160px;
-      background: radial-gradient(circle, rgba(204,17,0,0.25) 0%, transparent 65%);
-      border-radius: 50%;
-    }
-
-    .dotd-card::after {
-      content: '';
-      position: absolute;
-      bottom: -20px; left: 20px;
-      width: 120px; height: 120px;
-      background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    .dotd-tag {
-      display: inline-block;
-      background: var(--green);
-      color: #ffffff;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 5px 12px;
-      border-radius: 20px;
-      margin-bottom: 14px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .dotd-emoji-wrap {
-      font-size: 52px;
-      line-height: 1;
-      margin-bottom: 10px;
-      position: relative;
-      z-index: 1;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
-    }
-
-    .dotd-name {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--white);
-      line-height: 1.1;
-      position: relative;
-      z-index: 1;
-    }
-
-    .dotd-tagline {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--gold);
-      margin-top: 6px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .dotd-desc {
-      font-size: 14px;
-      color: rgba(255,255,255,0.75);
-      margin-top: 8px;
-      line-height: 1.55;
-      position: relative;
-      z-index: 1;
-    }
-
-    .dotd-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 18px;
-      padding: 12px 22px;
-      background: var(--green);
-      color: var(--white);
-      font-size: 14px;
-      font-weight: 700;
-      border-radius: 30px;
-      text-decoration: none;
-      position: relative;
-      z-index: 1;
-      box-shadow: 0 4px 16px rgba(204,17,0,0.3);
-      transition: transform 0.15s;
-    }
-
-    .dotd-btn:active { transform: scale(0.97); }
-
-    /* ── MENU SECTION ── */
-    .menu-section {
-      padding: 28px 20px 0;
-    }
-
-    .menu-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .menu-header-icon {
-      width: 36px; height: 36px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-
-    .icon-shake { background: #e8f8ef; }
-    .icon-tea   { background: #fff8e8; }
-    .icon-shots { background: #fff0e8; }
-    .icon-eats  { background: #f0f4ff; }
-
-    .menu-header h2 {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.3px;
-    }
-
-    .menu-header p {
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 500;
-      margin-top: 1px;
-    }
-
-    .menu-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .menu-item {
-      background: var(--white);
-      border-radius: 18px;
-      padding: 16px 18px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(0,0,0,0.04);
-      transition: transform 0.15s;
-    }
-
-    .menu-item:active { transform: scale(0.98); }
-
-    .item-emoji {
-      font-size: 32px;
-      width: 56px; height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--green-bg);
-      border-radius: 14px;
-      flex-shrink: 0;
-      overflow: hidden;
-    }
-
-    .item-emoji img {
-      width: 56px;
-      height: 56px;
-      object-fit: cover;
-      border-radius: 14px;
-    }
-
-    .item-body { flex: 1; min-width: 0; }
-
-    .item-name {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.2px;
-    }
-
-    .item-desc {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 3px;
-      line-height: 1.4;
-    }
-
-    .item-badge {
-      flex-shrink: 0;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-
-    .badge-gold { background: #fff0ee; color: #cc1100; border: 1px solid #ffbbb5; }
-    .badge-green { background: #f0f0f0; color: #111111; border: 1px solid #cccccc; }
-    .badge-orange { background: #fff0ee; color: #cc1100; border: 1px solid #ffbbb5; }
-    .badge-blue { background: #f0f0f0; color: #333333; border: 1px solid #cccccc; }
-
-    /* ── HOURS SECTION ── */
-    .hours-section {
-      padding: 28px 20px 0;
-    }
-
-    .hours-card {
-      background: var(--white);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(0,0,0,0.04);
-    }
-
-    .hours-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 13px 18px;
-      border-bottom: 1px solid var(--border);
-      transition: background 0.2s;
-    }
-
-    .hours-row:last-child { border-bottom: none; }
-    .hours-row.today { background: linear-gradient(90deg, #fff0ee, #fff5f4); }
-
-    .hours-day {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--muted);
-    }
-
-    .hours-time {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .hours-row.today .hours-day { color: var(--green); }
-    .hours-row.today .hours-time { color: var(--green); }
-
-    .today-tag {
-      font-size: 10px;
-      font-weight: 700;
-      background: #111111;
-      color: white;
-      padding: 2px 8px;
-      border-radius: 10px;
-      margin-left: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* ── LOCATION SECTION ── */
-    .location-section {
-      padding: 28px 20px 0;
-    }
-
-    .location-card {
-      background: var(--white);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(0,0,0,0.04);
-    }
-
-    .map-preview {
-      background: linear-gradient(135deg, #222222 0%, #111111 100%);
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .map-preview::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322c55e' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-
-    .location-body { padding: 18px; }
-
-    .location-address {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.3px;
-    }
-
-    .location-city {
-      font-size: 14px;
-      color: var(--muted);
-      margin-top: 3px;
-      font-weight: 500;
-    }
-
-    .map-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 14px;
-      padding: 14px;
-      background: #111111;
-      color: var(--white);
-      font-size: 15px;
-      font-weight: 700;
-      border-radius: 14px;
-      text-decoration: none;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-      transition: transform 0.15s;
-    }
-
-    .map-btn:active { transform: scale(0.98); }
-
-    /* ── SOCIAL STRIP ── */
-    .social-strip {
-      margin: 28px 20px 0;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .ig-card {
-      background: linear-gradient(135deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-      padding: 20px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-decoration: none;
-    }
-
-    .ig-left {}
-    .ig-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-    }
-
-    .ig-handle {
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--white);
-      margin-top: 3px;
-      letter-spacing: -0.3px;
-    }
-
-    .ig-right { font-size: 36px; }
-
-    /* ── PROOF BAR ── */
-    .proof-bar {
-      margin: 24px 20px 0;
-      background: var(--white);
-      border-radius: 20px;
-      padding: 18px 20px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(0,0,0,0.04);
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 8px;
-      text-align: center;
-    }
-
-    .proof-item {}
-    .proof-number {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 26px;
-      font-weight: 800;
-      color: #cc1100;
-      letter-spacing: -0.5px;
-    }
-
-    .proof-label {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--muted);
-      margin-top: 2px;
-      line-height: 1.3;
-    }
-
-    .proof-divider {
-      width: 1px;
-      background: var(--border);
-      margin: 4px 0;
-      display: none;
-    }
-
-    /* ── STICKY CTA ── */
-    .sticky-cta {
-      position: fixed;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 480px;
-      padding: 12px 20px;
-      background: rgba(255,252,245,0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-top: 1px solid var(--border);
-      z-index: 100;
-    }
-
-    .sticky-cta a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      padding: 16px;
-      background: var(--green);
-      color: var(--white);
-      font-size: 16px;
-      font-weight: 800;
-      border-radius: 16px;
-      text-decoration: none;
-      box-shadow: 0 8px 24px rgba(204,17,0,0.4);
-      letter-spacing: 0.2px;
-      transition: transform 0.15s;
-    }
-
-    .sticky-cta a:active { transform: scale(0.98); }
-
-    /* ── FOOTER ── */
-    .page-footer {
-      text-align: center;
-      padding: 24px 20px 10px;
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .page-footer strong { color: var(--text); }
-
-    /* ── FLAVOR CHIPS ── */
-    .all-flavors-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 14px;
-      margin-bottom: 8px;
-    }
-    .flavor-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      padding: 14px 16px;
-      background: #f8f8f8;
-      border-radius: 14px;
-      border: 1px solid #e8e8e8;
-    }
-    .flavor-chip {
-      font-size: 12px;
-      font-weight: 600;
-      color: #111111;
-      background: var(--white);
-      border: 1px solid #dddddd;
-      padding: 5px 11px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-    .flavor-chip.hot { color: #cc1100; border-color: rgba(204,17,0,0.25); }
-    .flavor-chip.tea { color: #111111; background: #f8f8f8; border-color: #cccccc; }
-    .subsection-label {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text);
-      margin-top: 14px;
-      margin-bottom: 8px;
-      padding: 4px 0;
-      border-bottom: 2px solid var(--border);
-    }
-    .menu-meta {
-      display: inline-flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-top: 6px;
-    }
-    .meta-tag {
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 9px;
-      border-radius: 10px;
-      background: #f0f0f0;
-      color: #333333;
-      border: 1px solid #dddddd;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nutrition Hub | Pearland, TX — Protein Shakes, Energy Teas & B12</title>
+<meta name="description" content="Nutrition Hub — handcrafted protein shakes, energy teas & B12 shots in Pearland, TX. 8201 Broadway, Suite 113. Order online or walk in.">
+<link rel="canonical" href="https://nutritionhub101.com/">
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Nutrition Hub | Pearland, TX — Protein Shakes, Energy Teas & B12">
+<meta property="og:description" content="Handcrafted protein shakes, energy teas & B12 shots in Pearland, TX. Order online or walk in.">
+<meta property="og:url" content="https://nutritionhub101.com/">
+<meta property="og:image" content="https://nutritionhub101.com/menu/images/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nutrition Hub | Pearland, TX — Protein Shakes, Energy Teas & B12">
+<meta name="twitter:description" content="Handcrafted protein shakes, energy teas & B12 shots in Pearland, TX. Order online or walk in.">
+
+<!-- LocalBusiness structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FoodEstablishment",
+  "name": "Nutrition Hub",
+  "description": "Handcrafted protein shakes, loaded teas, and B12 shots in Pearland, TX.",
+  "url": "https://nutritionhub101.com/",
+  "telephone": "(844) 748-2536",
+  "image": "https://nutritionhub101.com/menu/images/logo.png",
+  "servesCuisine": ["Protein Shakes", "Energy Teas", "Smoothies", "Healthy"],
+  "priceRange": "$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8201 Broadway, Suite 113",
+    "addressLocality": "Pearland",
+    "addressRegion": "TX",
+    "postalCode": "77581",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 29.559174,
+    "longitude": -95.345263
+  },
+  "hasMenu": "https://order.nutritionhub101.com/",
+  "acceptsReservations": "False",
+  "sameAs": ["https://instagram.com/nutritionhub101"],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "06:30", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "06:30", "closes": "15:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "14:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "15:00" }
+  ]
+}
+</script>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','915336731481586');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=915336731481586&ev=PageView&noscript=1"/></noscript>
+<style>
+  :root{
+    --bg:#0a0d0a; --bg2:#0f140f; --card:#141a14; --line:#1f2a1f;
+    --lime:#b6ff2e; --orange:#ff7a18; --pink:#ff2e88; --cyan:#23e0ff;
+    --txt:#eef3ea; --mut:#9aa897;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:var(--font);overflow-x:hidden;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .announce{background:var(--lime);color:#0a0d0a;text-align:center;font-weight:900;font-size:13px;letter-spacing:.4px;padding:9px}
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(10,13,10,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+  .brand{font-weight:900;letter-spacing:.5px;font-size:18px}
+  .brand span{color:var(--lime)}
+  .nav .btn{padding:9px 18px;font-size:13px}
+
+  /* HERO */
+  .hero{position:relative;padding:64px 0 46px;text-align:center;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(600px 300px at 18% 0%,rgba(255,122,24,.18),transparent 60%),
+    radial-gradient(700px 360px at 85% 18%,rgba(35,224,255,.14),transparent 60%),
+    radial-gradient(700px 400px at 50% 100%,rgba(182,255,46,.12),transparent 60%)}
+  .pill{position:relative;display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);color:var(--mut);font-size:12px;font-weight:800;letter-spacing:1.2px;padding:7px 16px;border-radius:40px;margin-bottom:22px}
+  .hero h1{position:relative;font-size:clamp(34px,6.4vw,62px);line-height:1.04;font-weight:900;letter-spacing:-1px}
+  .hero h1 .a{color:var(--lime);text-shadow:0 0 18px rgba(182,255,46,.5)} .hero h1 .b{color:var(--orange)}
+  .hero p{position:relative;max-width:560px;margin:18px auto 0;color:var(--mut);font-size:17px}
+  .cta{position:relative;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+
+  .btn{cursor:pointer;display:inline-block;border:none;font-family:var(--font);font-weight:900;letter-spacing:.5px;border-radius:40px;transition:.18s;font-size:14px}
+  .btn-lime{background:var(--lime);color:#0a0d0a;padding:14px 26px;box-shadow:0 0 24px rgba(182,255,46,.35)}
+  .btn-lime:hover{transform:translateY(-2px)}
+  .btn-pink{background:var(--pink);color:#fff;padding:14px 26px;box-shadow:0 0 22px rgba(255,46,136,.4)}
+  .btn-pink:hover{transform:translateY(-2px)}
+  .btn-ghost{background:transparent;border:1px solid var(--line);color:var(--txt);padding:13px 24px}
+  .btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
+
+  /* SECTION HEADERS */
+  .sec{padding:48px 0;border-top:1px solid var(--line)}
+  .sec h2{font-size:clamp(26px,4.4vw,38px);font-weight:900;letter-spacing:-.5px;text-align:center}
+  .sec h2 span{color:var(--lime)}
+  .sec .lead{color:var(--mut);text-align:center;max-width:560px;margin:12px auto 0;font-size:15px}
+
+  /* DRINK GRID */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  .drink{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;text-align:center;position:relative;overflow:hidden;transition:.2s}
+  .drink::after{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:linear-gradient(90deg,var(--lime),var(--pink))}
+  .drink:hover{transform:translateY(-4px);border-color:rgba(182,255,46,.4)}
+  .drink img{width:100%;height:200px;object-fit:contain;margin-bottom:12px}
+  .drink .tag{font-size:11px;font-weight:900;letter-spacing:1.5px;padding:4px 10px;border-radius:30px;display:inline-block;margin-bottom:8px}
+  .tag.shake{background:rgba(255,46,136,.15);color:var(--pink)}
+  .tag.tea{background:rgba(35,224,255,.15);color:var(--cyan)}
+  .drink h3{font-size:17px;font-weight:900;letter-spacing:-.3px}
+  .drink p{color:var(--mut);font-size:13px;margin-top:4px}
+
+  /* FEATURES */
+  .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  .fcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+  .fcard .ic{font-size:28px;margin-bottom:10px}
+  .fcard h3{font-size:18px;font-weight:900;margin-bottom:6px}
+  .fcard h3 span{color:var(--lime)}
+  .fcard p{color:var(--mut);font-size:14px}
+
+  /* REWARDS */
+  .rewards{background:linear-gradient(135deg,rgba(182,255,46,.1),rgba(255,46,136,.08));border:1px solid var(--line);border-radius:24px;padding:40px 28px;text-align:center;margin-top:34px}
+  .rewards h2{font-size:clamp(24px,4vw,34px)}
+  .rewards .steps{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin:24px 0}
+  .step{max-width:200px}
+  .step .n{display:inline-flex;width:40px;height:40px;align-items:center;justify-content:center;border-radius:50%;background:var(--lime);color:#0a0d0a;font-weight:900;font-size:18px;margin-bottom:10px;box-shadow:0 0 18px rgba(182,255,46,.4)}
+  .step b{display:block;margin-bottom:4px} .step p{color:var(--mut);font-size:13px}
+
+  /* HOURS + LOCATION */
+  .info{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
+  .infocard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+  .infocard h3{font-size:16px;font-weight:900;letter-spacing:1px;color:var(--orange);margin-bottom:14px}
+  .hrow{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+  .hrow:last-child{border-bottom:none}
+  .hrow .d{color:var(--mut)} .hrow .t{font-weight:700}
+  .infocard .addr{font-size:15px;line-height:1.7}
+  .infocard .addr b{color:var(--lime)}
+
+  /* CLOSE */
+  .close{text-align:center;padding:60px 0 36px;border-top:1px solid var(--line)}
+  .close h2{font-size:clamp(28px,4.6vw,44px);font-weight:900;letter-spacing:-.5px}
+  .close h2 span{color:var(--lime)}
+  .close p{color:var(--mut);max-width:480px;margin:14px auto 26px;font-size:15px}
+  .footer{text-align:center;color:#566;font-size:12px;padding:26px 0;border-top:1px solid var(--line)}
+  .footer a{color:var(--mut)}
+
+  @media(max-width:780px){
+    .grid{grid-template-columns:1fr 1fr;gap:12px}
+    .feats{grid-template-columns:1fr}
+    .info{grid-template-columns:1fr}
+    .drink img{height:160px}
+  }
+  @media(max-width:480px){.grid{grid-template-columns:1fr}}
+</style>
+  <script defer src="/analytics-consent.js"></script>
 <script defer src="/assets/portfolio-measurement.js"></script>
 </head>
 <body>
 
-  <!-- GMB BANNER -->
-  <img class="gmb-banner" src="NutritionHub_GMB_Cover_v3.png" alt="Nutrition Hub Pearland">
+<!-- NAV -->
+<nav class="nav"><div class="wrap row">
+  <div class="brand" style="display:flex;align-items:center;gap:10px">
+    <img src="https://order.nutritionhub101.com/images/logo.png" alt="Nutrition Hub 101" style="height:46px;width:46px;border-radius:50%;background:#fff;padding:3px;object-fit:contain;flex:none">
+    <span>NUTRITION <span style="color:var(--lime)">HUB</span></span>
+  </div>
+  <a class="btn btn-pink" href="https://order.nutritionhub101.com" target="_blank" onclick="fbq('track','Lead')">Order Online</a>
+</div></nav>
 
-  <!-- HERO -->
-  <div class="hero">
-    <p class="hero-sub">Handcrafted Shakes · Energy Teas · B12 Shots</p>
-    <div class="status-pill" id="status-pill">
-      <span class="status-dot"></span>
-      <span id="status-text">Walk-ins Welcome</span>
+<!-- HERO -->
+<header class="hero"><div class="wrap">
+  <span class="pill">📍 8201 BROADWAY, SUITE 113 · PEARLAND, TX</span>
+  <h1>Handcrafted <span class="a">protein shakes</span><br>& <span class="b">loaded teas</span> in Pearland, TX.</h1>
+  <p>Made to order, just for you. Build your drink online and skip the line — or walk in and let us make your new favorite. Walk-ins always welcome.</p>
+  <div class="cta">
+    <a class="btn btn-pink" href="https://order.nutritionhub101.com" target="_blank" onclick="fbq('track','Lead')">🥤 Order Online</a>
+    <a class="btn btn-ghost" href="#menu">See the Menu</a>
+  </div>
+</div></header>
+
+<!-- DRINK SHOWCASE -->
+<section class="sec" id="menu"><div class="wrap">
+  <h2>Fan <span>favorites</span></h2>
+  <p class="lead">A taste of the menu — protein-packed shakes and loaded energy teas, made fresh every day.</p>
+  <div class="grid">
+    <div class="drink">
+      <img src="https://raw.githubusercontent.com/Ronnie-Nutrition/nutritionhub-landing/main/shake_strawberry_cheesecake.png" alt="Strawberry Cheesecake protein shake" loading="lazy">
+      <span class="tag shake">PROTEIN SHAKE</span>
+      <h3>Strawberry Cheesecake</h3>
+      <p>24g+ protein · tastes like dessert</p>
+    </div>
+    <div class="drink">
+      <img src="https://raw.githubusercontent.com/Ronnie-Nutrition/nutritionhub-landing/main/shake_banana_pudding.png" alt="Banana Pudding protein shake" loading="lazy">
+      <span class="tag shake">PROTEIN SHAKE</span>
+      <h3>Banana Pudding</h3>
+      <p>Creamy banana-pudding flavor</p>
+    </div>
+    <div class="drink">
+      <img src="https://raw.githubusercontent.com/Ronnie-Nutrition/nutritionhub-landing/main/shake_salted_caramel.png" alt="Fried Ice Cream protein shake" loading="lazy">
+      <span class="tag shake">PROTEIN SHAKE</span>
+      <h3>Fried Ice Cream</h3>
+      <p>Sweet, creamy, crave-worthy</p>
+    </div>
+    <div class="drink">
+      <img src="https://raw.githubusercontent.com/Ronnie-Nutrition/nutritionhub-landing/main/tea_red.png" alt="Mamacita energy tea" loading="lazy">
+      <span class="tag tea">ENERGY TEA</span>
+      <h3>Mamacita</h3>
+      <p>Bold & refreshing · fruit-flavored</p>
+    </div>
+    <div class="drink">
+      <img src="https://raw.githubusercontent.com/Ronnie-Nutrition/nutritionhub-landing/main/tea_dragon_juice.png" alt="Blue Ocean energy tea" loading="lazy">
+      <span class="tag tea">ENERGY TEA</span>
+      <h3>Blue Ocean</h3>
+      <p>A refreshing iced tea</p>
+    </div>
+    <div class="drink">
+      <img src="https://raw.githubusercontent.com/Ronnie-Nutrition/nutritionhub-landing/main/shake_chocolate.png" alt="Cocoa Puffs protein shake" loading="lazy">
+      <span class="tag shake">PROTEIN SHAKE</span>
+      <h3>Cocoa Puffs</h3>
+      <p>Chocolatey cereal-milk shake</p>
     </div>
   </div>
-
-  <!-- TOP CTAs -->
-  <div class="cta-bar">
-    <a class="btn btn-primary" href="https://order.nutritionhub101.com" target="_blank" onclick="fbq('track', 'Lead')">
-      🛒 Order Online
-    </a>
-    <a class="btn btn-secondary" href="https://maps.google.com/?q=8201+Broadway+Suite+113+Pearland+TX+77581" target="_blank">
-      📍 Directions
-    </a>
+  <div class="cta" style="margin-top:34px">
+    <a class="btn btn-pink" href="https://order.nutritionhub101.com" target="_blank" onclick="fbq('track','Lead')">Build Your Drink →</a>
   </div>
+</div></section>
 
-  <!-- PROOF BAR -->
-  <div class="proof-bar">
-    <div class="proof-item">
-      <div class="proof-number">149+</div>
-      <div class="proof-label">Google Reviews</div>
+<!-- WHY -->
+<section class="sec"><div class="wrap">
+  <h2>Why <span>Nutrition Hub</span></h2>
+  <div class="feats">
+    <div class="fcard">
+      <div class="ic">💪</div>
+      <h3>Protein <span>that fills you up</span></h3>
+      <p>Every shake is built with a minimum of 24g of protein — real fuel that actually keeps you full. <a href="/meal-replacement-shakes-pearland/" style="color:var(--lime);font-weight:700">Weight loss shakes →</a> · <a href="/protein-shakes-pearland/" style="color:var(--pink);font-weight:700">post-workout protein shakes →</a></p>
     </div>
-    <div class="proof-item">
-      <div class="proof-number">24g</div>
-      <div class="proof-label">Protein Per Shake</div>
+    <div class="fcard">
+      <div class="ic">⚡</div>
+      <h3>Loaded teas, <span>made to order</span></h3>
+      <p>Made-to-order, fruit-flavored loaded teas. Ask our team about the ingredients and total caffeine in your chosen drink, including any additions. <a href="/energy-teas-pearland/" style="color:var(--cyan);font-weight:700">Explore our energy teas in Pearland →</a> · <a href="/loaded-teas-pearland/" style="color:var(--cyan);font-weight:700">Browse loaded-tea flavors and pickup options →</a></p>
     </div>
-    <div class="proof-item">
-      <div class="proof-number">7yr</div>
-      <div class="proof-label">Serving Pearland</div>
-    </div>
-  </div>
-
-  <!-- DRINK OF THE DAY -->
-  <div class="dotd-wrap">
-    <div class="section-eyebrow">✨ Featured Today</div>
-    <div class="dotd-card">
-      <div class="dotd-tag" id="dotd-tag">Fan Favorite</div>
-      <div class="dotd-emoji-wrap" id="dotd-emoji">🍌</div>
-      <div class="dotd-name" id="dotd-name">Banana Pudding Shake</div>
-      <div class="dotd-tagline" id="dotd-tagline">Tastes like dessert. Works like a meal.</div>
-      <div class="dotd-desc" id="dotd-desc">Creamy, dreamy, packed with 24g protein & 21 vitamins. Zero guilt — all flavor.</div>
-      <a class="dotd-btn" href="https://maps.google.com/?q=8201+Broadway+Suite+113+Pearland+TX+77581" target="_blank">
-        Come grab yours →
-      </a>
+    <div class="fcard">
+      <div class="ic">💉</div>
+      <h3>B12 <span>shots</span></h3>
+      <p>A refreshing $3 energy shot with B1, B6 &amp; B12 — solo or added to any drink. <a href="/b12-shots-pearland/" style="color:var(--cyan);font-weight:700">B12 energy shots in Pearland →</a></p>
     </div>
   </div>
+</div></section>
 
-  <!-- GOURMET SMOOTHIES -->
-  <div class="menu-section">
-    <div class="menu-header">
-      <div class="menu-header-icon icon-shake">🥤</div>
-      <div>
-        <h2>Gourmet Smoothies</h2>
-        <p>24–30g protein · 300 cal · Full meal replacement</p>
-      </div>
+<!-- REWARDS -->
+<section class="sec"><div class="wrap">
+  <div class="rewards">
+    <h2>Get rewarded <span>every visit</span></h2>
+    <p class="lead">Join the Hub Rewards club — earn points on every drink and unlock a <b style="color:var(--lime)">free drink</b> when you hit 100.</p>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><b>Order or check in</b><p>Online or at the counter — you're in.</p></div>
+      <div class="step"><span class="n">2</span><b>Earn points</b><p>Every visit stacks toward your reward.</p></div>
+      <div class="step"><span class="n">3</span><b>Free drink at 100</b><p>We track it for you automatically.</p></div>
     </div>
-    <div class="menu-stack">
-      <div class="menu-item">
-        <div class="item-emoji"><img src="shake_banana_pudding.png" alt="Banana Pudding Shake"></div>
-        <div class="item-body">
-          <div class="item-name">Banana Pudding</div>
-          <div class="item-desc">Tastes like dessert. Works like a meal. Our #1 seller.</div>
-        </div>
-        <span class="item-badge badge-gold">Fan Fav ⭐</span>
-      </div>
-      <div class="menu-item">
-        <div class="item-emoji"><img src="shake_salted_caramel.png" alt="Salted Caramel Frappe"></div>
-        <div class="item-body">
-          <div class="item-name">Salted Caramel Frappe</div>
-          <div class="item-desc">Rich, bold, sweet-salty perfection in every sip.</div>
-        </div>
-        <span class="item-badge badge-orange">🔥 Try It</span>
-      </div>
-      <div class="menu-item">
-        <div class="item-emoji"><img src="shake_strawberry_cheesecake.png" alt="Strawberry Cheesecake Shake"></div>
-        <div class="item-body">
-          <div class="item-name">Strawberry Cheesecake</div>
-          <div class="item-desc">Creamy cheesecake flavor with real protein power.</div>
-        </div>
-      </div>
-    </div>
-    <div class="all-flavors-label">All Gourmet Flavors</div>
-    <div class="flavor-list">
-      <span class="flavor-chip">Banana Pudding</span>
-      <span class="flavor-chip">Bougie</span>
-      <span class="flavor-chip">Butter Pecan</span>
-      <span class="flavor-chip">Coco-Pebbles/Puffs</span>
-      <span class="flavor-chip">Limarita Gourmet</span>
-      <span class="flavor-chip">Mango Tango</span>
-      <span class="flavor-chip">Orange Blast</span>
-      <span class="flavor-chip">Fruity Pebbles</span>
-      <span class="flavor-chip">Fried Ice Cream</span>
-      <span class="flavor-chip">Peach Cobbler</span>
-      <span class="flavor-chip">Push Pop</span>
-      <span class="flavor-chip">S'mores</span>
-      <span class="flavor-chip">Texas Sunset</span>
-      <span class="flavor-chip">Tropical Twist</span>
-      <span class="flavor-chip">Whatchamacallit</span>
-      <span class="flavor-chip">Salted Caramel Frappe</span>
-      <span class="flavor-chip">Strawberry Cheesecake</span>
-      <span class="flavor-chip">Wild Berry Lemonade</span>
-      <span class="flavor-chip">Fruity Force</span>
-      <span class="flavor-chip">Keto Berry Shake</span>
-      <span class="flavor-chip">Peanut Butter Crunch</span>
-      <span class="flavor-chip">Fit Frosty</span>
-      <span class="flavor-chip">Banana Split</span>
-      <span class="flavor-chip">Coffee Crusted Pralines N' Cream</span>
-    </div>
+    <a class="btn btn-lime" href="https://order.nutritionhub101.com/checkin.html?online=1" target="_blank" onclick="fbq('track','Lead')">Join Hub Rewards</a>
   </div>
+</div></section>
 
-  <!-- SMOOTHIES 20OZ -->
-  <div class="menu-section">
-    <div class="menu-header">
-      <div class="menu-header-icon icon-shake">🍶</div>
-      <div>
-        <h2>Smoothies</h2>
-        <p>20oz · 24g protein · 200 cal · 21 vitamins</p>
-      </div>
+<!-- HOURS + LOCATION -->
+<section class="sec"><div class="wrap">
+  <h2>Come <span>see us</span></h2>
+  <div class="info">
+    <div class="infocard">
+      <h3>HOURS</h3>
+      <div class="hrow"><span class="d">Mon – Thu</span><span class="t">6:30 AM – 5:00 PM</span></div>
+      <div class="hrow"><span class="d">Friday</span><span class="t">6:30 AM – 3:00 PM</span></div>
+      <div class="hrow"><span class="d">Saturday</span><span class="t">8:00 AM – 2:00 PM</span></div>
+      <div class="hrow"><span class="d">Sunday</span><span class="t">12:00 PM – 3:00 PM</span></div>
     </div>
-    <div class="menu-stack">
-      <div class="menu-item">
-        <div class="item-emoji">🍫</div>
-        <div class="item-body">
-          <div class="item-name">Dutch Chocolate</div>
-          <div class="item-desc">Rich chocolate flavor — tastes indulgent, performs clean.</div>
-        </div>
-        <span class="item-badge badge-gold">Popular ⭐</span>
-      </div>
-      <div class="menu-item">
-        <div class="item-emoji">🍬</div>
-        <div class="item-body">
-          <div class="item-name">Strawberry Banana</div>
-          <div class="item-desc">Classic, fresh, and always a crowd-pleaser.</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="item-emoji">🥜</div>
-        <div class="item-body">
-          <div class="item-name">Peanut Butter Jelly</div>
-          <div class="item-desc">Nostalgia in a cup. Macro-friendly and delicious.</div>
-        </div>
-      </div>
-    </div>
-    <div class="all-flavors-label">All Smoothie Flavors</div>
-    <div class="flavor-list">
-      <span class="flavor-chip">Banana Bread</span>
-      <span class="flavor-chip">Banana Caramel</span>
-      <span class="flavor-chip">Banana Colada</span>
-      <span class="flavor-chip">Banana Foster</span>
-      <span class="flavor-chip">Peanut Butter Banana</span>
-      <span class="flavor-chip">Brownie Batter</span>
-      <span class="flavor-chip">Birthday Cake</span>
-      <span class="flavor-chip">Blue Banana</span>
-      <span class="flavor-chip">Blue Pina</span>
-      <span class="flavor-chip">Cookies N' Cream</span>
-      <span class="flavor-chip">Cinn-a-Bun</span>
-      <span class="flavor-chip">Cinnamon Roll</span>
-      <span class="flavor-chip">Cinnamon Toast Crunch</span>
-      <span class="flavor-chip">Dutch Chocolate</span>
-      <span class="flavor-chip">French Vanilla</span>
-      <span class="flavor-chip">Lemon Cookie</span>
-      <span class="flavor-chip">Lemon Pound Cake</span>
-      <span class="flavor-chip">Mint Chocolate</span>
-      <span class="flavor-chip">Orange Creamsicle</span>
-      <span class="flavor-chip">Peanut Butter Jelly</span>
-      <span class="flavor-chip">Pina Colada</span>
-      <span class="flavor-chip">Pralines N' Cream</span>
-      <span class="flavor-chip">Strawberry Banana</span>
-      <span class="flavor-chip">Reeces Cup</span>
-      <span class="flavor-chip">Wild Berry</span>
-      <span class="flavor-chip">Snickerdoodle</span>
-      <span class="flavor-chip">Butterfinger</span>
-      <span class="flavor-chip">Café Latte</span>
-      <span class="flavor-chip">Dulce de Leche</span>
-      <span class="flavor-chip">Strawberry Shortcake</span>
-    </div>
-  </div>
-
-  <!-- VEGETARIAN SMOOTHIE -->
-  <div class="menu-section">
-    <div class="menu-header">
-      <div class="menu-header-icon icon-shake">🌱</div>
-      <div>
-        <h2>Vegetarian Smoothie</h2>
-        <p>24g protein · Rice, quinoa & pea protein · Plant-based</p>
-      </div>
-    </div>
-    <div class="all-flavors-label">Available Flavors</div>
-    <div class="flavor-list">
-      <span class="flavor-chip">Brownie Batter</span>
-      <span class="flavor-chip">Cinnamon Roll</span>
-      <span class="flavor-chip">Vanilla</span>
-      <span class="flavor-chip">Apple Pie</span>
-      <span class="flavor-chip">Strawberry</span>
-    </div>
-  </div>
-
-  <!-- LIT TEA -->
-  <div class="menu-section">
-    <div class="menu-header">
-      <div class="menu-header-icon icon-tea">⚡</div>
-      <div>
-        <h2>Lit Tea</h2>
-        <p>32oz · Energy + metabolism boost · B12 & B6 · Low calorie</p>
-      </div>
-    </div>
-    <div class="menu-stack">
-      <div class="menu-item">
-        <div class="item-emoji"><img src="tea_dragon_juice.png" alt="Blue Ocean Tea"></div>
-        <div class="item-body">
-          <div class="item-name">Blue Ocean</div>
-          <div class="item-desc">Bold, tropical, hits different. Our #1 seller.</div>
-        </div>
-        <span class="item-badge badge-orange">#1 Seller 🔥</span>
-      </div>
-      <div class="menu-item">
-        <div class="item-emoji"><img src="tea_red.png" alt="Mamacita Tea"></div>
-        <div class="item-body">
-          <div class="item-name">Mamacita</div>
-          <div class="item-desc">Bright, bold, and totally unique. One sip and you'll be back.</div>
-        </div>
-        <span class="item-badge badge-blue">⚡ Popular</span>
-      </div>
-      <div class="menu-item">
-        <div class="item-emoji"><img src="tea_blue_margarita.png" alt="Wonder Woman Tea"></div>
-        <div class="item-body">
-          <div class="item-name">Wonder Woman</div>
-          <div class="item-desc">Guarana, aloe, B-complex. Feel unstoppable all day.</div>
-        </div>
-      </div>
-    </div>
-    <div class="all-flavors-label">Zero Sugar Options</div>
-    <div class="flavor-list">
-      <span class="flavor-chip tea">Arnold Palmer</span>
-      <span class="flavor-chip tea">Bikini In a Bottle</span>
-      <span class="flavor-chip tea">Blue Margarita</span>
-      <span class="flavor-chip tea">Blue Pina</span>
-      <span class="flavor-chip tea">Cherry Limeade</span>
-      <span class="flavor-chip tea">Blue Ocean</span>
-      <span class="flavor-chip tea">Green Apple</span>
-      <span class="flavor-chip tea">Jolly Rancher</span>
-      <span class="flavor-chip tea">Jungle Juice</span>
-      <span class="flavor-chip tea">Watacolada</span>
-      <span class="flavor-chip tea">Jellybean</span>
-      <span class="flavor-chip tea">Wonder Woman</span>
-      <span class="flavor-chip tea">Pineapple Upside Down</span>
-      <span class="flavor-chip tea">Frankenstein</span>
-      <span class="flavor-chip tea">Crazy in Love</span>
-      <span class="flavor-chip tea">Tigers Blood</span>
-      <span class="flavor-chip tea">Blue Lemonade</span>
-    </div>
-    <div class="all-flavors-label" style="margin-top:14px;">H3O + CR7 Options</div>
-    <div class="flavor-list">
-      <span class="flavor-chip tea">Mamba</span>
-      <span class="flavor-chip tea">Over the Rainbow</span>
-      <span class="flavor-chip tea">Purple Passion</span>
-      <span class="flavor-chip tea">Purple Rain</span>
-      <span class="flavor-chip tea">Strawberry Sunrise</span>
-      <span class="flavor-chip tea">Raspberry Sunrise</span>
-      <span class="flavor-chip tea">Blue Ocean</span>
-      <span class="flavor-chip tea">Madori</span>
-      <span class="flavor-chip tea">Orange Pineapple Push Pop</span>
-      <span class="flavor-chip tea">Cherry Bomb</span>
-      <span class="flavor-chip tea">Fish Bowl</span>
-    </div>
-  </div>
-
-  <!-- ENHANCED TEAS -->
-  <div class="menu-section">
-    <div class="menu-header">
-      <div class="menu-header-icon icon-tea">🌸</div>
-      <div>
-        <h2>Enhanced Teas</h2>
-        <p>Premium blends · Unique flavors · All the energy</p>
-      </div>
-    </div>
-    <div class="flavor-list" style="margin-top:4px;">
-      <span class="flavor-chip tea">Olaf</span>
-      <span class="flavor-chip tea">Peaches N' Cream</span>
-      <span class="flavor-chip tea">Lil' Red Corvette</span>
-      <span class="flavor-chip tea">Horchata</span>
-      <span class="flavor-chip tea">Fuzzy Navel</span>
-      <span class="flavor-chip tea">Mamacita</span>
-      <span class="flavor-chip tea">Strawberry Refresher</span>
-    </div>
-  </div>
-
-  <!-- HOT DRINKS -->
-  <div class="menu-section">
-    <div class="menu-header">
-      <div class="menu-header-icon icon-shots">☕</div>
-      <div>
-        <h2>Hot Drinks</h2>
-        <p>Warm, cozy, and loaded with nutrition</p>
-      </div>
-    </div>
-    <div class="menu-stack">
-      <div class="menu-item">
-        <div class="item-emoji">🍵</div>
-        <div class="item-body">
-          <div class="item-name">Chai Latte</div>
-          <div class="item-desc">15g protein · Warm spice blend. Morning fuel done right.</div>
-        </div>
-        <span class="item-badge badge-gold">15g Protein</span>
-      </div>
-      <div class="menu-item">
-        <div class="item-emoji">🍫</div>
-        <div class="item-body">
-          <div class="item-name">Hot Chocolate</div>
-          <div class="item-desc">24g protein · Rich, velvety, and completely on-plan.</div>
-        </div>
-        <span class="item-badge badge-green">24g Protein</span>
-      </div>
-      <div class="menu-item">
-        <div class="item-emoji">🌿</div>
-        <div class="item-body">
-          <div class="item-name">Medicine Ball</div>
-          <div class="item-desc">Immunity boost · Energy · Mental focus. Feel the difference.</div>
-        </div>
-      </div>
-    </div>
-    <div class="flavor-list" style="margin-top:12px;">
-      <span class="flavor-chip hot">Chai Latte — 15g Protein</span>
-      <span class="flavor-chip hot">Hot Chocolate — 24g Protein</span>
-      <span class="flavor-chip hot">Medicine Ball — Immunity Boost</span>
-      <span class="flavor-chip hot">Hang Over Tea</span>
-      <span class="flavor-chip hot">Detox Tea</span>
-    </div>
-  </div>
-
-  <!-- PROTEIN COFFEE -->
-  <div class="menu-section">
-    <div class="menu-header">
-      <div class="menu-header-icon icon-shots">☕</div>
-      <div>
-        <h2>Protein Coffee</h2>
-        <p>20oz · 15g protein · Only 2g sugar</p>
-      </div>
-    </div>
-    <div class="flavor-list" style="margin-top:4px;">
-      <span class="flavor-chip">House Blend</span>
-      <span class="flavor-chip">Mocha</span>
-    </div>
-  </div>
-
-  <!-- SHOTS & BOOSTS -->
-  <div class="menu-section">
-    <div class="menu-header">
-      <div class="menu-header-icon icon-shots">💉</div>
-      <div>
-        <h2>Shots & Boosts</h2>
-        <p>Quick hits · Add to anything · Instant effect</p>
-      </div>
-    </div>
-    <div class="menu-stack">
-      <div class="menu-item">
-        <div class="item-emoji">⚡</div>
-        <div class="item-body">
-          <div class="item-name">B12 Energy Shot</div>
-          <div class="item-desc">Instant lift, no jitters. 2 minutes to a better afternoon.</div>
-        </div>
-        <span class="item-badge badge-gold">Quick Hit</span>
-      </div>
-      <div class="menu-item">
-        <div class="item-emoji">🌿</div>
-        <div class="item-body">
-          <div class="item-name">Aloe Boost</div>
-          <div class="item-desc">Gut health + natural hydration. Add it to any drink.</div>
-        </div>
-      </div>
-    </div>
-    <div class="all-flavors-label">Enhancers — Add to Any Drink</div>
-    <div class="flavor-list">
-      <span class="flavor-chip">Fiber</span>
-      <span class="flavor-chip">Probiotic</span>
-      <span class="flavor-chip">Aloe</span>
-      <span class="flavor-chip">Lift Off Table</span>
-      <span class="flavor-chip">Lift Off 24 Spark</span>
-      <span class="flavor-chip">Collagen</span>
-    </div>
-  </div>
-
-  <!-- GOOD EATS -->
-  <div class="menu-section">
-    <div class="menu-header">
-      <div class="menu-header-icon icon-eats">🍽️</div>
-      <div>
-        <h2>Good Eats</h2>
-        <p>High protein · Actually delicious · On-plan approved</p>
-      </div>
-    </div>
-    <div class="menu-stack">
-      <div class="menu-item">
-        <div class="item-emoji">🧇</div>
-        <div class="item-body">
-          <div class="item-name">Protein Waffles</div>
-          <div class="item-desc">33g protein · Banana, Chocolate or Dulce. Topped with strawberries, banana, granola & whip cream.</div>
-        </div>
-        <span class="item-badge badge-green">33g Protein</span>
-      </div>
-      <div class="menu-item">
-        <div class="item-emoji">☕</div>
-        <div class="item-body">
-          <div class="item-name">Donut Shot</div>
-          <div class="item-desc">A little treat, big on flavor. Quick grab at the counter.</div>
-        </div>
-        <span class="item-badge badge-orange">Counter Item</span>
-      </div>
-    </div>
-    <div class="all-flavors-label">Snacks & Counter Items</div>
-    <div class="flavor-list">
-      <span class="flavor-chip">Donut Shot</span>
-      <span class="flavor-chip">Protein Balls — 24g/pkg</span>
-      <span class="flavor-chip">Protein Bites</span>
-      <span class="flavor-chip">Protein Bars</span>
-      <span class="flavor-chip">Kickers</span>
-      <span class="flavor-chip">Total Control</span>
-      <span class="flavor-chip">24 Bar</span>
-    </div>
-  </div>
-
-  <!-- HOURS -->
-  <div class="hours-section">
-    <div class="section-eyebrow" style="margin-bottom:14px;">🕐 Hours</div>
-    <div class="hours-card" id="hours-card">
-      <div class="hours-row" data-days="1,2,3,4">
-        <span class="hours-day">Mon – Thu</span>
-        <span class="hours-time">6:30 AM – 5:00 PM</span>
-      </div>
-      <div class="hours-row" data-days="5">
-        <span class="hours-day">Friday</span>
-        <span class="hours-time">6:30 AM – 3:00 PM</span>
-      </div>
-      <div class="hours-row" data-days="6">
-        <span class="hours-day">Saturday</span>
-        <span class="hours-time">8:00 AM – 2:00 PM</span>
-      </div>
-      <div class="hours-row" data-days="0">
-        <span class="hours-day">Sunday</span>
-        <span class="hours-time">12:00 PM – 3:00 PM</span>
+    <div class="infocard">
+      <h3>LOCATION</h3>
+      <p class="addr">
+        <b>Nutrition Hub</b><br>
+        8201 Broadway, Suite 113<br>
+        Pearland, TX 77581
+      </p>
+      <div class="cta" style="justify-content:flex-start;margin-top:18px">
+        <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=8201+Broadway+Suite+113+Pearland+TX+77581" target="_blank">Get Directions</a>
+        <a class="btn btn-ghost" href="https://instagram.com/nutritionhub101" target="_blank">Message Us on IG</a>
       </div>
     </div>
   </div>
+</div></section>
 
-  <!-- LOCATION -->
-  <div class="location-section">
-    <div class="section-eyebrow" style="margin-bottom:14px;">📍 Find Us</div>
-    <div class="location-card">
-      <div class="map-preview">🗺️</div>
-      <div class="location-body">
-        <div class="location-address">8201 Broadway, Suite 113</div>
-        <div class="location-city">Pearland, TX 77581 · Near 288 · Walk-ins welcome</div>
-        <a class="map-btn" href="https://maps.google.com/?q=8201+Broadway+Suite+113+Pearland+TX+77581" target="_blank">
-          🗺️ Get Directions in Google Maps
-        </a>
-      </div>
-    </div>
-  </div>
+<!-- CLOSE -->
+<div class="close"><div class="wrap">
+  <h2>Your new <span>favorite drink</span> is waiting.</h2>
+  <p>Order online and skip the line, or walk in and ask for Ronnie.</p>
+  <a class="btn btn-pink" href="https://order.nutritionhub101.com" target="_blank" onclick="fbq('track','Lead')">🥤 Order Online</a>
+</div></div>
 
-  <!-- INSTAGRAM -->
-  <div class="social-strip">
-    <a class="ig-card" href="https://instagram.com/nutritionhub101" target="_blank">
-      <div class="ig-left">
-        <div class="ig-label">Follow us on Instagram</div>
-        <div class="ig-handle">@nutritionhub101</div>
-      </div>
-      <div class="ig-right">📸</div>
-    </a>
-  </div>
+<!-- Explore: internal links to local landing pages (SEO) -->
+<div class="footer" style="border-top:1px solid var(--line);padding:18px 0 0"><div class="wrap">
+  <strong style="letter-spacing:1px">EXPLORE NUTRITION HUB</strong><br>
+    <a href="/healthy-food-pearland/">Healthy Food in Pearland</a> ·
+    <a href="/grab-and-go-pearland/">Grab-and-Go Snacks</a> ·
+    <a href="/smoothies-pearland/">Smoothies in Pearland</a> ·
+    <a href="/loaded-teas-pearland/">Loaded Teas</a> ·
+    <a href="/protein-coffee-pearland/">Protein Coffee</a> ·
+    <a href="/healthy-breakfast-pearland/">Healthy Breakfast</a> ·
+    <a href="/nutrition-club-pearland/">Nutrition Club in Pearland</a> ·
+    <a href="/smoothies-shadow-creek-ranch/">Near Shadow Creek Ranch</a> ·
+    <a href="/smoothies-silverlake/">Near Silverlake</a> ·
+    <a href="/smoothies-friendswood/">Near Friendswood</a> ·
+    <a href="/blog/">Blog</a>
+</div></div>
 
-  <!-- FOOTER -->
-  <div class="page-footer">
-    <strong>Nutrition Hub · Pearland, TX</strong><br>
-    (844) 748-2536 · 8201 Broadway Suite 113<br>
-    <span style="font-size:11px; color:#bbb;">Powered by EasyAiFlows</span>
-  </div>
+<div class="footer"><div class="wrap">
+  © 2026 Nutrition Hub · 8201 Broadway, Suite 113, Pearland, TX ·
+  <a href="https://instagram.com/nutritionhub101" target="_blank">@nutritionhub101</a>
+  <br>
+  <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms">Terms &amp; Conditions</a> · <a href="/sms">Text Updates</a>
+</div></div>
 
-  <!-- STICKY CTA -->
-  <div class="sticky-cta">
-    <a href="https://order.nutritionhub101.com" target="_blank" onclick="fbq('track', 'Lead')">
-      🛒 Order Online — Skip the Wait!
-    </a>
-  </div>
+<!-- ============================================================
+     GHL CHAT WIDGET GOES HERE
+     In GHL: Sites → Chat Widget → copy the embed snippet and paste
+     it right above this comment. It will float on every page and
+     give customers a no-SMS way to message you (routes to own-GHL
+     Conversations → also rings Email/IG/FB if connected).
+     ============================================================ -->
 
-  <script>
-    // Inject Drink of the Day
-    document.getElementById('dotd-tag').textContent   = DRINK.tag || "Today's Special";
-    document.getElementById('dotd-emoji').textContent = DRINK.emoji;
-    document.getElementById('dotd-name').textContent  = DRINK.name;
-    document.getElementById('dotd-tagline').textContent = DRINK.tagline;
-    document.getElementById('dotd-desc').textContent  = DRINK.desc;
-
-    // Open/Closed status + highlight today's hours
-    const now   = new Date();
-    const day   = now.getDay();
-    const hour  = now.getHours() + now.getMinutes() / 60;
-
-    let isOpen = false;
-    if (day >= 1 && day <= 4) isOpen = hour >= 6.5 && hour < 17;
-    else if (day === 5)        isOpen = hour >= 6.5 && hour < 15;
-    else if (day === 6)        isOpen = hour >= 8   && hour < 14;
-    else if (day === 0)        isOpen = hour >= 12  && hour < 15;
-
-    const pill = document.getElementById('status-pill');
-    const txt  = document.getElementById('status-text');
-
-    if (isOpen) {
-      pill.className = 'status-pill open';
-      txt.textContent = 'Open Now · Walk-ins Welcome';
-    } else {
-      pill.className = 'status-pill closed';
-      txt.textContent = 'Closed · See Hours Below';
-    }
-
-    // Highlight today's row
-    document.querySelectorAll('.hours-row').forEach(row => {
-      const days = row.dataset.days.split(',').map(Number);
-      if (days.includes(day)) {
-        row.classList.add('today');
-        const daySpan = row.querySelector('.hours-day');
-        daySpan.innerHTML += '<span class="today-tag">Today</span>';
-      }
-    });
-  </script>
 </body>
 </html>
